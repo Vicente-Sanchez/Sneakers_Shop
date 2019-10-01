@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ListDetVentaTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:form styleClass="jsfcrud_list_form">
+                <h:panelGroup id="messagePanel" layout="block">
+                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                </h:panelGroup>
+                <h:outputText escape="false" value="#{bundle.ListDetVentaEmpty}" rendered="#{detVentaController.items.rowCount == 0}"/>
+                <h:panelGroup rendered="#{detVentaController.items.rowCount > 0}">
+                    <h:outputText value="#{detVentaController.pagination.pageFirstItem + 1}..#{detVentaController.pagination.pageLastItem + 1}/#{detVentaController.pagination.itemsCount}"/>&nbsp;
+                    <h:commandLink action="#{detVentaController.previous}" value="#{bundle.Previous} #{detVentaController.pagination.pageSize}" rendered="#{detVentaController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandLink action="#{detVentaController.next}" value="#{bundle.Next} #{detVentaController.pagination.pageSize}" rendered="#{detVentaController.pagination.hasNextPage}"/>&nbsp;
+                    <h:dataTable value="#{detVentaController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListDetVentaTitle_id}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.id}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListDetVentaTitle_cantidad}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.cantidad}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListDetVentaTitle_precioCompra}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.precioCompra}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListDetVentaTitle_precioVenta}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.precioVenta}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListDetVentaTitle_status}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.status}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListDetVentaTitle_idProd}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.idProd}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="#{bundle.ListDetVentaTitle_idVenta}"/>
+                            </f:facet>
+                            <h:outputText value="#{item.idVenta}"/>
+                        </h:column>
+                        <h:column>
+                            <f:facet name="header">
+                                <h:outputText value="&nbsp;"/>
+                            </f:facet>
+                            <h:commandLink action="#{detVentaController.prepareView}" value="#{bundle.ListDetVentaViewLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{detVentaController.prepareEdit}" value="#{bundle.ListDetVentaEditLink}"/>
+                            <h:outputText value=" "/>
+                            <h:commandLink action="#{detVentaController.destroy}" value="#{bundle.ListDetVentaDestroyLink}"/>
+                        </h:column>
+                    </h:dataTable>
+                </h:panelGroup>
+                <br />
+                <h:commandLink action="#{detVentaController.prepareCreate}" value="#{bundle.ListDetVentaCreateLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ListDetVentaIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

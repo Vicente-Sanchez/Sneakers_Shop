@@ -1,0 +1,104 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+         <div id="left">
+            <button onclick="myFunction('Proveedores')" class="w3-button w3-block w3-black w3-left-align">
+                Proveedores</button>
+
+            <div id="Proveedores" class="w3-hide">
+                <a class="w3-button w3-block w3-left-align" href="#">Altas</a>
+                <a class="w3-button w3-block w3-left-align" href="#">Bajas</a>
+                <a class="w3-button w3-block w3-left-align" href="#">Modificaciones</a>
+            </div>
+            <button onclick="myFunction('Imagenes')" class="w3-button w3-block w3-black w3-left-align">
+                Imagenes</button>
+
+            <div id="Imagenes" class="w3-hide">
+                <a class="w3-button w3-block w3-left-align" href="#">Altas</a>
+                <a class="w3-button w3-block w3-left-align" href="#">Bajas</a>
+                <a class="w3-button w3-block w3-left-align" href="#">Modificaciones</a>
+            </div>
+            <button onclick="myFunction('Compras')" class="w3-button w3-block w3-black w3-left-align">
+                Compras</button>
+
+            <div id="Compras" class="w3-hide">
+                <a class="w3-button w3-block w3-left-align" href="#">Altas</a>
+                <a class="w3-button w3-block w3-left-align" href="#">Bajas</a>
+                <a class="w3-button w3-block w3-left-align" href="#">Modificaciones</a>
+            </div>
+            <button onclick="myFunction('Tallas')" class="w3-button w3-block w3-black w3-left-align">
+                Tallas</button>
+
+            <div id="Tallas" class="w3-hide">
+                <a class="w3-button w3-block w3-left-align" href="#">Altas</a>
+                <a class="w3-button w3-block w3-left-align" href="#">Bajas</a>
+                <a class="w3-button w3-block w3-left-align" href="#">Modificaciones</a>
+            </div>
+            <button onclick="myFunction('Productos')" class="w3-button w3-block w3-black w3-left-align">
+                Productos</button>
+
+            <div id="Productos" class="w3-hide">
+                <a class="w3-button w3-block w3-left-align" href="#">Altas</a>
+                <a class="w3-button w3-block w3-left-align" href="#">Bajas</a>
+                <a class="w3-button w3-block w3-left-align" href="#">Modificaciones</a>
+            </div>
+            <button onclick="myFunction('Categorias')" class="w3-button w3-block w3-black w3-left-align">
+                Categorias</button>
+
+            <div id="Categorias" class="w3-hide">
+                <a class="w3-button w3-block w3-left-align" href="#">Altas</a>
+                <a class="w3-button w3-block w3-left-align" href="#">Bajas</a>
+                <a class="w3-button w3-block w3-left-align" href="#">Modificaciones</a>
+            </div>
+            <button onclick="myFunction('Ventas')" class="w3-button w3-block w3-black w3-left-align">
+                Ventas</button>
+
+            <div id="Ventas" class="w3-hide">
+                <a class="w3-button w3-block w3-left-align" href="#">Altas</a>
+                <a class="w3-button w3-block w3-left-align" href="#">Bajas</a>
+                <a class="w3-button w3-block w3-left-align" href="#">Modificaciones</a>
+            </div>
+            <button onclick="myFunction('Tipo_pago')" class="w3-button w3-block w3-black w3-left-align">
+                Tipo de Pago</button>
+
+            <div id="Tipo_pago" class="w3-hide">
+                <a class="w3-button w3-block w3-left-align" href="#">Altas</a>
+                <a class="w3-button w3-block w3-left-align" href="#">Bajas</a>
+                <a class="w3-button w3-block w3-left-align" href="#">Modificaciones</a>
+            </div>
+            <button onclick="myFunction('Det_comp')" class="w3-button w3-block w3-black w3-left-align">
+                Detalles Compras</button>
+
+            <div id="Det_comp" class="w3-hide">
+                <a class="w3-button w3-block w3-left-align" href="#">Altas</a>
+                <a class="w3-button w3-block w3-left-align" href="#">Bajas</a>
+                <a class="w3-button w3-block w3-left-align" href="#">Modificaciones</a>
+            </div>
+            <button onclick="myFunction('Det_venta')" class="w3-button w3-block w3-black w3-left-align">
+                Detalles Ventas</button>
+
+            <div id="Det_venta" class="w3-hide">
+                <a class="w3-button w3-block w3-left-align" href="#">Altas</a>
+                <a class="w3-button w3-block w3-left-align" href="#">Bajas</a>
+                <a class="w3-button w3-block w3-left-align" href="#">Modificaciones</a>
+            </div>
+
+            <script>
+                function myFunction(id) {
+                    var x = document.getElementById(id);
+                    if (x.className.indexOf("w3-show") == -1) {
+                        x.className += " w3-show";
+                    } else {
+                        x.className = x.className.replace(" w3-show", "");
+                    }
+                }
+            </script>
+        </div>
+    </h:body>
+</html>
+

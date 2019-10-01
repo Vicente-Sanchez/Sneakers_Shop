@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewDetVentaTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewDetVentaLabel_id}"/>
+                    <h:outputText value="#{detVentaController.selected.id}" title="#{bundle.ViewDetVentaTitle_id}"/>
+                    <h:outputText value="#{bundle.ViewDetVentaLabel_cantidad}"/>
+                    <h:outputText value="#{detVentaController.selected.cantidad}" title="#{bundle.ViewDetVentaTitle_cantidad}"/>
+                    <h:outputText value="#{bundle.ViewDetVentaLabel_precioCompra}"/>
+                    <h:outputText value="#{detVentaController.selected.precioCompra}" title="#{bundle.ViewDetVentaTitle_precioCompra}"/>
+                    <h:outputText value="#{bundle.ViewDetVentaLabel_precioVenta}"/>
+                    <h:outputText value="#{detVentaController.selected.precioVenta}" title="#{bundle.ViewDetVentaTitle_precioVenta}"/>
+                    <h:outputText value="#{bundle.ViewDetVentaLabel_status}"/>
+                    <h:outputText value="#{detVentaController.selected.status}" title="#{bundle.ViewDetVentaTitle_status}"/>
+                    <h:outputText value="#{bundle.ViewDetVentaLabel_idProd}"/>
+                    <h:outputText value="#{detVentaController.selected.idProd}" title="#{bundle.ViewDetVentaTitle_idProd}"/>
+                    <h:outputText value="#{bundle.ViewDetVentaLabel_idVenta}"/>
+                    <h:outputText value="#{detVentaController.selected.idVenta}" title="#{bundle.ViewDetVentaTitle_idVenta}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{detVentaController.destroyAndView}" value="#{bundle.ViewDetVentaDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewDetVentaEditLink}"/>
+                <br />
+                <h:commandLink action="#{detVentaController.prepareCreate}" value="#{bundle.ViewDetVentaCreateLink}" />
+                <br />
+                <h:commandLink action="#{detVentaController.prepareList}" value="#{bundle.ViewDetVentaShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewDetVentaIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

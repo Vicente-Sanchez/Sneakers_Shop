@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewDetCompraTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputText value="#{bundle.ViewDetCompraLabel_id}"/>
+                    <h:outputText value="#{detCompraController.selected.id}" title="#{bundle.ViewDetCompraTitle_id}"/>
+                    <h:outputText value="#{bundle.ViewDetCompraLabel_cantidad}"/>
+                    <h:outputText value="#{detCompraController.selected.cantidad}" title="#{bundle.ViewDetCompraTitle_cantidad}"/>
+                    <h:outputText value="#{bundle.ViewDetCompraLabel_precioCompra}"/>
+                    <h:outputText value="#{detCompraController.selected.precioCompra}" title="#{bundle.ViewDetCompraTitle_precioCompra}"/>
+                    <h:outputText value="#{bundle.ViewDetCompraLabel_precioVenta}"/>
+                    <h:outputText value="#{detCompraController.selected.precioVenta}" title="#{bundle.ViewDetCompraTitle_precioVenta}"/>
+                    <h:outputText value="#{bundle.ViewDetCompraLabel_status}"/>
+                    <h:outputText value="#{detCompraController.selected.status}" title="#{bundle.ViewDetCompraTitle_status}"/>
+                    <h:outputText value="#{bundle.ViewDetCompraLabel_idComp}"/>
+                    <h:outputText value="#{detCompraController.selected.idComp}" title="#{bundle.ViewDetCompraTitle_idComp}"/>
+                    <h:outputText value="#{bundle.ViewDetCompraLabel_idProd}"/>
+                    <h:outputText value="#{detCompraController.selected.idProd}" title="#{bundle.ViewDetCompraTitle_idProd}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{detCompraController.destroyAndView}" value="#{bundle.ViewDetCompraDestroyLink}"/>
+                <br />
+                <br />
+                <h:link outcome="Edit" value="#{bundle.ViewDetCompraEditLink}"/>
+                <br />
+                <h:commandLink action="#{detCompraController.prepareCreate}" value="#{bundle.ViewDetCompraCreateLink}" />
+                <br />
+                <h:commandLink action="#{detCompraController.prepareList}" value="#{bundle.ViewDetCompraShowAllLink}"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.ViewDetCompraIndexLink}"/>
+
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>
