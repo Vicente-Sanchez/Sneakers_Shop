@@ -9,30 +9,47 @@
         <ui:define name="title">
             <h:outputText value="#{bundle.CreateCategoriasTitle}"></h:outputText>
         </ui:define>
-        <ui:define name="body">
-            <h:panelGroup id="messagePanel" layout="block">
-                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
-            </h:panelGroup>
-            <h:form>
-                <h:panelGrid columns="2">
-                    <h:outputLabel value="#{bundle.CreateCategoriasLabel_id}" for="id" />
-                    <h:inputText id="id" value="#{categoriasController.selected.id}" title="#{bundle.CreateCategoriasTitle_id}" required="true" requiredMessage="#{bundle.CreateCategoriasRequiredMessage_id}"/>
-                    <h:outputLabel value="#{bundle.CreateCategoriasLabel_nombreCat}" for="nombreCat" />
-                    <h:inputText id="nombreCat" value="#{categoriasController.selected.nombreCat}" title="#{bundle.CreateCategoriasTitle_nombreCat}" required="true" requiredMessage="#{bundle.CreateCategoriasRequiredMessage_nombreCat}"/>
-                    <h:outputLabel value="#{bundle.CreateCategoriasLabel_descripccionCat}" for="descripccionCat" />
-                    <h:inputText id="descripccionCat" value="#{categoriasController.selected.descripccionCat}" title="#{bundle.CreateCategoriasTitle_descripccionCat}" required="true" requiredMessage="#{bundle.CreateCategoriasRequiredMessage_descripccionCat}"/>
-                    <h:outputLabel value="#{bundle.CreateCategoriasLabel_status}" for="status" />
-                    <h:inputText id="status" value="#{categoriasController.selected.status}" title="#{bundle.CreateCategoriasTitle_status}" required="true" requiredMessage="#{bundle.CreateCategoriasRequiredMessage_status}"/>
-                </h:panelGrid>
-                <br />
-                <h:commandLink action="#{categoriasController.create}" value="#{bundle.CreateCategoriasSaveLink}" />
-                <br />
-                <br />
-                <h:commandLink action="#{categoriasController.prepareList}" value="#{bundle.CreateCategoriasShowAllLink}" immediate="true"/>
-                <br />
-                <br />
-                <h:link outcome="/index" value="#{bundle.CreateCategoriasIndexLink}"/>
-            </h:form>
+        <ui:define name="content">
+            <div class="container">
+                <div id="login-row" class="row justify-content-center align-items-center">
+                    <div id="login-column" class="col-md-6">
+                        <div id="login-box" class="col-md-12">
+                            <h:panelGroup id="messagePanel" layout="block">
+                                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                            </h:panelGroup>
+                            <h:form id="login-form" class="form">
+                                <h:panelGrid columns="2">
+                                    <div class="form-group">
+                                        <h:outputLabel class="text-dark" value="#{bundle.CreateCategoriasLabel_id}" for="id" /><br/>
+                                        <h:inputText id="id" class="form-control" value="#{categoriasController.selected.id}" title="#{bundle.CreateCategoriasTitle_id}" required="true" requiredMessage="#{bundle.CreateCategoriasRequiredMessage_id}"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <h:outputLabel class="text-dark" value="#{bundle.CreateCategoriasLabel_nombreCat}" for="nombreCat" /><br/>
+                                        <h:inputText id="nombreCat" class="form-control" value="#{categoriasController.selected.nombreCat}" title="#{bundle.CreateCategoriasTitle_nombreCat}" required="true" requiredMessage="#{bundle.CreateCategoriasRequiredMessage_nombreCat}"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <h:outputLabel class="text-dark" value="#{bundle.CreateCategoriasLabel_descripccionCat}" for="descripccionCat" /><br/>
+                                        <h:inputText id="descripccionCat" class="form-control" value="#{categoriasController.selected.descripccionCat}" title="#{bundle.CreateCategoriasTitle_descripccionCat}" required="true" requiredMessage="#{bundle.CreateCategoriasRequiredMessage_descripccionCat}"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <h:outputLabel class="text-dark" value="#{bundle.CreateCategoriasLabel_status}" for="status" /><br/>
+                                        <h:inputText id="status" class="form-control" value="#{categoriasController.selected.status}" title="#{bundle.CreateCategoriasTitle_status}" required="true" requiredMessage="#{bundle.CreateCategoriasRequiredMessage_status}"/>
+                                    </div>
+
+                                </h:panelGrid>
+                                <br />
+                                <h:commandLink class="text-dark" action="#{categoriasController.create}" value="#{bundle.CreateCategoriasSaveLink}" />
+                                <br />
+                                <br />
+                                <h:commandLink class="text-dark" action="#{categoriasController.prepareList}" value="#{bundle.CreateCategoriasShowAllLink}" immediate="true"/>
+                                <br />
+                                <br />
+                                <h:link class="text-dark" outcome="/index" value="#{bundle.CreateCategoriasIndexLink}"/>
+                            </h:form>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </ui:define>
     </ui:composition>
 

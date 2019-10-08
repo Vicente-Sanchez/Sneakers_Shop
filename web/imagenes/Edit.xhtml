@@ -9,33 +9,49 @@
         <ui:define name="title">
             <h:outputText value="#{bundle.EditImagenesTitle}"></h:outputText>
         </ui:define>
-        <ui:define name="body">
-            <h:panelGroup id="messagePanel" layout="block">
-                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
-            </h:panelGroup>
-            <h:form>
-                <h:panelGrid columns="2">
-                    <h:outputLabel value="#{bundle.EditImagenesLabel_id}" for="id" />
-                    <h:inputText id="id" value="#{imagenesController.selected.id}" title="#{bundle.EditImagenesTitle_id}" required="true" requiredMessage="#{bundle.EditImagenesRequiredMessage_id}"/>
-                    <h:outputLabel value="#{bundle.EditImagenesLabel_ruta}" for="ruta" />
-                    <h:inputText id="ruta" value="#{imagenesController.selected.ruta}" title="#{bundle.EditImagenesTitle_ruta}" required="true" requiredMessage="#{bundle.EditImagenesRequiredMessage_ruta}"/>
-                    <h:outputLabel value="#{bundle.EditImagenesLabel_status}" for="status" />
-                    <h:inputText id="status" value="#{imagenesController.selected.status}" title="#{bundle.EditImagenesTitle_status}" required="true" requiredMessage="#{bundle.EditImagenesRequiredMessage_status}"/>
-                    <h:outputLabel value="#{bundle.EditImagenesLabel_idProd}" for="idProd" />
-                    <h:selectOneMenu id="idProd" value="#{imagenesController.selected.idProd}" title="#{bundle.EditImagenesTitle_idProd}" required="true" requiredMessage="#{bundle.EditImagenesRequiredMessage_idProd}">
-                        <f:selectItems value="#{productoController.itemsAvailableSelectOne}"/>
-                    </h:selectOneMenu>
-                </h:panelGrid>
-                <h:commandLink action="#{imagenesController.update}" value="#{bundle.EditImagenesSaveLink}"/>
-                <br />
-                <br />
-                <h:link outcome="View" value="#{bundle.EditImagenesViewLink}"/>
-                <br />
-                <h:commandLink action="#{imagenesController.prepareList}" value="#{bundle.EditImagenesShowAllLink}" immediate="true"/>
-                <br />
-                <br />
-                <h:link outcome="/index" value="#{bundle.EditImagenesIndexLink}" />
-            </h:form>
+        <ui:define name="content">
+            <div class="container">
+                <div id="login-row" class="row justify-content-center align-items-center">
+                    <div id="login-column" class="col-md-6">
+                        <div id="login-box" class="col-md-12">
+                            <h:panelGroup id="messagePanel" layout="block">
+                                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                            </h:panelGroup>
+                            <h:form id="login-form" class="form">
+                                <h:panelGrid columns="2">
+                                    <div class="form-group">
+                                        <h:outputLabel class="text-dark" value="#{bundle.EditImagenesLabel_id}" for="id" /><br/>
+                                        <h:inputText id="id" class="form-control" value="#{imagenesController.selected.id}" title="#{bundle.EditImagenesTitle_id}" required="true" requiredMessage="#{bundle.EditImagenesRequiredMessage_id}"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <h:outputLabel class="text-dark" value="#{bundle.EditImagenesLabel_ruta}" for="ruta" /><br/>
+                                        <h:inputText id="ruta" class="form-control" value="#{imagenesController.selected.ruta}" title="#{bundle.EditImagenesTitle_ruta}" required="true" requiredMessage="#{bundle.EditImagenesRequiredMessage_ruta}"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <h:outputLabel class="text-dark" value="#{bundle.EditImagenesLabel_status}" for="status" /><br/>
+                                        <h:inputText id="status" class="form-control" value="#{imagenesController.selected.status}" title="#{bundle.EditImagenesTitle_status}" required="true" requiredMessage="#{bundle.EditImagenesRequiredMessage_status}"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <h:outputLabel class="text-dark" value="#{bundle.EditImagenesLabel_idProd}" for="idProd" /><br/>
+                                        <h:selectOneMenu id="idProd" class="form-control" value="#{imagenesController.selected.idProd}" title="#{bundle.EditImagenesTitle_idProd}" required="true" requiredMessage="#{bundle.EditImagenesRequiredMessage_idProd}">
+                                            <f:selectItems value="#{productoController.itemsAvailableSelectOne}"/>
+                                        </h:selectOneMenu>
+                                    </div>
+                                </h:panelGrid>
+                                <h:commandLink action="#{imagenesController.update}" value="#{bundle.EditImagenesSaveLink}"/>
+                                <br />
+                                <br />
+                                <h:link outcome="View" value="#{bundle.EditImagenesViewLink}"/>
+                                <br />
+                                <h:commandLink action="#{imagenesController.prepareList}" value="#{bundle.EditImagenesShowAllLink}" immediate="true"/>
+                                <br />
+                                <br />
+                                <h:link outcome="/index" value="#{bundle.EditImagenesIndexLink}" />
+                            </h:form>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </ui:define>
     </ui:composition>
 

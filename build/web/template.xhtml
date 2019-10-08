@@ -13,10 +13,32 @@
         <h:outputStylesheet library="css" name="default.css"/>
         <h:outputStylesheet library="css" name="cssLayout.css"/>
         <h:outputStylesheet library="css" name="w3.css"/>
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"/>
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     </h:head>
 
     <h:body>
-        
+        <div id="top">
+            <div class="w3-right w3-hide-small">
+                <a href="#projects" class="w3-bar-item w3-button">Salir</a>
+            </div>
+            <h1>Sneakers Shop</h1>
+        </div>
+        <div>
+            <div id="left">
+                <ui:include src="./templates/izquierda.xhtml"/>
+            </div>
+            <ui:insert name="content">
+            <div>
+                <div id="content">
+                   
+                    
+                </div>
+            </div>
+            </ui:insert>
+        </div>
+
     </h:body>
 
 </html>

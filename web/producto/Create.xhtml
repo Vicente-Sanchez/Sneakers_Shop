@@ -9,44 +9,68 @@
         <ui:define name="title">
             <h:outputText value="#{bundle.CreateProductoTitle}"></h:outputText>
         </ui:define>
-        <ui:define name="body">
-            <h:panelGroup id="messagePanel" layout="block">
-                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
-            </h:panelGroup>
-            <h:form>
-                <h:panelGrid columns="2">
-                    <h:outputLabel value="#{bundle.CreateProductoLabel_id}" for="id" />
-                    <h:inputText id="id" value="#{productoController.selected.id}" title="#{bundle.CreateProductoTitle_id}" required="true" requiredMessage="#{bundle.CreateProductoRequiredMessage_id}"/>
-                    <h:outputLabel value="#{bundle.CreateProductoLabel_nombreProd}" for="nombreProd" />
-                    <h:inputText id="nombreProd" value="#{productoController.selected.nombreProd}" title="#{bundle.CreateProductoTitle_nombreProd}" required="true" requiredMessage="#{bundle.CreateProductoRequiredMessage_nombreProd}"/>
-                    <h:outputLabel value="#{bundle.CreateProductoLabel_descripProd}" for="descripProd" />
-                    <h:inputText id="descripProd" value="#{productoController.selected.descripProd}" title="#{bundle.CreateProductoTitle_descripProd}" required="true" requiredMessage="#{bundle.CreateProductoRequiredMessage_descripProd}"/>
-                    <h:outputLabel value="#{bundle.CreateProductoLabel_precioProd}" for="precioProd" />
-                    <h:inputText id="precioProd" value="#{productoController.selected.precioProd}" title="#{bundle.CreateProductoTitle_precioProd}" required="true" requiredMessage="#{bundle.CreateProductoRequiredMessage_precioProd}"/>
-                    <h:outputLabel value="#{bundle.CreateProductoLabel_status}" for="status" />
-                    <h:inputText id="status" value="#{productoController.selected.status}" title="#{bundle.CreateProductoTitle_status}" required="true" requiredMessage="#{bundle.CreateProductoRequiredMessage_status}"/>
-                    <h:outputLabel value="#{bundle.CreateProductoLabel_idCategoria}" for="idCategoria" />
-                    <h:selectOneMenu id="idCategoria" value="#{productoController.selected.idCategoria}" title="#{bundle.CreateProductoTitle_idCategoria}" required="true" requiredMessage="#{bundle.CreateProductoRequiredMessage_idCategoria}">
-                        <f:selectItems value="#{categoriasController.itemsAvailableSelectOne}"/>
-                    </h:selectOneMenu>
-                    <h:outputLabel value="#{bundle.CreateProductoLabel_idGen}" for="idGen" />
-                    <h:selectOneMenu id="idGen" value="#{productoController.selected.idGen}" title="#{bundle.CreateProductoTitle_idGen}" required="true" requiredMessage="#{bundle.CreateProductoRequiredMessage_idGen}">
-                        <f:selectItems value="#{generoController.itemsAvailableSelectOne}"/>
-                    </h:selectOneMenu>
-                    <h:outputLabel value="#{bundle.CreateProductoLabel_idProv}" for="idProv" />
-                    <h:selectOneMenu id="idProv" value="#{productoController.selected.idProv}" title="#{bundle.CreateProductoTitle_idProv}" required="true" requiredMessage="#{bundle.CreateProductoRequiredMessage_idProv}">
-                        <f:selectItems value="#{proveedoresController.itemsAvailableSelectOne}"/>
-                    </h:selectOneMenu>
-                </h:panelGrid>
-                <br />
-                <h:commandLink action="#{productoController.create}" value="#{bundle.CreateProductoSaveLink}" />
-                <br />
-                <br />
-                <h:commandLink action="#{productoController.prepareList}" value="#{bundle.CreateProductoShowAllLink}" immediate="true"/>
-                <br />
-                <br />
-                <h:link outcome="/index" value="#{bundle.CreateProductoIndexLink}"/>
-            </h:form>
+        <ui:define name="content">
+            <div class="container">
+                <div id="login-row" class="row justify-content-center align-items-center">
+                    <div id="login-column" class="col-md-6">
+                        <div id="login-box" class="col-md-12">
+                            <h:panelGroup id="messagePanel" layout="block">
+                                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                            </h:panelGroup>
+                            <h:form id="login-form" class="form">
+                                <h:panelGrid columns="2">
+                                    <div class="form-group">
+                                        <h:outputLabel class="text-dark" value="#{bundle.CreateProductoLabel_id}" for="id" /><br/>
+                                        <h:inputText id="id" class="form-control" value="#{productoController.selected.id}" title="#{bundle.CreateProductoTitle_id}" required="true" requiredMessage="#{bundle.CreateProductoRequiredMessage_id}"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <h:outputLabel class="text-dark" value="#{bundle.CreateProductoLabel_nombreProd}" for="nombreProd" /><br/>
+                                        <h:inputText id="nombreProd" class="form-control" value="#{productoController.selected.nombreProd}" title="#{bundle.CreateProductoTitle_nombreProd}" required="true" requiredMessage="#{bundle.CreateProductoRequiredMessage_nombreProd}"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <h:outputLabel class="text-dark" value="#{bundle.CreateProductoLabel_descripProd}" for="descripProd" /><br/>
+                                        <h:inputText id="descripProd" class="form-control" value="#{productoController.selected.descripProd}" title="#{bundle.CreateProductoTitle_descripProd}" required="true" requiredMessage="#{bundle.CreateProductoRequiredMessage_descripProd}"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <h:outputLabel class="text-dark" value="#{bundle.CreateProductoLabel_precioProd}" for="precioProd" /><br/>
+                                        <h:inputText id="precioProd" class="form-control" value="#{productoController.selected.precioProd}" title="#{bundle.CreateProductoTitle_precioProd}" required="true" requiredMessage="#{bundle.CreateProductoRequiredMessage_precioProd}"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <h:outputLabel class="text-dark" value="#{bundle.CreateProductoLabel_status}" for="status" /><br/>
+                                        <h:inputText id="status" class="form-control" value="#{productoController.selected.status}" title="#{bundle.CreateProductoTitle_status}" required="true" requiredMessage="#{bundle.CreateProductoRequiredMessage_status}"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <h:outputLabel class="text-dark" value="#{bundle.CreateProductoLabel_idCategoria}" for="idCategoria" /><br/>
+                                        <h:selectOneMenu id="idCategoria" class="form-control" value="#{productoController.selected.idCategoria}" title="#{bundle.CreateProductoTitle_idCategoria}" required="true" requiredMessage="#{bundle.CreateProductoRequiredMessage_idCategoria}">
+                                            <f:selectItems value="#{categoriasController.itemsAvailableSelectOne}"/>
+                                        </h:selectOneMenu>
+                                    </div>
+                                    <div class="form-group">
+                                        <h:outputLabel class="text-dark" value="#{bundle.CreateProductoLabel_idGen}" for="idGen" /><br/>
+                                        <h:selectOneMenu id="idGen" class="form-control" value="#{productoController.selected.idGen}" title="#{bundle.CreateProductoTitle_idGen}" required="true" requiredMessage="#{bundle.CreateProductoRequiredMessage_idGen}">
+                                            <f:selectItems value="#{generoController.itemsAvailableSelectOne}"/>
+                                        </h:selectOneMenu>
+                                    </div>
+                                    <div class="form-group">
+                                        <h:outputLabel class="text-dark" value="#{bundle.CreateProductoLabel_idProv}" for="idProv" /><br/>
+                                        <h:selectOneMenu id="idProv" class="form-control" value="#{productoController.selected.idProv}" title="#{bundle.CreateProductoTitle_idProv}" required="true" requiredMessage="#{bundle.CreateProductoRequiredMessage_idProv}">
+                                            <f:selectItems value="#{proveedoresController.itemsAvailableSelectOne}"/>
+                                        </h:selectOneMenu>
+                                    </div>
+                                </h:panelGrid>
+                                <br />
+                                <h:commandLink class="text-dark" action="#{productoController.create}" value="#{bundle.CreateProductoSaveLink}" />
+                                <br />
+                                <br />
+                                <h:commandLink class="text-dark" action="#{productoController.prepareList}" value="#{bundle.CreateProductoShowAllLink}" immediate="true"/>
+                                <br />
+                                <br />
+                                <h:link class="text-dark" outcome="/index" value="#{bundle.CreateProductoIndexLink}"/>
+                            </h:form>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </ui:define>
     </ui:composition>
 

@@ -6,86 +6,95 @@
         <title>Facelet Title</title>
     </h:head>
     <h:body>
-         <div id="left">
+        <div id="left">
             <button onclick="myFunction('Proveedores')" class="w3-button w3-block w3-black w3-left-align">
                 Proveedores</button>
 
             <div id="Proveedores" class="w3-hide">
-                <a class="w3-button w3-block w3-left-align" href="#">Altas</a>
-                <a class="w3-button w3-block w3-left-align" href="#">Bajas</a>
-                <a class="w3-button w3-block w3-left-align" href="#">Modificaciones</a>
+                <h:link class="w3-button w3-block w3-left-align" outcome="/proveedores/Create" value="Insertar"/>
+                <h:link class="w3-button w3-block w3-left-align" outcome="/proveedores/Edit" value="Editar"/>
+                <h:link class="w3-button w3-block w3-left-align" outcome="/proveedores/List" value="Consultar"/>
+            </div>
+            <button onclick="myFunction('Genero')" class="w3-button w3-block w3-black w3-left-align">
+                Genero</button>
+            
+            <div id="Genero" class="w3-hide">
+                 <h:link class="w3-button w3-block w3-left-align" outcome="/genero/Create" value="Insertar"/>
+                 <h:link class="w3-button w3-block w3-left-align" outcome="/genero/Edit" value="Editar"/>
+                 <h:link class="w3-button w3-block w3-left-align" outcome="/genero/List" value="Consultar"/>
             </div>
             <button onclick="myFunction('Imagenes')" class="w3-button w3-block w3-black w3-left-align">
                 Imagenes</button>
 
             <div id="Imagenes" class="w3-hide">
-                <a class="w3-button w3-block w3-left-align" href="#">Altas</a>
-                <a class="w3-button w3-block w3-left-align" href="#">Bajas</a>
-                <a class="w3-button w3-block w3-left-align" href="#">Modificaciones</a>
+                <h:link class="w3-button w3-block w3-left-align" outcome="/imagenes/Create" value="Insertar"/>
+                <h:link class="w3-button w3-block w3-left-align" outcome="/imagenes/Edit" value="Editar"/>
+                <h:link class="w3-button w3-block w3-left-align" outcome="/imagenes/List" value="Consultar"/>
             </div>
             <button onclick="myFunction('Compras')" class="w3-button w3-block w3-black w3-left-align">
                 Compras</button>
 
             <div id="Compras" class="w3-hide">
-                <a class="w3-button w3-block w3-left-align" href="#">Altas</a>
-                <a class="w3-button w3-block w3-left-align" href="#">Bajas</a>
-                <a class="w3-button w3-block w3-left-align" href="#">Modificaciones</a>
+
+                <h:link class="w3-button w3-block w3-left-align" outcome="/compras/Create" value="Insertar"/>
+                <h:link class="w3-button w3-block w3-left-align" outcome="/compras/Edit" value="Editar"/>
+                <h:link class="w3-button w3-block w3-left-align" outcome="/compras/List" value="Consultar"/>
             </div>
             <button onclick="myFunction('Tallas')" class="w3-button w3-block w3-black w3-left-align">
                 Tallas</button>
 
             <div id="Tallas" class="w3-hide">
-                <a class="w3-button w3-block w3-left-align" href="#">Altas</a>
-                <a class="w3-button w3-block w3-left-align" href="#">Bajas</a>
-                <a class="w3-button w3-block w3-left-align" href="#">Modificaciones</a>
+                <h:link class="w3-button w3-block w3-left-align" outcome="/talla/Create" value="Insertar"/>
+                <h:link class="w3-button w3-block w3-left-align" outcome="/talla/Edit" value="Editar"/>
+                <h:link class="w3-button w3-block w3-left-align" outcome="/talla/List" value="Consultar"/>
             </div>
             <button onclick="myFunction('Productos')" class="w3-button w3-block w3-black w3-left-align">
                 Productos</button>
 
             <div id="Productos" class="w3-hide">
-                <a class="w3-button w3-block w3-left-align" href="#">Altas</a>
-                <a class="w3-button w3-block w3-left-align" href="#">Bajas</a>
-                <a class="w3-button w3-block w3-left-align" href="#">Modificaciones</a>
+                <h:link class="w3-button w3-block w3-left-align" outcome="/producto/Create" value="Insertar"/>
+                <h:link class="w3-button w3-block w3-left-align" outcome="/producto/Edit" value="Editar"/>
+                <h:link class="w3-button w3-block w3-left-align" outcome="/producto/List" value="Consultar"/>
             </div>
             <button onclick="myFunction('Categorias')" class="w3-button w3-block w3-black w3-left-align">
                 Categorias</button>
 
             <div id="Categorias" class="w3-hide">
-                <a class="w3-button w3-block w3-left-align" href="#">Altas</a>
-                <a class="w3-button w3-block w3-left-align" href="#">Bajas</a>
-                <a class="w3-button w3-block w3-left-align" href="#">Modificaciones</a>
+                <h:link class="w3-button w3-block w3-left-align"  outcome="/categorias/Create" value="Insertar"/>
+                <h:link class="w3-button w3-block w3-left-align"  outcome="/categorias/Edit" value="Editar"/>
+                <h:link class="w3-button w3-block w3-left-align"  outcome="/categorias/List" value="Consultar"/>
             </div>
             <button onclick="myFunction('Ventas')" class="w3-button w3-block w3-black w3-left-align">
                 Ventas</button>
 
             <div id="Ventas" class="w3-hide">
-                <a class="w3-button w3-block w3-left-align" href="#">Altas</a>
-                <a class="w3-button w3-block w3-left-align" href="#">Bajas</a>
-                <a class="w3-button w3-block w3-left-align" href="#">Modificaciones</a>
+                <h:link class="w3-button w3-block w3-left-align" outcome="/ventas/Create" value="Insertar"/>
+                <h:link class="w3-button w3-block w3-left-align" outcome="/ventas/Edit" value="Editar"/>
+                <h:link class="w3-button w3-block w3-left-align" outcome="/ventas/List" value="Consultar"/>
             </div>
             <button onclick="myFunction('Tipo_pago')" class="w3-button w3-block w3-black w3-left-align">
                 Tipo de Pago</button>
 
             <div id="Tipo_pago" class="w3-hide">
-                <a class="w3-button w3-block w3-left-align" href="#">Altas</a>
-                <a class="w3-button w3-block w3-left-align" href="#">Bajas</a>
-                <a class="w3-button w3-block w3-left-align" href="#">Modificaciones</a>
+                <h:link class="w3-button w3-block w3-left-align" outcome="/tipoDePago/Create" value="Insertar"/>
+                <h:link class="w3-button w3-block w3-left-align" outcome="/tipoDePago/Edit" value="Editar"/>
+                <h:link class="w3-button w3-block w3-left-align" outcome="/tipoDePago/List" value="Consultar"/>
             </div>
             <button onclick="myFunction('Det_comp')" class="w3-button w3-block w3-black w3-left-align">
                 Detalles Compras</button>
 
             <div id="Det_comp" class="w3-hide">
-                <a class="w3-button w3-block w3-left-align" href="#">Altas</a>
-                <a class="w3-button w3-block w3-left-align" href="#">Bajas</a>
-                <a class="w3-button w3-block w3-left-align" href="#">Modificaciones</a>
+                <h:link class="w3-button w3-block w3-left-align" outcome="/detCompra/Create" value="Insertar"/>
+                <h:link class="w3-button w3-block w3-left-align" outcome="/detCompra/Edit" value="Editar"/>
+                <h:link class="w3-button w3-block w3-left-align" outcome="/detCompra/List" value="Consultar"/>
             </div>
             <button onclick="myFunction('Det_venta')" class="w3-button w3-block w3-black w3-left-align">
                 Detalles Ventas</button>
 
             <div id="Det_venta" class="w3-hide">
-                <a class="w3-button w3-block w3-left-align" href="#">Altas</a>
-                <a class="w3-button w3-block w3-left-align" href="#">Bajas</a>
-                <a class="w3-button w3-block w3-left-align" href="#">Modificaciones</a>
+                <h:link class="w3-button w3-block w3-left-align" outcome="/detVenta/Create" value="Insertar"/>
+                <h:link class="w3-button w3-block w3-left-align" outcome="/detVenta/Edit" value="Editar"/>
+                <h:link class="w3-button w3-block w3-left-align" outcome="/detVenta/List" value="Consultar"/>
             </div>
 
             <script>
