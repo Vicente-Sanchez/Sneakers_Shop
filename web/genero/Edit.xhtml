@@ -10,42 +10,28 @@
             <h:outputText value="#{bundle.EditGeneroTitle}"></h:outputText>
         </ui:define>
         <ui:define name="content">
-            <div class="container">
-                <div id="login-row" class="row justify-content-center align-items-center">
-                    <div id="login-column" class="col-md-6">
-                        <div id="login-box" class="col-md-12">
-                            <h:panelGroup id="messagePanel" layout="block">
-                                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
-                            </h:panelGroup>
-                            <h:form id="login-form" class="form">
-                                <h:panelGrid columns="2">
-                                    <div class="form-group">
-                                        <h:outputLabel class="text-dark" value="#{bundle.EditGeneroLabel_id}" for="id" /><br/>
-                                        <h:inputText id="id" class="form-control" value="#{generoController.selected.id}" title="#{bundle.EditGeneroTitle_id}" required="true" requiredMessage="#{bundle.EditGeneroRequiredMessage_id}"/>
-                                    </div>
-                                    <div class="form-group">
-                                        <h:outputLabel class="text-dark" value="#{bundle.EditGeneroLabel_nombre}" for="nombre" /><br/>
-                                        <h:inputText id="nombre" class="form-control" value="#{generoController.selected.nombre}" title="#{bundle.EditGeneroTitle_nombre}" required="true" requiredMessage="#{bundle.EditGeneroRequiredMessage_nombre}"/>
-                                    </div>
-                                    <div class="form-group">
-                                        <h:outputLabel class="text-dark" value="#{bundle.EditGeneroLabel_status}" for="status" /><br/>
-                                        <h:inputText id="status" class="form-control" value="#{generoController.selected.status}" title="#{bundle.EditGeneroTitle_status}" required="true" requiredMessage="#{bundle.EditGeneroRequiredMessage_status}"/>
-                                    </div>
-                                </h:panelGrid>
-                                <h:commandLink class="text-dark" action="#{generoController.update}" value="#{bundle.EditGeneroSaveLink}"/>
-                                <br />
-                                <br />
-                                <h:link class="text-dark" outcome="View" value="#{bundle.EditGeneroViewLink}"/>
-                                <br />
-                                <h:commandLink class="text-dark" action="#{generoController.prepareList}" value="#{bundle.EditGeneroShowAllLink}" immediate="true"/>
-                                <br />
-                                <br />
-                                <h:link class="text-dark" outcome="/index" value="#{bundle.EditGeneroIndexLink}" />
-                            </h:form>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditGeneroLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{generoController.selected.id}" title="#{bundle.EditGeneroTitle_id}" required="true" requiredMessage="#{bundle.EditGeneroRequiredMessage_id}"/>
+                    <h:outputLabel value="#{bundle.EditGeneroLabel_nombre}" for="nombre" />
+                    <h:inputText id="nombre" value="#{generoController.selected.nombre}" title="#{bundle.EditGeneroTitle_nombre}" required="true" requiredMessage="#{bundle.EditGeneroRequiredMessage_nombre}"/>
+                    <h:outputLabel value="#{bundle.EditGeneroLabel_status}" for="status" />
+                    <h:inputText id="status" value="#{generoController.selected.status}" title="#{bundle.EditGeneroTitle_status}" required="true" requiredMessage="#{bundle.EditGeneroRequiredMessage_status}"/>
+                </h:panelGrid>
+                <h:commandLink action="#{generoController.update}" value="#{bundle.EditGeneroSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditGeneroViewLink}"/>
+                <br />
+                <h:commandLink action="#{generoController.prepareList}" value="#{bundle.EditGeneroShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditGeneroIndexLink}" />
+            </h:form>
         </ui:define>
     </ui:composition>
 
