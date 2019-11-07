@@ -10,45 +10,29 @@
             <h:outputText value="#{bundle.CreateTipoDePagoTitle}"></h:outputText>
         </ui:define>
         <ui:define name="content">
-            <div class="container">
-                <div id="login-row" class="row justify-content-center align-items-center">
-                    <div id="login-column" class="col-md-6">
-                        <div id="login-box" class="col-md-12">
-                            <h:panelGroup id="messagePanel" layout="block">
-                                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
-                            </h:panelGroup>
-                            <h:form id="login-form" class="form"> 
-                                <h:panelGrid columns="2">
-                                    <div class="form-group">
-                                        <h:outputLabel class="text-dark" value="#{bundle.CreateTipoDePagoLabel_id}" for="id" /><br/>
-                                        <h:inputText id="id" class="form-control" value="#{tipoDePagoController.selected.id}" title="#{bundle.CreateTipoDePagoTitle_id}" required="true" requiredMessage="#{bundle.CreateTipoDePagoRequiredMessage_id}"/>
-                                    </div>
-                                    <div class="form-group">
-                                        <h:outputLabel class="text-dark" value="#{bundle.CreateTipoDePagoLabel_nombre}" for="nombre" /><br/>
-                                        <h:inputText id="nombre" class="form-control" value="#{tipoDePagoController.selected.nombre}" title="#{bundle.CreateTipoDePagoTitle_nombre}" required="true" requiredMessage="#{bundle.CreateTipoDePagoRequiredMessage_nombre}"/>
-                                    </div>
-                                    <div class="form-group">
-                                        <h:outputLabel class="text-dark" value="#{bundle.CreateTipoDePagoLabel_descripccion}" for="descripccion" /><br/>
-                                        <h:inputText id="descripccion" class="form-control" value="#{tipoDePagoController.selected.descripccion}" title="#{bundle.CreateTipoDePagoTitle_descripccion}" required="true" requiredMessage="#{bundle.CreateTipoDePagoRequiredMessage_descripccion}"/>
-                                    </div>
-                                    <div class="form-group">
-                                        <h:outputLabel class="text-dark" value="#{bundle.CreateTipoDePagoLabel_status}" for="status" /><br/>
-                                        <h:inputText id="status" class="form-control" value="#{tipoDePagoController.selected.status}" title="#{bundle.CreateTipoDePagoTitle_status}" required="true" requiredMessage="#{bundle.CreateTipoDePagoRequiredMessage_status}"/>
-                                    </div>
-                                </h:panelGrid>
-                                <br />
-                                <h:commandLink class="text-dark" action="#{tipoDePagoController.create}" value="#{bundle.CreateTipoDePagoSaveLink}" />
-                                <br />
-                                <br />
-                                <h:commandLink class="text-dark" action="#{tipoDePagoController.prepareList}" value="#{bundle.CreateTipoDePagoShowAllLink}" immediate="true"/>
-                                <br />
-                                <br />
-                                <h:link class="text-dark" outcome="/index" value="#{bundle.CreateTipoDePagoIndexLink}"/>
-                            </h:form>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateTipoDePagoLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{tipoDePagoController.selected.id}" title="#{bundle.CreateTipoDePagoTitle_id}" required="true" requiredMessage="#{bundle.CreateTipoDePagoRequiredMessage_id}"/>
+                    <h:outputLabel value="#{bundle.CreateTipoDePagoLabel_nombre}" for="nombre" />
+                    <h:inputText id="nombre" value="#{tipoDePagoController.selected.nombre}" title="#{bundle.CreateTipoDePagoTitle_nombre}" required="true" requiredMessage="#{bundle.CreateTipoDePagoRequiredMessage_nombre}"/>
+                    <h:outputLabel value="#{bundle.CreateTipoDePagoLabel_descripccion}" for="descripccion" />
+                    <h:inputText id="descripccion" value="#{tipoDePagoController.selected.descripccion}" title="#{bundle.CreateTipoDePagoTitle_descripccion}" required="true" requiredMessage="#{bundle.CreateTipoDePagoRequiredMessage_descripccion}"/>
+                    <h:outputLabel value="#{bundle.CreateTipoDePagoLabel_status}" for="status" />
+                    <h:inputText id="status" value="#{tipoDePagoController.selected.status}" title="#{bundle.CreateTipoDePagoTitle_status}" required="true" requiredMessage="#{bundle.CreateTipoDePagoRequiredMessage_status}"/>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{tipoDePagoController.create}" value="#{bundle.CreateTipoDePagoSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{tipoDePagoController.prepareList}" value="#{bundle.CreateTipoDePagoShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateTipoDePagoIndexLink}"/>
+            </h:form>
         </ui:define>
     </ui:composition>
 

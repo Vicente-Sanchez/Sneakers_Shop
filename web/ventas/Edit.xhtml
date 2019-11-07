@@ -10,65 +10,42 @@
             <h:outputText value="#{bundle.EditVentasTitle}"></h:outputText>
         </ui:define>
         <ui:define name="content">
-            <div class="container">
-                <div id="login-row" class="row justify-content-center align-items-center">
-                    <div id="login-column" class="col-md-6">
-                        <div id="login-box" class="col-md-12">
-                            <h:panelGroup id="messagePanel" layout="block">
-                                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
-                            </h:panelGroup>
-                            <h:form id="login-form" class="form">
-                                <h:panelGrid columns="2">
-                                    <div class="form-group">
-                                        <h:outputLabel class="text-dark" value="#{bundle.EditVentasLabel_id}" for="id" /><br/>
-                                        <h:inputText id="id" class="form-control" value="#{ventasController.selected.id}" title="#{bundle.EditVentasTitle_id}" required="true" requiredMessage="#{bundle.EditVentasRequiredMessage_id}"/>
-                                    </div>
-                                    <div class="form-group">
-                                        <h:outputLabel class="text-dark" value="#{bundle.EditVentasLabel_fecha}" for="fecha" /><br/>
-                                        <h:inputText id="fecha" class="form-control" value="#{ventasController.selected.fecha}" title="#{bundle.EditVentasTitle_fecha}" required="true" requiredMessage="#{bundle.EditVentasRequiredMessage_fecha}">
-                                            <f:convertDateTime pattern="MM/dd/yyyy" />
-                                        </h:inputText>
-                                    </div>
-                                    <div class="form-group">
-                                        <h:outputLabel class="text-dark" value="#{bundle.EditVentasLabel_idCliente}" for="idCliente" /><br/>
-                                        <h:inputText id="idCliente" class="form-control" value="#{ventasController.selected.idCliente}" title="#{bundle.EditVentasTitle_idCliente}" required="true" requiredMessage="#{bundle.EditVentasRequiredMessage_idCliente}"/>
-                                    </div>
-                                    <div class="form-group">
-                                        <h:outputLabel class="text-dark" value="#{bundle.EditVentasLabel_subtotal}" for="subtotal" /><br/>
-                                        <h:inputText id="subtotal" class="form-control" value="#{ventasController.selected.subtotal}" title="#{bundle.EditVentasTitle_subtotal}" required="true" requiredMessage="#{bundle.EditVentasRequiredMessage_subtotal}"/>
-                                    </div>
-                                    <div class="form-group">
-                                        <h:outputLabel class="text-dark" value="#{bundle.EditVentasLabel_iva}" for="iva" /><br/>
-                                        <h:inputText id="iva" class="form-control" value="#{ventasController.selected.iva}" title="#{bundle.EditVentasTitle_iva}" required="true" requiredMessage="#{bundle.EditVentasRequiredMessage_iva}"/>
-                                    </div>
-                                    <div class="form-group">
-                                        <h:outputLabel class="text-dark" value="#{bundle.EditVentasLabel_total}" for="total" /><br/>
-                                        <h:inputText id="total" class="form-control" value="#{ventasController.selected.total}" title="#{bundle.EditVentasTitle_total}" required="true" requiredMessage="#{bundle.EditVentasRequiredMessage_total}"/>
-                                    </div>
-                                    <div class="form-group">
-                                        <h:outputLabel class="text-dark" value="#{bundle.EditVentasLabel_idTipodepago}" for="idTipodepago" /><br/>
-                                        <h:inputText id="idTipodepago" class="form-control" value="#{ventasController.selected.idTipodepago}" title="#{bundle.EditVentasTitle_idTipodepago}" required="true" requiredMessage="#{bundle.EditVentasRequiredMessage_idTipodepago}"/>
-                                    </div>
-                                    <div class="form-group">
-                                        <h:outputLabel class="text-dark" value="#{bundle.EditVentasLabel_status}" for="status" /><br/>
-                                        <h:inputText id="status" class="form-control" value="#{ventasController.selected.status}" title="#{bundle.EditVentasTitle_status}" required="true" requiredMessage="#{bundle.EditVentasRequiredMessage_status}"/>
-
-                                    </div>
-                                </h:panelGrid>
-                                <h:commandLink class="text-dark" action="#{ventasController.update}" value="#{bundle.EditVentasSaveLink}"/>
-                                <br />
-                                <br />
-                                <h:link class="text-dark" outcome="View" value="#{bundle.EditVentasViewLink}"/>
-                                <br />
-                                <h:commandLink class="text-dark" action="#{ventasController.prepareList}" value="#{bundle.EditVentasShowAllLink}" immediate="true"/>
-                                <br />
-                                <br />
-                                <h:link class="text-dark" outcome="/index" value="#{bundle.EditVentasIndexLink}" />
-                            </h:form>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditVentasLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{ventasController.selected.id}" title="#{bundle.EditVentasTitle_id}" required="true" requiredMessage="#{bundle.EditVentasRequiredMessage_id}"/>
+                    <h:outputLabel value="#{bundle.EditVentasLabel_fecha}" for="fecha" />
+                    <h:inputText id="fecha" value="#{ventasController.selected.fecha}" title="#{bundle.EditVentasTitle_fecha}" required="true" requiredMessage="#{bundle.EditVentasRequiredMessage_fecha}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.EditVentasLabel_idCliente}" for="idCliente" />
+                    <h:inputText id="idCliente" value="#{ventasController.selected.idCliente}" title="#{bundle.EditVentasTitle_idCliente}" required="true" requiredMessage="#{bundle.EditVentasRequiredMessage_idCliente}"/>
+                    <h:outputLabel value="#{bundle.EditVentasLabel_subtotal}" for="subtotal" />
+                    <h:inputText id="subtotal" value="#{ventasController.selected.subtotal}" title="#{bundle.EditVentasTitle_subtotal}" required="true" requiredMessage="#{bundle.EditVentasRequiredMessage_subtotal}"/>
+                    <h:outputLabel value="#{bundle.EditVentasLabel_iva}" for="iva" />
+                    <h:inputText id="iva" value="#{ventasController.selected.iva}" title="#{bundle.EditVentasTitle_iva}" required="true" requiredMessage="#{bundle.EditVentasRequiredMessage_iva}"/>
+                    <h:outputLabel value="#{bundle.EditVentasLabel_total}" for="total" />
+                    <h:inputText id="total" value="#{ventasController.selected.total}" title="#{bundle.EditVentasTitle_total}" required="true" requiredMessage="#{bundle.EditVentasRequiredMessage_total}"/>
+                    <h:outputLabel value="#{bundle.EditVentasLabel_status}" for="status" />
+                    <h:inputText id="status" value="#{ventasController.selected.status}" title="#{bundle.EditVentasTitle_status}" required="true" requiredMessage="#{bundle.EditVentasRequiredMessage_status}"/>
+                    <h:outputLabel value="#{bundle.EditVentasLabel_idTipodepago}" for="idTipodepago" />
+                    <h:selectOneMenu id="idTipodepago" value="#{ventasController.selected.idTipodepago}" title="#{bundle.EditVentasTitle_idTipodepago}" required="true" requiredMessage="#{bundle.EditVentasRequiredMessage_idTipodepago}">
+                        <f:selectItems value="#{tipoDePagoController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <h:commandLink action="#{ventasController.update}" value="#{bundle.EditVentasSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditVentasViewLink}"/>
+                <br />
+                <h:commandLink action="#{ventasController.prepareList}" value="#{bundle.EditVentasShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditVentasIndexLink}" />
+            </h:form>
         </ui:define>
     </ui:composition>
 

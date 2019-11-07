@@ -10,62 +10,40 @@
             <h:outputText value="#{bundle.EditComprasTitle}"></h:outputText>
         </ui:define>
         <ui:define name="content">
-            <div class="container">
-                <div id="login-row" class="row justify-content-center align-items-center">
-                    <div id="login-column" class="col-md-6">
-                        <div id="login-box" class="col-md-12">
-                            <h:panelGroup id="messagePanel" layout="block">
-                                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
-                            </h:panelGroup>
-                            <h:form id="login-form" class="form">
-                                <h:panelGrid columns="2">
-                                    <div class="form-group">
-                                        <h:outputLabel class="text-dark" value="#{bundle.EditComprasLabel_id}" for="id" /><br/>
-                                        <h:inputText id="id" class="form-control" value="#{comprasController.selected.id}" title="#{bundle.EditComprasTitle_id}" required="true" requiredMessage="#{bundle.EditComprasRequiredMessage_id}"/>
-                                    </div>
-                                    <div class="form-group">
-                                        <h:outputLabel class="text-dark" value="#{bundle.EditComprasLabel_fecha}" for="fecha" /><br/>
-                                        <h:inputText id="fecha" class="form-control" value="#{comprasController.selected.fecha}" title="#{bundle.EditComprasTitle_fecha}" required="true" requiredMessage="#{bundle.EditComprasRequiredMessage_fecha}">
-                                            <f:convertDateTime pattern="MM/dd/yyyy" />
-                                        </h:inputText>
-                                    </div>
-                                    <div class="form-group">
-                                        <h:outputLabel class="text-dark" value="#{bundle.EditComprasLabel_subtotal}" for="subtotal" /> <br/>
-                                        <h:inputText id="subtotal" class="form-control" value="#{comprasController.selected.subtotal}" title="#{bundle.EditComprasTitle_subtotal}" required="true" requiredMessage="#{bundle.EditComprasRequiredMessage_subtotal}"/>                                    </div>
-                                    <div class="form-group">
-                                        <h:outputLabel class="text-dark" value="#{bundle.EditComprasLabel_iva}" for="iva" /><br/>
-                                        <h:inputText id="iva" class="form-control" value="#{comprasController.selected.iva}" title="#{bundle.EditComprasTitle_iva}" required="true" requiredMessage="#{bundle.EditComprasRequiredMessage_iva}"/>
-                                    </div>
-                                    <div class="form-group">
-                                        <h:outputLabel class="text-dark" value="#{bundle.EditComprasLabel_total}" for="total" /><br/>
-                                        <h:inputText id="total" class="form-control" value="#{comprasController.selected.total}" title="#{bundle.EditComprasTitle_total}" required="true" requiredMessage="#{bundle.EditComprasRequiredMessage_total}"/>
-                                    </div>
-                                    <div class="form-group">
-                                        <h:outputLabel class="text-dark" value="#{bundle.EditComprasLabel_status}" for="status" /><br/>
-                                        <h:inputText id="status" class="form-control" value="#{comprasController.selected.status}" title="#{bundle.EditComprasTitle_status}" required="true" requiredMessage="#{bundle.EditComprasRequiredMessage_status}"/>
-
-                                    </div>
-                                    <div class="form-group">
-                                        <h:outputLabel class="text-dark" value="#{bundle.EditComprasLabel_idProv}" for="idProv" /><br/>
-                                        <h:selectOneMenu id="idProv" class="form-control" value="#{comprasController.selected.idProv}" title="#{bundle.EditComprasTitle_idProv}" required="true" requiredMessage="#{bundle.EditComprasRequiredMessage_idProv}">
-                                            <f:selectItems value="#{proveedoresController.itemsAvailableSelectOne}"/>
-                                        </h:selectOneMenu>
-                                    </div>
-                                </h:panelGrid>
-                                <h:commandLink class="text-dark" action="#{comprasController.update}" value="#{bundle.EditComprasSaveLink}"/>
-                                <br />
-                                <br />
-                                <h:link class="text-dark" outcome="View" value="#{bundle.EditComprasViewLink}"/>
-                                <br />
-                                <h:commandLink class="text-dark" action="#{comprasController.prepareList}" value="#{bundle.EditComprasShowAllLink}" immediate="true"/>
-                                <br />
-                                <br />
-                                <h:link class="text-dark" outcome="/index" value="#{bundle.EditComprasIndexLink}" />
-                            </h:form>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.EditComprasLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{comprasController.selected.id}" title="#{bundle.EditComprasTitle_id}" required="true" requiredMessage="#{bundle.EditComprasRequiredMessage_id}"/>
+                    <h:outputLabel value="#{bundle.EditComprasLabel_fecha}" for="fecha" />
+                    <h:inputText id="fecha" value="#{comprasController.selected.fecha}" title="#{bundle.EditComprasTitle_fecha}" required="true" requiredMessage="#{bundle.EditComprasRequiredMessage_fecha}">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:inputText>
+                    <h:outputLabel value="#{bundle.EditComprasLabel_subtotal}" for="subtotal" />
+                    <h:inputText id="subtotal" value="#{comprasController.selected.subtotal}" title="#{bundle.EditComprasTitle_subtotal}" required="true" requiredMessage="#{bundle.EditComprasRequiredMessage_subtotal}"/>
+                    <h:outputLabel value="#{bundle.EditComprasLabel_iva}" for="iva" />
+                    <h:inputText id="iva" value="#{comprasController.selected.iva}" title="#{bundle.EditComprasTitle_iva}" required="true" requiredMessage="#{bundle.EditComprasRequiredMessage_iva}"/>
+                    <h:outputLabel value="#{bundle.EditComprasLabel_total}" for="total" />
+                    <h:inputText id="total" value="#{comprasController.selected.total}" title="#{bundle.EditComprasTitle_total}" required="true" requiredMessage="#{bundle.EditComprasRequiredMessage_total}"/>
+                    <h:outputLabel value="#{bundle.EditComprasLabel_status}" for="status" />
+                    <h:inputText id="status" value="#{comprasController.selected.status}" title="#{bundle.EditComprasTitle_status}" required="true" requiredMessage="#{bundle.EditComprasRequiredMessage_status}"/>
+                    <h:outputLabel value="#{bundle.EditComprasLabel_idProv}" for="idProv" />
+                    <h:selectOneMenu id="idProv" value="#{comprasController.selected.idProv}" title="#{bundle.EditComprasTitle_idProv}" required="true" requiredMessage="#{bundle.EditComprasRequiredMessage_idProv}">
+                        <f:selectItems value="#{proveedoresController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <h:commandLink action="#{comprasController.update}" value="#{bundle.EditComprasSaveLink}"/>
+                <br />
+                <br />
+                <h:link outcome="View" value="#{bundle.EditComprasViewLink}"/>
+                <br />
+                <h:commandLink action="#{comprasController.prepareList}" value="#{bundle.EditComprasShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.EditComprasIndexLink}" />
+            </h:form>
         </ui:define>
     </ui:composition>
 
