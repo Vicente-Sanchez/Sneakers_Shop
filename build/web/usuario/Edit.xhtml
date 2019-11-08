@@ -28,15 +28,16 @@
                     <h:outputLabel value="#{bundle.EditUsuarioLabel_status}" for="status" />
                     <h:inputText id="status" value="#{usuarioController.selected.status}" title="#{bundle.EditUsuarioTitle_status}" required="true" requiredMessage="#{bundle.EditUsuarioRequiredMessage_status}"/>
                 </h:panelGrid>
-                <h:commandLink action="#{usuarioController.update}" value="#{bundle.EditUsuarioSaveLink}"/>
+                <h:commandButton action="#{usuarioController.update}" value="#{bundle.EditUsuarioSaveLink}"/>
                 <br />
                 <br />
-                <h:link outcome="View" value="#{bundle.EditUsuarioViewLink}"/>
+                <h:commandButton action="View" value="#{bundle.EditUsuarioViewLink}"/>
                 <br />
-                <h:commandLink action="#{usuarioController.prepareList}" value="#{bundle.EditUsuarioShowAllLink}" immediate="true"/>
+                <br/>
+                <h:commandButton action="#{usuarioController.prepareList}" value="#{bundle.EditUsuarioShowAllLink}" immediate="true"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.EditUsuarioIndexLink}" />
+                <h:commandButton action="/plantilla_admin" value="#{bundle.EditUsuarioIndexLink}" />
             </h:form>
         </ui:define>
     </ui:composition>

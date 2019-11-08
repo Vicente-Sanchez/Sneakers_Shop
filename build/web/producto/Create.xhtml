@@ -39,13 +39,14 @@
                     </h:selectOneMenu>
                 </h:panelGrid>
                 <br />
-                <h:commandLink action="#{productoController.create}" value="#{bundle.CreateProductoSaveLink}" />
+                <br/>
+                <h:commandButton action="#{productoController.create}" value="#{bundle.CreateProductoSaveLink}" />
                 <br />
                 <br />
-                <h:commandLink action="#{productoController.prepareList}" value="#{bundle.CreateProductoShowAllLink}" immediate="true"/>
+                <h:commandButton action="#{productoController.prepareList}" value="#{bundle.CreateProductoShowAllLink}" immediate="true"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.CreateProductoIndexLink}"/>
+                <h:commandButton action="/plantilla_admin" value="#{bundle.CreateProductoIndexLink}"/>
             </h:form>
         </ui:define>
     </ui:composition>

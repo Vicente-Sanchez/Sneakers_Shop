@@ -23,13 +23,14 @@
                     <h:inputText id="status" value="#{generoController.selected.status}" title="#{bundle.CreateGeneroTitle_status}" required="true" requiredMessage="#{bundle.CreateGeneroRequiredMessage_status}"/>
                 </h:panelGrid>
                 <br />
-                <h:commandLink action="#{generoController.create}" value="#{bundle.CreateGeneroSaveLink}" />
+                <br/>
+                <h:commandButton action="#{generoController.create}" value="#{bundle.CreateGeneroSaveLink}" />
                 <br />
                 <br />
-                <h:commandLink action="#{generoController.prepareList}" value="#{bundle.CreateGeneroShowAllLink}" immediate="true"/>
+                <h:commandButton action="#{generoController.prepareList}" value="#{bundle.CreateGeneroShowAllLink}" immediate="true"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.CreateGeneroIndexLink}"/>
+                <h:commandButton action="/plantilla_admin" value="#{bundle.CreateGeneroIndexLink}"/>
             </h:form>
         </ui:define>
     </ui:composition>

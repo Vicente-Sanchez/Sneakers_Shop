@@ -35,13 +35,14 @@
                     </h:selectOneMenu>
                 </h:panelGrid>
                 <br />
-                <h:commandLink action="#{comprasController.create}" value="#{bundle.CreateComprasSaveLink}" />
+                <br />
+                <h:commandButton action="#{comprasController.create}" value="#{bundle.CreateComprasSaveLink}" />
                 <br />
                 <br />
-                <h:commandLink action="#{comprasController.prepareList}" value="#{bundle.CreateComprasShowAllLink}" immediate="true"/>
+                <h:commandButton action="#{comprasController.prepareList}" value="#{bundle.CreateComprasShowAllLink}" immediate="true"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.CreateComprasIndexLink}"/>
+                <h:commandButton action="/plantilla_admin" value="#{bundle.CreateComprasIndexLink}"/>
             </h:form>
         </ui:define>
     </ui:composition>

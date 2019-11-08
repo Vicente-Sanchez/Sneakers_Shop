@@ -17,8 +17,8 @@
                 <h:outputText escape="false" value="#{bundle.ListTipoDePagoEmpty}" rendered="#{tipoDePagoController.items.rowCount == 0}"/>
                 <h:panelGroup rendered="#{tipoDePagoController.items.rowCount > 0}">
                     <h:outputText value="#{tipoDePagoController.pagination.pageFirstItem + 1}..#{tipoDePagoController.pagination.pageLastItem + 1}/#{tipoDePagoController.pagination.itemsCount}"/>&nbsp;
-                    <h:commandLink action="#{tipoDePagoController.previous}" value="#{bundle.Previous} #{tipoDePagoController.pagination.pageSize}" rendered="#{tipoDePagoController.pagination.hasPreviousPage}"/>&nbsp;
-                    <h:commandLink action="#{tipoDePagoController.next}" value="#{bundle.Next} #{tipoDePagoController.pagination.pageSize}" rendered="#{tipoDePagoController.pagination.hasNextPage}"/>&nbsp;
+                    <h:commandButton action="#{tipoDePagoController.previous}" value="#{bundle.Previous} #{tipoDePagoController.pagination.pageSize}" rendered="#{tipoDePagoController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandButton action="#{tipoDePagoController.next}" value="#{bundle.Next} #{tipoDePagoController.pagination.pageSize}" rendered="#{tipoDePagoController.pagination.hasNextPage}"/>&nbsp;
                     <h:dataTable value="#{tipoDePagoController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
                         <h:column>
                             <f:facet name="header">
@@ -48,19 +48,20 @@
                             <f:facet name="header">
                                 <h:outputText value="&nbsp;"/>
                             </f:facet>
-                            <h:commandLink action="#{tipoDePagoController.prepareView}" value="#{bundle.ListTipoDePagoViewLink}"/>
+                            <h:commandButton action="#{tipoDePagoController.prepareView}" value="#{bundle.ListTipoDePagoViewLink}"/>
                             <h:outputText value=" "/>
-                            <h:commandLink action="#{tipoDePagoController.prepareEdit}" value="#{bundle.ListTipoDePagoEditLink}"/>
+                            <h:commandButton action="#{tipoDePagoController.prepareEdit}" value="#{bundle.ListTipoDePagoEditLink}"/>
                             <h:outputText value=" "/>
-                            <h:commandLink action="#{tipoDePagoController.destroy}" value="#{bundle.ListTipoDePagoDestroyLink}"/>
+                            <h:commandButton action="#{tipoDePagoController.destroy}" value="#{bundle.ListTipoDePagoDestroyLink}"/>
                         </h:column>
                     </h:dataTable>
                 </h:panelGroup>
                 <br />
-                <h:commandLink action="#{tipoDePagoController.prepareCreate}" value="#{bundle.ListTipoDePagoCreateLink}"/>
+                <br/>
+                <h:commandButton action="#{tipoDePagoController.prepareCreate}" value="#{bundle.ListTipoDePagoCreateLink}"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.ListTipoDePagoIndexLink}"/>
+                <h:commandButton action="/plantilla_admin" value="#{bundle.ListTipoDePagoIndexLink}"/>
             </h:form>
         </ui:define>
     </ui:composition>

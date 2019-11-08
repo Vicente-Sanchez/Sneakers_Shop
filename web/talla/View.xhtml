@@ -16,28 +16,31 @@
             <h:form>
                 <h:panelGrid columns="2">
                     <h:outputText value="#{bundle.ViewTallaLabel_id}"/>
-                    <h:outputText value="#{tallaController.selected.id}" title="#{bundle.ViewTallaTitle_id}"/>
+                    <h:inputText disabled="true" value="#{tallaController.selected.id}" title="#{bundle.ViewTallaTitle_id}"/>
                     <h:outputText value="#{bundle.ViewTallaLabel_numeroTalla}"/>
-                    <h:outputText value="#{tallaController.selected.numeroTalla}" title="#{bundle.ViewTallaTitle_numeroTalla}"/>
+                    <h:inputText disabled="true" value="#{tallaController.selected.numeroTalla}" title="#{bundle.ViewTallaTitle_numeroTalla}"/>
                     <h:outputText value="#{bundle.ViewTallaLabel_cantidad}"/>
-                    <h:outputText value="#{tallaController.selected.cantidad}" title="#{bundle.ViewTallaTitle_cantidad}"/>
+                    <h:inputText disabled="true" value="#{tallaController.selected.cantidad}" title="#{bundle.ViewTallaTitle_cantidad}"/>
                     <h:outputText value="#{bundle.ViewTallaLabel_status}"/>
-                    <h:outputText value="#{tallaController.selected.status}" title="#{bundle.ViewTallaTitle_status}"/>
+                    <h:inputText disabled="true" value="#{tallaController.selected.status}" title="#{bundle.ViewTallaTitle_status}"/>
                     <h:outputText value="#{bundle.ViewTallaLabel_idProducto}"/>
-                    <h:outputText value="#{tallaController.selected.idProducto}" title="#{bundle.ViewTallaTitle_idProducto}"/>
+                    <h:inputText disabled="true" value="#{tallaController.selected.idProducto}" title="#{bundle.ViewTallaTitle_idProducto}"/>
                 </h:panelGrid>
                 <br />
-                <h:commandLink action="#{tallaController.destroyAndView}" value="#{bundle.ViewTallaDestroyLink}"/>
+                <br/>
+                <h:commandButton action="#{tallaController.destroyAndView}" value="#{bundle.ViewTallaDestroyLink}"/>
                 <br />
                 <br />
-                <h:link outcome="Edit" value="#{bundle.ViewTallaEditLink}"/>
+                <h:commandButton action="Edit" value="#{bundle.ViewTallaEditLink}"/>
                 <br />
-                <h:commandLink action="#{tallaController.prepareCreate}" value="#{bundle.ViewTallaCreateLink}" />
+                <br/>
+                <h:commandButton action="#{tallaController.prepareCreate}" value="#{bundle.ViewTallaCreateLink}" />
                 <br />
-                <h:commandLink action="#{tallaController.prepareList}" value="#{bundle.ViewTallaShowAllLink}"/>
+                <br/>
+                <h:commandButton action="#{tallaController.prepareList}" value="#{bundle.ViewTallaShowAllLink}"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.ViewTallaIndexLink}"/>
+                <h:commandButton action="/plantilla_admin" value="#{bundle.ViewTallaIndexLink}"/>
 
             </h:form>
         </ui:define>

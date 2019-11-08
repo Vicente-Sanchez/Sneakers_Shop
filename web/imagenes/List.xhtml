@@ -17,8 +17,8 @@
                 <h:outputText escape="false" value="#{bundle.ListImagenesEmpty}" rendered="#{imagenesController.items.rowCount == 0}"/>
                 <h:panelGroup rendered="#{imagenesController.items.rowCount > 0}">
                     <h:outputText value="#{imagenesController.pagination.pageFirstItem + 1}..#{imagenesController.pagination.pageLastItem + 1}/#{imagenesController.pagination.itemsCount}"/>&nbsp;
-                    <h:commandLink action="#{imagenesController.previous}" value="#{bundle.Previous} #{imagenesController.pagination.pageSize}" rendered="#{imagenesController.pagination.hasPreviousPage}"/>&nbsp;
-                    <h:commandLink action="#{imagenesController.next}" value="#{bundle.Next} #{imagenesController.pagination.pageSize}" rendered="#{imagenesController.pagination.hasNextPage}"/>&nbsp;
+                    <h:commandButton action="#{imagenesController.previous}" value="#{bundle.Previous} #{imagenesController.pagination.pageSize}" rendered="#{imagenesController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandButton action="#{imagenesController.next}" value="#{bundle.Next} #{imagenesController.pagination.pageSize}" rendered="#{imagenesController.pagination.hasNextPage}"/>&nbsp;
                     <h:dataTable value="#{imagenesController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
                         <h:column>
                             <f:facet name="header">
@@ -48,19 +48,20 @@
                             <f:facet name="header">
                                 <h:outputText value="&nbsp;"/>
                             </f:facet>
-                            <h:commandLink action="#{imagenesController.prepareView}" value="#{bundle.ListImagenesViewLink}"/>
+                            <h:commandButton action="#{imagenesController.prepareView}" value="#{bundle.ListImagenesViewLink}"/>
                             <h:outputText value=" "/>
-                            <h:commandLink action="#{imagenesController.prepareEdit}" value="#{bundle.ListImagenesEditLink}"/>
+                            <h:commandButton action="#{imagenesController.prepareEdit}" value="#{bundle.ListImagenesEditLink}"/>
                             <h:outputText value=" "/>
-                            <h:commandLink action="#{imagenesController.destroy}" value="#{bundle.ListImagenesDestroyLink}"/>
+                            <h:commandButton action="#{imagenesController.destroy}" value="#{bundle.ListImagenesDestroyLink}"/>
                         </h:column>
                     </h:dataTable>
                 </h:panelGroup>
                 <br />
-                <h:commandLink action="#{imagenesController.prepareCreate}" value="#{bundle.ListImagenesCreateLink}"/>
+                <br/>
+                <h:commandButton action="#{imagenesController.prepareCreate}" value="#{bundle.ListImagenesCreateLink}"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.ListImagenesIndexLink}"/>
+                <h:commandButton action="/plantilla_admin" value="#{bundle.ListImagenesIndexLink}"/>
             </h:form>
         </ui:define>
     </ui:composition>

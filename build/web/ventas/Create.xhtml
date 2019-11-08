@@ -37,13 +37,14 @@
                     </h:selectOneMenu>
                 </h:panelGrid>
                 <br />
-                <h:commandLink action="#{ventasController.create}" value="#{bundle.CreateVentasSaveLink}" />
+                <br/>
+                <h:commandButton action="#{ventasController.create}" value="#{bundle.CreateVentasSaveLink}" />
                 <br />
                 <br />
-                <h:commandLink action="#{ventasController.prepareList}" value="#{bundle.CreateVentasShowAllLink}" immediate="true"/>
+                <h:commandButton action="#{ventasController.prepareList}" value="#{bundle.CreateVentasShowAllLink}" immediate="true"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.CreateVentasIndexLink}"/>
+                <h:commandButton action="/plantilla_admin" value="#{bundle.CreateVentasIndexLink}"/>
             </h:form>
         </ui:define>
     </ui:composition>

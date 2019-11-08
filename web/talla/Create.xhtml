@@ -29,13 +29,14 @@
                     </h:selectOneMenu>
                 </h:panelGrid>
                 <br />
-                <h:commandLink action="#{tallaController.create}" value="#{bundle.CreateTallaSaveLink}" />
+                <br/>
+                <h:commandButton action="#{tallaController.create}" value="#{bundle.CreateTallaSaveLink}" />
                 <br />
                 <br />
-                <h:commandLink action="#{tallaController.prepareList}" value="#{bundle.CreateTallaShowAllLink}" immediate="true"/>
+                <h:commandButton action="#{tallaController.prepareList}" value="#{bundle.CreateTallaShowAllLink}" immediate="true"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.CreateTallaIndexLink}"/>
+                <h:commandButton action="/plantilla_admin" value="#{bundle.CreateTallaIndexLink}"/>
             </h:form>
         </ui:define>
     </ui:composition>

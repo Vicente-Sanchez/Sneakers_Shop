@@ -38,15 +38,16 @@
                     <h:outputLabel value="#{bundle.EditProveedoresLabel_status}" for="status" />
                     <h:inputText id="status" value="#{proveedoresController.selected.status}" title="#{bundle.EditProveedoresTitle_status}" required="true" requiredMessage="#{bundle.EditProveedoresRequiredMessage_status}"/>
                 </h:panelGrid>
-                <h:commandLink action="#{proveedoresController.update}" value="#{bundle.EditProveedoresSaveLink}"/>
+                <h:commandButton action="#{proveedoresController.update}" value="#{bundle.EditProveedoresSaveLink}"/>
                 <br />
                 <br />
-                <h:link outcome="View" value="#{bundle.EditProveedoresViewLink}"/>
+                <h:commandButton action="View" value="#{bundle.EditProveedoresViewLink}"/>
                 <br />
-                <h:commandLink action="#{proveedoresController.prepareList}" value="#{bundle.EditProveedoresShowAllLink}" immediate="true"/>
+                <br/>
+                <h:commandButton action="#{proveedoresController.prepareList}" value="#{bundle.EditProveedoresShowAllLink}" immediate="true"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.EditProveedoresIndexLink}" />
+                <h:commandButton action="/plantilla_admin" value="#{bundle.EditProveedoresIndexLink}" />
             </h:form>
         </ui:define>
     </ui:composition>

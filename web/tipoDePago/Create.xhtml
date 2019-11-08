@@ -25,13 +25,14 @@
                     <h:inputText id="status" value="#{tipoDePagoController.selected.status}" title="#{bundle.CreateTipoDePagoTitle_status}" required="true" requiredMessage="#{bundle.CreateTipoDePagoRequiredMessage_status}"/>
                 </h:panelGrid>
                 <br />
-                <h:commandLink action="#{tipoDePagoController.create}" value="#{bundle.CreateTipoDePagoSaveLink}" />
+                <br/>
+                <h:commandButton action="#{tipoDePagoController.create}" value="#{bundle.CreateTipoDePagoSaveLink}" />
                 <br />
                 <br />
-                <h:commandLink action="#{tipoDePagoController.prepareList}" value="#{bundle.CreateTipoDePagoShowAllLink}" immediate="true"/>
+                <h:commandButton action="#{tipoDePagoController.prepareList}" value="#{bundle.CreateTipoDePagoShowAllLink}" immediate="true"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.CreateTipoDePagoIndexLink}"/>
+                <h:commandButton action="/plantilla_admin" value="#{bundle.CreateTipoDePagoIndexLink}"/>
             </h:form>
         </ui:define>
     </ui:composition>

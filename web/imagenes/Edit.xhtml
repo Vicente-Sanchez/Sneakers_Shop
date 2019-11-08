@@ -26,15 +26,16 @@
                         <f:selectItems value="#{productoController.itemsAvailableSelectOne}"/>
                     </h:selectOneMenu>
                 </h:panelGrid>
-                <h:commandLink action="#{imagenesController.update}" value="#{bundle.EditImagenesSaveLink}"/>
+                <h:commandButton action="#{imagenesController.update}" value="#{bundle.EditImagenesSaveLink}"/>
                 <br />
                 <br />
-                <h:link outcome="View" value="#{bundle.EditImagenesViewLink}"/>
+                <h:commandButton action="View" value="#{bundle.EditImagenesViewLink}"/>
                 <br />
-                <h:commandLink action="#{imagenesController.prepareList}" value="#{bundle.EditImagenesShowAllLink}" immediate="true"/>
+                <br/>
+                <h:commandButton action="#{imagenesController.prepareList}" value="#{bundle.EditImagenesShowAllLink}" immediate="true"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.EditImagenesIndexLink}" />
+                <h:commandButton action="/plantilla_admin" value="#{bundle.EditImagenesIndexLink}" />
             </h:form>
         </ui:define>
     </ui:composition>

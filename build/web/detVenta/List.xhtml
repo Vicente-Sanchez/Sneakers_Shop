@@ -17,8 +17,8 @@
                 <h:outputText escape="false" value="#{bundle.ListDetVentaEmpty}" rendered="#{detVentaController.items.rowCount == 0}"/>
                 <h:panelGroup rendered="#{detVentaController.items.rowCount > 0}">
                     <h:outputText value="#{detVentaController.pagination.pageFirstItem + 1}..#{detVentaController.pagination.pageLastItem + 1}/#{detVentaController.pagination.itemsCount}"/>&nbsp;
-                    <h:commandLink action="#{detVentaController.previous}" value="#{bundle.Previous} #{detVentaController.pagination.pageSize}" rendered="#{detVentaController.pagination.hasPreviousPage}"/>&nbsp;
-                    <h:commandLink action="#{detVentaController.next}" value="#{bundle.Next} #{detVentaController.pagination.pageSize}" rendered="#{detVentaController.pagination.hasNextPage}"/>&nbsp;
+                    <h:commandButton action="#{detVentaController.previous}" value="#{bundle.Previous} #{detVentaController.pagination.pageSize}" rendered="#{detVentaController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandButton action="#{detVentaController.next}" value="#{bundle.Next} #{detVentaController.pagination.pageSize}" rendered="#{detVentaController.pagination.hasNextPage}"/>&nbsp;
                     <h:dataTable value="#{detVentaController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
                         <h:column>
                             <f:facet name="header">
@@ -66,19 +66,20 @@
                             <f:facet name="header">
                                 <h:outputText value="&nbsp;"/>
                             </f:facet>
-                            <h:commandLink action="#{detVentaController.prepareView}" value="#{bundle.ListDetVentaViewLink}"/>
+                            <h:commandButton action="#{detVentaController.prepareView}" value="#{bundle.ListDetVentaViewLink}"/>
                             <h:outputText value=" "/>
-                            <h:commandLink action="#{detVentaController.prepareEdit}" value="#{bundle.ListDetVentaEditLink}"/>
+                            <h:commandButton action="#{detVentaController.prepareEdit}" value="#{bundle.ListDetVentaEditLink}"/>
                             <h:outputText value=" "/>
-                            <h:commandLink action="#{detVentaController.destroy}" value="#{bundle.ListDetVentaDestroyLink}"/>
+                            <h:commandButton action="#{detVentaController.destroy}" value="#{bundle.ListDetVentaDestroyLink}"/>
                         </h:column>
                     </h:dataTable>
                 </h:panelGroup>
                 <br />
-                <h:commandLink action="#{detVentaController.prepareCreate}" value="#{bundle.ListDetVentaCreateLink}"/>
+                <br/>
+                <h:commandButton action="#{detVentaController.prepareCreate}" value="#{bundle.ListDetVentaCreateLink}"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.ListDetVentaIndexLink}"/>
+                <h:commandButton action="/plantilla_admin" value="#{bundle.ListDetVentaIndexLink}"/>
             </h:form>
         </ui:define>
     </ui:composition>

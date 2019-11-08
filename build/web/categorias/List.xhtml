@@ -17,8 +17,8 @@
                 <h:outputText escape="false" value="#{bundle.ListCategoriasEmpty}" rendered="#{categoriasController.items.rowCount == 0}"/>
                 <h:panelGroup rendered="#{categoriasController.items.rowCount > 0}">
                     <h:outputText value="#{categoriasController.pagination.pageFirstItem + 1}..#{categoriasController.pagination.pageLastItem + 1}/#{categoriasController.pagination.itemsCount}"/>&nbsp;
-                    <h:commandLink action="#{categoriasController.previous}" value="#{bundle.Previous} #{categoriasController.pagination.pageSize}" rendered="#{categoriasController.pagination.hasPreviousPage}"/>&nbsp;
-                    <h:commandLink action="#{categoriasController.next}" value="#{bundle.Next} #{categoriasController.pagination.pageSize}" rendered="#{categoriasController.pagination.hasNextPage}"/>&nbsp;
+                    <h:commandButton action="#{categoriasController.previous}" value="#{bundle.Previous} #{categoriasController.pagination.pageSize}" rendered="#{categoriasController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandButton action="#{categoriasController.next}" value="#{bundle.Next} #{categoriasController.pagination.pageSize}" rendered="#{categoriasController.pagination.hasNextPage}"/>&nbsp;
                     <h:dataTable value="#{categoriasController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
                         <h:column>
                             <f:facet name="header">
@@ -48,19 +48,19 @@
                             <f:facet name="header">
                                 <h:outputText value="&nbsp;"/>
                             </f:facet>
-                            <h:commandLink action="#{categoriasController.prepareView}" value="#{bundle.ListCategoriasViewLink}"/>
+                            <h:commandButton action="#{categoriasController.prepareView}" value="#{bundle.ListCategoriasViewLink}"/>
                             <h:outputText value=" "/>
-                            <h:commandLink action="#{categoriasController.prepareEdit}" value="#{bundle.ListCategoriasEditLink}"/>
+                            <h:commandButton action="#{categoriasController.prepareEdit}" value="#{bundle.ListCategoriasEditLink}"/>
                             <h:outputText value=" "/>
-                            <h:commandLink action="#{categoriasController.destroy}" value="#{bundle.ListCategoriasDestroyLink}"/>
+                            <h:commandButton action="#{categoriasController.destroy}" value="#{bundle.ListCategoriasDestroyLink}"/>
                         </h:column>
                     </h:dataTable>
                 </h:panelGroup>
                 <br />
-                <h:commandLink action="#{categoriasController.prepareCreate}" value="#{bundle.ListCategoriasCreateLink}"/>
+                <h:commandButton action="#{categoriasController.prepareCreate}" value="#{bundle.ListCategoriasCreateLink}"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.ListCategoriasIndexLink}"/>
+                <h:commandButton action="/plantilla_admin" value="#{bundle.ListCategoriasIndexLink}"/>
             </h:form>
         </ui:define>
     </ui:composition>

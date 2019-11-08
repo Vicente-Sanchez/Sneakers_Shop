@@ -16,30 +16,33 @@
             <h:form>
                 <h:panelGrid columns="2">
                     <h:outputText value="#{bundle.ViewUsuarioLabel_id}"/>
-                    <h:outputText value="#{usuarioController.selected.id}" title="#{bundle.ViewUsuarioTitle_id}"/>
+                    <h:inputText disabled="true" value="#{usuarioController.selected.id}" title="#{bundle.ViewUsuarioTitle_id}"/>
                     <h:outputText value="#{bundle.ViewUsuarioLabel_nombre}"/>
-                    <h:outputText value="#{usuarioController.selected.nombre}" title="#{bundle.ViewUsuarioTitle_nombre}"/>
+                    <h:inputText disabled="true" value="#{usuarioController.selected.nombre}" title="#{bundle.ViewUsuarioTitle_nombre}"/>
                     <h:outputText value="#{bundle.ViewUsuarioLabel_usu}"/>
-                    <h:outputText value="#{usuarioController.selected.usu}" title="#{bundle.ViewUsuarioTitle_usu}"/>
+                    <h:inputText disabled="true" value="#{usuarioController.selected.usu}" title="#{bundle.ViewUsuarioTitle_usu}"/>
                     <h:outputText value="#{bundle.ViewUsuarioLabel_pasword}"/>
-                    <h:outputText value="#{usuarioController.selected.pasword}" title="#{bundle.ViewUsuarioTitle_pasword}"/>
-                    <h:outputText value="#{bundle.ViewUsuarioLabel_nivelUsuario}"/>
+                    <h:inputText disabled="true" value="#{usuarioController.selected.pasword}" title="#{bundle.ViewUsuarioTitle_pasword}"/>
+                    <h:inputText disabled="true" value="#{bundle.ViewUsuarioLabel_nivelUsuario}"/>
                     <h:outputText value="#{usuarioController.selected.nivelUsuario}" title="#{bundle.ViewUsuarioTitle_nivelUsuario}"/>
-                    <h:outputText value="#{bundle.ViewUsuarioLabel_status}"/>
+                    <h:inputText disabled="true" value="#{bundle.ViewUsuarioLabel_status}"/>
                     <h:outputText value="#{usuarioController.selected.status}" title="#{bundle.ViewUsuarioTitle_status}"/>
                 </h:panelGrid>
                 <br />
-                <h:commandLink action="#{usuarioController.destroyAndView}" value="#{bundle.ViewUsuarioDestroyLink}"/>
+                <br/>
+                <h:commandButton action="#{usuarioController.destroyAndView}" value="#{bundle.ViewUsuarioDestroyLink}"/>
                 <br />
                 <br />
-                <h:link outcome="Edit" value="#{bundle.ViewUsuarioEditLink}"/>
+                <h:commandButton action="Edit" value="#{bundle.ViewUsuarioEditLink}"/>
                 <br />
-                <h:commandLink action="#{usuarioController.prepareCreate}" value="#{bundle.ViewUsuarioCreateLink}" />
+                <br/>
+                <h:commandButton action="#{usuarioController.prepareCreate}" value="#{bundle.ViewUsuarioCreateLink}" />
                 <br />
-                <h:commandLink action="#{usuarioController.prepareList}" value="#{bundle.ViewUsuarioShowAllLink}"/>
+                <br/>
+                <h:commandButton action="#{usuarioController.prepareList}" value="#{bundle.ViewUsuarioShowAllLink}"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.ViewUsuarioIndexLink}"/>
+                <h:commandButton action="/plantilla_admin" value="#{bundle.ViewUsuarioIndexLink}"/>
 
             </h:form>
         </ui:define>

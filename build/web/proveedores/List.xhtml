@@ -17,8 +17,8 @@
                 <h:outputText escape="false" value="#{bundle.ListProveedoresEmpty}" rendered="#{proveedoresController.items.rowCount == 0}"/>
                 <h:panelGroup rendered="#{proveedoresController.items.rowCount > 0}">
                     <h:outputText value="#{proveedoresController.pagination.pageFirstItem + 1}..#{proveedoresController.pagination.pageLastItem + 1}/#{proveedoresController.pagination.itemsCount}"/>&nbsp;
-                    <h:commandLink action="#{proveedoresController.previous}" value="#{bundle.Previous} #{proveedoresController.pagination.pageSize}" rendered="#{proveedoresController.pagination.hasPreviousPage}"/>&nbsp;
-                    <h:commandLink action="#{proveedoresController.next}" value="#{bundle.Next} #{proveedoresController.pagination.pageSize}" rendered="#{proveedoresController.pagination.hasNextPage}"/>&nbsp;
+                    <h:commandButton action="#{proveedoresController.previous}" value="#{bundle.Previous} #{proveedoresController.pagination.pageSize}" rendered="#{proveedoresController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandButton action="#{proveedoresController.next}" value="#{bundle.Next} #{proveedoresController.pagination.pageSize}" rendered="#{proveedoresController.pagination.hasNextPage}"/>&nbsp;
                     <h:dataTable value="#{proveedoresController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
                         <h:column>
                             <f:facet name="header">
@@ -90,19 +90,20 @@
                             <f:facet name="header">
                                 <h:outputText value="&nbsp;"/>
                             </f:facet>
-                            <h:commandLink action="#{proveedoresController.prepareView}" value="#{bundle.ListProveedoresViewLink}"/>
+                            <h:commandButton action="#{proveedoresController.prepareView}" value="#{bundle.ListProveedoresViewLink}"/>
                             <h:outputText value=" "/>
-                            <h:commandLink action="#{proveedoresController.prepareEdit}" value="#{bundle.ListProveedoresEditLink}"/>
+                            <h:commandButton action="#{proveedoresController.prepareEdit}" value="#{bundle.ListProveedoresEditLink}"/>
                             <h:outputText value=" "/>
-                            <h:commandLink action="#{proveedoresController.destroy}" value="#{bundle.ListProveedoresDestroyLink}"/>
+                            <h:commandButton action="#{proveedoresController.destroy}" value="#{bundle.ListProveedoresDestroyLink}"/>
                         </h:column>
                     </h:dataTable>
                 </h:panelGroup>
                 <br />
-                <h:commandLink action="#{proveedoresController.prepareCreate}" value="#{bundle.ListProveedoresCreateLink}"/>
+                <br/>
+                <h:commandButton action="#{proveedoresController.prepareCreate}" value="#{bundle.ListProveedoresCreateLink}"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.ListProveedoresIndexLink}"/>
+                <h:commandButton action="/plantilla_admin" value="#{bundle.ListProveedoresIndexLink}"/>
             </h:form>
         </ui:define>
     </ui:composition>

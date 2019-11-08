@@ -16,34 +16,37 @@
             <h:form>
                 <h:panelGrid columns="2">
                     <h:outputText value="#{bundle.ViewComprasLabel_id}"/>
-                    <h:outputText value="#{comprasController.selected.id}" title="#{bundle.ViewComprasTitle_id}"/>
+                    <h:inputText disabled="true" value="#{comprasController.selected.id}" title="#{bundle.ViewComprasTitle_id}"/>
                     <h:outputText value="#{bundle.ViewComprasLabel_fecha}"/>
-                    <h:outputText value="#{comprasController.selected.fecha}" title="#{bundle.ViewComprasTitle_fecha}">
+                    <h:inputText disabled="true" value="#{comprasController.selected.fecha}" title="#{bundle.ViewComprasTitle_fecha}">
                         <f:convertDateTime pattern="MM/dd/yyyy" />
-                    </h:outputText>
+                    </h:inputText>>
                     <h:outputText value="#{bundle.ViewComprasLabel_subtotal}"/>
-                    <h:outputText value="#{comprasController.selected.subtotal}" title="#{bundle.ViewComprasTitle_subtotal}"/>
+                    <h:inputText disabled="true" value="#{comprasController.selected.subtotal}" title="#{bundle.ViewComprasTitle_subtotal}"/>
                     <h:outputText value="#{bundle.ViewComprasLabel_iva}"/>
-                    <h:outputText value="#{comprasController.selected.iva}" title="#{bundle.ViewComprasTitle_iva}"/>
+                    <h:inputText disabled="true" value="#{comprasController.selected.iva}" title="#{bundle.ViewComprasTitle_iva}"/>
                     <h:outputText value="#{bundle.ViewComprasLabel_total}"/>
-                    <h:outputText value="#{comprasController.selected.total}" title="#{bundle.ViewComprasTitle_total}"/>
+                    <h:inputText disabled="true" value="#{comprasController.selected.total}" title="#{bundle.ViewComprasTitle_total}"/>
                     <h:outputText value="#{bundle.ViewComprasLabel_status}"/>
-                    <h:outputText value="#{comprasController.selected.status}" title="#{bundle.ViewComprasTitle_status}"/>
+                    <h:inputText disabled="true" value="#{comprasController.selected.status}" title="#{bundle.ViewComprasTitle_status}"/>
                     <h:outputText value="#{bundle.ViewComprasLabel_idProv}"/>
-                    <h:outputText value="#{comprasController.selected.idProv}" title="#{bundle.ViewComprasTitle_idProv}"/>
+                    <h:inputText disabled="true" value="#{comprasController.selected.idProv}" title="#{bundle.ViewComprasTitle_idProv}"/>
                 </h:panelGrid>
                 <br />
-                <h:commandLink action="#{comprasController.destroyAndView}" value="#{bundle.ViewComprasDestroyLink}"/>
+                <br/>
+                <h:commandButton action="#{comprasController.destroyAndView}" value="#{bundle.ViewComprasDestroyLink}"/>
                 <br />
                 <br />
-                <h:link outcome="Edit" value="#{bundle.ViewComprasEditLink}"/>
+                <h:commandButton action="Edit" value="#{bundle.ViewComprasEditLink}"/>
                 <br />
-                <h:commandLink action="#{comprasController.prepareCreate}" value="#{bundle.ViewComprasCreateLink}" />
+                <br/>
+                <h:commandButton action="#{comprasController.prepareCreate}" value="#{bundle.ViewComprasCreateLink}" />
                 <br />
-                <h:commandLink action="#{comprasController.prepareList}" value="#{bundle.ViewComprasShowAllLink}"/>
+                <br/>
+                <h:commandButton action="#{comprasController.prepareList}" value="#{bundle.ViewComprasShowAllLink}"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.ViewComprasIndexLink}"/>
+                <h:commandButton action="/plantilla_admin" value="#{bundle.ViewComprasIndexLink}"/>
 
             </h:form>
         </ui:define>

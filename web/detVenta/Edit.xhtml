@@ -34,15 +34,16 @@
                         <f:selectItems value="#{ventasController.itemsAvailableSelectOne}"/>
                     </h:selectOneMenu>
                 </h:panelGrid>
-                <h:commandLink action="#{detVentaController.update}" value="#{bundle.EditDetVentaSaveLink}"/>
+                <h:commandButton action="#{detVentaController.update}" value="#{bundle.EditDetVentaSaveLink}"/>
                 <br />
                 <br />
-                <h:link outcome="View" value="#{bundle.EditDetVentaViewLink}"/>
+                <h:commandButton action="View" value="#{bundle.EditDetVentaViewLink}"/>
                 <br />
-                <h:commandLink action="#{detVentaController.prepareList}" value="#{bundle.EditDetVentaShowAllLink}" immediate="true"/>
+                <br/>
+                <h:commandButton action="#{detVentaController.prepareList}" value="#{bundle.EditDetVentaShowAllLink}" immediate="true"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.EditDetVentaIndexLink}" />
+                <h:commandButton action="/plantilla_admin" value="#{bundle.EditDetVentaIndexLink}" />
             </h:form>
         </ui:define>
     </ui:composition>
