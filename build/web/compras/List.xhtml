@@ -17,8 +17,8 @@
                 <h:outputText escape="false" value="#{bundle.ListComprasEmpty}" rendered="#{comprasController.items.rowCount == 0}"/>
                 <h:panelGroup rendered="#{comprasController.items.rowCount > 0}">
                     <h:outputText value="#{comprasController.pagination.pageFirstItem + 1}..#{comprasController.pagination.pageLastItem + 1}/#{comprasController.pagination.itemsCount}"/>&nbsp;
-                    <h:commandLink action="#{comprasController.previous}" value="#{bundle.Previous} #{comprasController.pagination.pageSize}" rendered="#{comprasController.pagination.hasPreviousPage}"/>&nbsp;
-                    <h:commandLink action="#{comprasController.next}" value="#{bundle.Next} #{comprasController.pagination.pageSize}" rendered="#{comprasController.pagination.hasNextPage}"/>&nbsp;
+                    <h:commandButton action="#{comprasController.previous}" value="#{bundle.Previous} #{comprasController.pagination.pageSize}" rendered="#{comprasController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandButton action="#{comprasController.next}" value="#{bundle.Next} #{comprasController.pagination.pageSize}" rendered="#{comprasController.pagination.hasNextPage}"/>&nbsp;
                     <h:dataTable value="#{comprasController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
                         <h:column>
                             <f:facet name="header">
@@ -68,19 +68,19 @@
                             <f:facet name="header">
                                 <h:outputText value="&nbsp;"/>
                             </f:facet>
-                            <h:commandLink action="#{comprasController.prepareView}" value="#{bundle.ListComprasViewLink}"/>
+                            <h:commandButton action="#{comprasController.prepareView}" value="#{bundle.ListComprasViewLink}"/>
                             <h:outputText value=" "/>
-                            <h:commandLink action="#{comprasController.prepareEdit}" value="#{bundle.ListComprasEditLink}"/>
+                            <h:commandButton action="#{comprasController.prepareEdit}" value="#{bundle.ListComprasEditLink}"/>
                             <h:outputText value=" "/>
-                            <h:commandLink action="#{comprasController.destroy}" value="#{bundle.ListComprasDestroyLink}"/>
+                            <h:commandButton action="#{comprasController.destroy}" value="#{bundle.ListComprasDestroyLink}"/>
                         </h:column>
                     </h:dataTable>
                 </h:panelGroup>
                 <br />
-                <h:commandLink action="#{comprasController.prepareCreate}" value="#{bundle.ListComprasCreateLink}"/>
+                <h:commandButton action="#{comprasController.prepareCreate}" value="#{bundle.ListComprasCreateLink}"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.ListComprasIndexLink}"/>
+                <h:commandButton action="/plantilla_admin" value="#{bundle.ListComprasIndexLink}"/>
             </h:form>
         </ui:define>
     </ui:composition>

@@ -24,15 +24,16 @@
                     <h:outputLabel value="#{bundle.EditTipoDePagoLabel_status}" for="status" />
                     <h:inputText id="status" value="#{tipoDePagoController.selected.status}" title="#{bundle.EditTipoDePagoTitle_status}" required="true" requiredMessage="#{bundle.EditTipoDePagoRequiredMessage_status}"/>
                 </h:panelGrid>
-                <h:commandLink action="#{tipoDePagoController.update}" value="#{bundle.EditTipoDePagoSaveLink}"/>
+                <h:commandButton action="#{tipoDePagoController.update}" value="#{bundle.EditTipoDePagoSaveLink}"/>
                 <br />
                 <br />
-                <h:link outcome="View" value="#{bundle.EditTipoDePagoViewLink}"/>
+                <h:commandButton action="View" value="#{bundle.EditTipoDePagoViewLink}"/>
                 <br />
-                <h:commandLink action="#{tipoDePagoController.prepareList}" value="#{bundle.EditTipoDePagoShowAllLink}" immediate="true"/>
+                <br/>
+                <h:commandButton action="#{tipoDePagoController.prepareList}" value="#{bundle.EditTipoDePagoShowAllLink}" immediate="true"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.EditTipoDePagoIndexLink}" />
+                <h:commandButton action="/plantilla_admin" value="#{bundle.EditTipoDePagoIndexLink}" />
             </h:form>
         </ui:define>
     </ui:composition>

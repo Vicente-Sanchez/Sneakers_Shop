@@ -17,8 +17,8 @@
                 <h:outputText escape="false" value="#{bundle.ListUsuarioEmpty}" rendered="#{usuarioController.items.rowCount == 0}"/>
                 <h:panelGroup rendered="#{usuarioController.items.rowCount > 0}">
                     <h:outputText value="#{usuarioController.pagination.pageFirstItem + 1}..#{usuarioController.pagination.pageLastItem + 1}/#{usuarioController.pagination.itemsCount}"/>&nbsp;
-                    <h:commandLink action="#{usuarioController.previous}" value="#{bundle.Previous} #{usuarioController.pagination.pageSize}" rendered="#{usuarioController.pagination.hasPreviousPage}"/>&nbsp;
-                    <h:commandLink action="#{usuarioController.next}" value="#{bundle.Next} #{usuarioController.pagination.pageSize}" rendered="#{usuarioController.pagination.hasNextPage}"/>&nbsp;
+                    <h:commandButton action="#{usuarioController.previous}" value="#{bundle.Previous} #{usuarioController.pagination.pageSize}" rendered="#{usuarioController.pagination.hasPreviousPage}"/>&nbsp;
+                    <h:commandButton action="#{usuarioController.next}" value="#{bundle.Next} #{usuarioController.pagination.pageSize}" rendered="#{usuarioController.pagination.hasNextPage}"/>&nbsp;
                     <h:dataTable value="#{usuarioController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
                         <h:column>
                             <f:facet name="header">
@@ -60,19 +60,20 @@
                             <f:facet name="header">
                                 <h:outputText value="&nbsp;"/>
                             </f:facet>
-                            <h:commandLink action="#{usuarioController.prepareView}" value="#{bundle.ListUsuarioViewLink}"/>
+                            <h:commandButton action="#{usuarioController.prepareView}" value="#{bundle.ListUsuarioViewLink}"/>
                             <h:outputText value=" "/>
-                            <h:commandLink action="#{usuarioController.prepareEdit}" value="#{bundle.ListUsuarioEditLink}"/>
+                            <h:commandButton action="#{usuarioController.prepareEdit}" value="#{bundle.ListUsuarioEditLink}"/>
                             <h:outputText value=" "/>
-                            <h:commandLink action="#{usuarioController.destroy}" value="#{bundle.ListUsuarioDestroyLink}"/>
+                            <h:commandButton action="#{usuarioController.destroy}" value="#{bundle.ListUsuarioDestroyLink}"/>
                         </h:column>
                     </h:dataTable>
                 </h:panelGroup>
                 <br />
-                <h:commandLink action="#{usuarioController.prepareCreate}" value="#{bundle.ListUsuarioCreateLink}"/>
+                <br/>
+                <h:commandButton action="#{usuarioController.prepareCreate}" value="#{bundle.ListUsuarioCreateLink}"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.ListUsuarioIndexLink}"/>
+                <h:commandButton action="/plantilla_admin" value="#{bundle.ListUsuarioIndexLink}"/>
             </h:form>
         </ui:define>
     </ui:composition>

@@ -35,13 +35,14 @@
                     </h:selectOneMenu>
                 </h:panelGrid>
                 <br />
-                <h:commandLink action="#{detVentaController.create}" value="#{bundle.CreateDetVentaSaveLink}" />
+                <br/>
+                <h:commandButton action="#{detVentaController.create}" value="#{bundle.CreateDetVentaSaveLink}" />
                 <br />
                 <br />
-                <h:commandLink action="#{detVentaController.prepareList}" value="#{bundle.CreateDetVentaShowAllLink}" immediate="true"/>
+                <h:commandButton action="#{detVentaController.prepareList}" value="#{bundle.CreateDetVentaShowAllLink}" immediate="true"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.CreateDetVentaIndexLink}"/>
+                <h:commandButton action="/plantilla_admin" value="#{bundle.CreateDetVentaIndexLink}"/>
             </h:form>
         </ui:define>
     </ui:composition>

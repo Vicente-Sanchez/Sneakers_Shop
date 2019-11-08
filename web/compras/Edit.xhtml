@@ -34,15 +34,16 @@
                         <f:selectItems value="#{proveedoresController.itemsAvailableSelectOne}"/>
                     </h:selectOneMenu>
                 </h:panelGrid>
-                <h:commandLink action="#{comprasController.update}" value="#{bundle.EditComprasSaveLink}"/>
+                <h:commandButton action="#{comprasController.update}" value="#{bundle.EditComprasSaveLink}"/>
                 <br />
                 <br />
-                <h:link outcome="View" value="#{bundle.EditComprasViewLink}"/>
-                <br />
-                <h:commandLink action="#{comprasController.prepareList}" value="#{bundle.EditComprasShowAllLink}" immediate="true"/>
+                <h:commandButton action="View" value="#{bundle.EditComprasViewLink}"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.EditComprasIndexLink}" />
+                <h:commandButton action="#{comprasController.prepareList}" value="#{bundle.EditComprasShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:commandButton action="/plantilla_admin" value="#{bundle.EditComprasIndexLink}" />
             </h:form>
         </ui:define>
     </ui:composition>

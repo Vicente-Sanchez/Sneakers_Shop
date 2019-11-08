@@ -27,13 +27,14 @@
                     </h:selectOneMenu>
                 </h:panelGrid>
                 <br />
-                <h:commandLink action="#{imagenesController.create}" value="#{bundle.CreateImagenesSaveLink}" />
+                <br/>
+                <h:commandButton action="#{imagenesController.create}" value="#{bundle.CreateImagenesSaveLink}" />
                 <br />
                 <br />
-                <h:commandLink action="#{imagenesController.prepareList}" value="#{bundle.CreateImagenesShowAllLink}" immediate="true"/>
+                <h:commandButton action="#{imagenesController.prepareList}" value="#{bundle.CreateImagenesShowAllLink}" immediate="true"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.CreateImagenesIndexLink}"/>
+                <h:commandButton action="/plantilla_admin" value="#{bundle.CreateImagenesIndexLink}"/>
             </h:form>
         </ui:define>
     </ui:composition>

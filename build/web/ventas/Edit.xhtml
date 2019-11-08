@@ -36,15 +36,16 @@
                         <f:selectItems value="#{tipoDePagoController.itemsAvailableSelectOne}"/>
                     </h:selectOneMenu>
                 </h:panelGrid>
-                <h:commandLink action="#{ventasController.update}" value="#{bundle.EditVentasSaveLink}"/>
+                <h:commandButton action="#{ventasController.update}" value="#{bundle.EditVentasSaveLink}"/>
                 <br />
                 <br />
-                <h:link outcome="View" value="#{bundle.EditVentasViewLink}"/>
+                <h:commandButton action="View" value="#{bundle.EditVentasViewLink}"/>
                 <br />
-                <h:commandLink action="#{ventasController.prepareList}" value="#{bundle.EditVentasShowAllLink}" immediate="true"/>
+                <br/>
+                <h:commandButton action="#{ventasController.prepareList}" value="#{bundle.EditVentasShowAllLink}" immediate="true"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.EditVentasIndexLink}" />
+                <h:commandButton action="/plantilla_admin" value="#{bundle.EditVentasIndexLink}" />
             </h:form>
         </ui:define>
     </ui:composition>

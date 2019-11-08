@@ -16,34 +16,37 @@
             <h:form>
                 <h:panelGrid columns="2">
                     <h:outputText value="#{bundle.ViewProductoLabel_id}"/>
-                    <h:outputText value="#{productoController.selected.id}" title="#{bundle.ViewProductoTitle_id}"/>
+                    <h:inputText disabled="true" value="#{productoController.selected.id}" title="#{bundle.ViewProductoTitle_id}"/>
                     <h:outputText value="#{bundle.ViewProductoLabel_nombreProd}"/>
-                    <h:outputText value="#{productoController.selected.nombreProd}" title="#{bundle.ViewProductoTitle_nombreProd}"/>
+                    <h:inputText disabled="true" value="#{productoController.selected.nombreProd}" title="#{bundle.ViewProductoTitle_nombreProd}"/>
                     <h:outputText value="#{bundle.ViewProductoLabel_descripProd}"/>
-                    <h:outputText value="#{productoController.selected.descripProd}" title="#{bundle.ViewProductoTitle_descripProd}"/>
+                    <h:inputText disabled="true" value="#{productoController.selected.descripProd}" title="#{bundle.ViewProductoTitle_descripProd}"/>
                     <h:outputText value="#{bundle.ViewProductoLabel_precioProd}"/>
-                    <h:outputText value="#{productoController.selected.precioProd}" title="#{bundle.ViewProductoTitle_precioProd}"/>
+                    <h:inputText disabled="true" value="#{productoController.selected.precioProd}" title="#{bundle.ViewProductoTitle_precioProd}"/>
                     <h:outputText value="#{bundle.ViewProductoLabel_status}"/>
-                    <h:outputText value="#{productoController.selected.status}" title="#{bundle.ViewProductoTitle_status}"/>
+                    <h:inputText disabled="true" value="#{productoController.selected.status}" title="#{bundle.ViewProductoTitle_status}"/>
                     <h:outputText value="#{bundle.ViewProductoLabel_idCategoria}"/>
-                    <h:outputText value="#{productoController.selected.idCategoria}" title="#{bundle.ViewProductoTitle_idCategoria}"/>
+                    <h:inputText disabled="true" value="#{productoController.selected.idCategoria}" title="#{bundle.ViewProductoTitle_idCategoria}"/>
                     <h:outputText value="#{bundle.ViewProductoLabel_idGen}"/>
-                    <h:outputText value="#{productoController.selected.idGen}" title="#{bundle.ViewProductoTitle_idGen}"/>
+                    <h:inputText disabled="true" value="#{productoController.selected.idGen}" title="#{bundle.ViewProductoTitle_idGen}"/>
                     <h:outputText value="#{bundle.ViewProductoLabel_idProv}"/>
-                    <h:outputText value="#{productoController.selected.idProv}" title="#{bundle.ViewProductoTitle_idProv}"/>
+                    <h:inputText disabled="true" value="#{productoController.selected.idProv}" title="#{bundle.ViewProductoTitle_idProv}"/>
                 </h:panelGrid>
                 <br />
-                <h:commandLink action="#{productoController.destroyAndView}" value="#{bundle.ViewProductoDestroyLink}"/>
+                <br/>
+                <h:commandButton action="#{productoController.destroyAndView}" value="#{bundle.ViewProductoDestroyLink}"/>
                 <br />
                 <br />
-                <h:link outcome="Edit" value="#{bundle.ViewProductoEditLink}"/>
+                <h:commandButton action="Edit" value="#{bundle.ViewProductoEditLink}"/>
                 <br />
-                <h:commandLink action="#{productoController.prepareCreate}" value="#{bundle.ViewProductoCreateLink}" />
+                <br/>
+                <h:commandButton action="#{productoController.prepareCreate}" value="#{bundle.ViewProductoCreateLink}" />
                 <br />
-                <h:commandLink action="#{productoController.prepareList}" value="#{bundle.ViewProductoShowAllLink}"/>
+                <br/>
+                <h:commandButton action="#{productoController.prepareList}" value="#{bundle.ViewProductoShowAllLink}"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.ViewProductoIndexLink}"/>
+                <h:commandButton action="/plantilla_admin" value="#{bundle.ViewProductoIndexLink}"/>
 
             </h:form>
         </ui:define>

@@ -16,26 +16,29 @@
             <h:form>
                 <h:panelGrid columns="2">
                     <h:outputText value="#{bundle.ViewImagenesLabel_id}"/>
-                    <h:outputText value="#{imagenesController.selected.id}" title="#{bundle.ViewImagenesTitle_id}"/>
+                    <h:inputText disabled="true" value="#{imagenesController.selected.id}" title="#{bundle.ViewImagenesTitle_id}"/>
                     <h:outputText value="#{bundle.ViewImagenesLabel_ruta}"/>
-                    <h:outputText value="#{imagenesController.selected.ruta}" title="#{bundle.ViewImagenesTitle_ruta}"/>
+                    <h:inputText disabled="true" value="#{imagenesController.selected.ruta}" title="#{bundle.ViewImagenesTitle_ruta}"/>
                     <h:outputText value="#{bundle.ViewImagenesLabel_status}"/>
-                    <h:outputText value="#{imagenesController.selected.status}" title="#{bundle.ViewImagenesTitle_status}"/>
+                    <h:inputText disabled="true" value="#{imagenesController.selected.status}" title="#{bundle.ViewImagenesTitle_status}"/>
                     <h:outputText value="#{bundle.ViewImagenesLabel_idProd}"/>
-                    <h:outputText value="#{imagenesController.selected.idProd}" title="#{bundle.ViewImagenesTitle_idProd}"/>
+                    <h:inputText disabled="true" value="#{imagenesController.selected.idProd}" title="#{bundle.ViewImagenesTitle_idProd}"/>
                 </h:panelGrid>
                 <br />
-                <h:commandLink action="#{imagenesController.destroyAndView}" value="#{bundle.ViewImagenesDestroyLink}"/>
+                <br/>
+                <h:commandButton action="#{imagenesController.destroyAndView}" value="#{bundle.ViewImagenesDestroyLink}"/>
                 <br />
                 <br />
-                <h:link outcome="Edit" value="#{bundle.ViewImagenesEditLink}"/>
+                <h:commandButton action="Edit" value="#{bundle.ViewImagenesEditLink}"/>
                 <br />
-                <h:commandLink action="#{imagenesController.prepareCreate}" value="#{bundle.ViewImagenesCreateLink}" />
+                <br/>
+                <h:commandButton action="#{imagenesController.prepareCreate}" value="#{bundle.ViewImagenesCreateLink}" />
                 <br />
-                <h:commandLink action="#{imagenesController.prepareList}" value="#{bundle.ViewImagenesShowAllLink}"/>
+                <br/>
+                <h:commandButton action="#{imagenesController.prepareList}" value="#{bundle.ViewImagenesShowAllLink}"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.ViewImagenesIndexLink}"/>
+                <h:commandButton action="/plantilla_admin" value="#{bundle.ViewImagenesIndexLink}"/>
 
             </h:form>
         </ui:define>

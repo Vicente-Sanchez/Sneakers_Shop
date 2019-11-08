@@ -16,32 +16,35 @@
             <h:form>
                 <h:panelGrid columns="2">
                     <h:outputText value="#{bundle.ViewDetVentaLabel_id}"/>
-                    <h:outputText value="#{detVentaController.selected.id}" title="#{bundle.ViewDetVentaTitle_id}"/>
+                    <h:inputText disabled="true" value="#{detVentaController.selected.id}" title="#{bundle.ViewDetVentaTitle_id}"/>
                     <h:outputText value="#{bundle.ViewDetVentaLabel_cantidad}"/>
-                    <h:outputText value="#{detVentaController.selected.cantidad}" title="#{bundle.ViewDetVentaTitle_cantidad}"/>
+                    <h:inputText disabled="true" value="#{detVentaController.selected.cantidad}" title="#{bundle.ViewDetVentaTitle_cantidad}"/>
                     <h:outputText value="#{bundle.ViewDetVentaLabel_precioCompra}"/>
-                    <h:outputText value="#{detVentaController.selected.precioCompra}" title="#{bundle.ViewDetVentaTitle_precioCompra}"/>
+                    <h:inputText disabled="true" value="#{detVentaController.selected.precioCompra}" title="#{bundle.ViewDetVentaTitle_precioCompra}"/>
                     <h:outputText value="#{bundle.ViewDetVentaLabel_precioVenta}"/>
-                    <h:outputText value="#{detVentaController.selected.precioVenta}" title="#{bundle.ViewDetVentaTitle_precioVenta}"/>
+                    <h:inputText disabled="true" value="#{detVentaController.selected.precioVenta}" title="#{bundle.ViewDetVentaTitle_precioVenta}"/>
                     <h:outputText value="#{bundle.ViewDetVentaLabel_status}"/>
-                    <h:outputText value="#{detVentaController.selected.status}" title="#{bundle.ViewDetVentaTitle_status}"/>
+                    <h:inputText disabled="true" value="#{detVentaController.selected.status}" title="#{bundle.ViewDetVentaTitle_status}"/>
                     <h:outputText value="#{bundle.ViewDetVentaLabel_idProd}"/>
-                    <h:outputText value="#{detVentaController.selected.idProd}" title="#{bundle.ViewDetVentaTitle_idProd}"/>
+                    <h:inputText disabled="true" value="#{detVentaController.selected.idProd}" title="#{bundle.ViewDetVentaTitle_idProd}"/>
                     <h:outputText value="#{bundle.ViewDetVentaLabel_idVenta}"/>
-                    <h:outputText value="#{detVentaController.selected.idVenta}" title="#{bundle.ViewDetVentaTitle_idVenta}"/>
+                    <h:inputText disabled="true" value="#{detVentaController.selected.idVenta}" title="#{bundle.ViewDetVentaTitle_idVenta}"/>
                 </h:panelGrid>
                 <br />
-                <h:commandLink action="#{detVentaController.destroyAndView}" value="#{bundle.ViewDetVentaDestroyLink}"/>
+                <br/>
+                <h:commandButton action="#{detVentaController.destroyAndView}" value="#{bundle.ViewDetVentaDestroyLink}"/>
                 <br />
                 <br />
-                <h:link outcome="Edit" value="#{bundle.ViewDetVentaEditLink}"/>
+                <h:commandButton action="Edit" value="#{bundle.ViewDetVentaEditLink}"/>
                 <br />
-                <h:commandLink action="#{detVentaController.prepareCreate}" value="#{bundle.ViewDetVentaCreateLink}" />
+                <br/>
+                <h:commandButton action="#{detVentaController.prepareCreate}" value="#{bundle.ViewDetVentaCreateLink}" />
                 <br />
-                <h:commandLink action="#{detVentaController.prepareList}" value="#{bundle.ViewDetVentaShowAllLink}"/>
+                <br/>
+                <h:commandButton action="#{detVentaController.prepareList}" value="#{bundle.ViewDetVentaShowAllLink}"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.ViewDetVentaIndexLink}"/>
+                <h:commandButton action="/plantilla_admin" value="#{bundle.ViewDetVentaIndexLink}"/>
 
             </h:form>
         </ui:define>

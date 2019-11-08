@@ -29,13 +29,14 @@
                     <h:inputText id="status" value="#{usuarioController.selected.status}" title="#{bundle.CreateUsuarioTitle_status}" required="true" requiredMessage="#{bundle.CreateUsuarioRequiredMessage_status}"/>
                 </h:panelGrid>
                 <br />
-                <h:commandLink action="#{usuarioController.create}" value="#{bundle.CreateUsuarioSaveLink}" />
+                <br/>
+                <h:commandButton action="#{usuarioController.create}" value="#{bundle.CreateUsuarioSaveLink}" />
                 <br />
                 <br />
-                <h:commandLink action="#{usuarioController.prepareList}" value="#{bundle.CreateUsuarioShowAllLink}" immediate="true"/>
+                <h:commandButton action="#{usuarioController.prepareList}" value="#{bundle.CreateUsuarioShowAllLink}" immediate="true"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.CreateUsuarioIndexLink}"/>
+                <h:commandButton action="/plantilla_admin" value="#{bundle.CreateUsuarioIndexLink}"/>
             </h:form>
         </ui:define>
     </ui:composition>

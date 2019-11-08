@@ -16,26 +16,29 @@
             <h:form>
                 <h:panelGrid columns="2">
                     <h:outputText value="#{bundle.ViewTipoDePagoLabel_id}"/>
-                    <h:outputText value="#{tipoDePagoController.selected.id}" title="#{bundle.ViewTipoDePagoTitle_id}"/>
+                    <h:inputText disabled="true" value="#{tipoDePagoController.selected.id}" title="#{bundle.ViewTipoDePagoTitle_id}"/>
                     <h:outputText value="#{bundle.ViewTipoDePagoLabel_nombre}"/>
-                    <h:outputText value="#{tipoDePagoController.selected.nombre}" title="#{bundle.ViewTipoDePagoTitle_nombre}"/>
+                    <h:inputText disabled="true" value="#{tipoDePagoController.selected.nombre}" title="#{bundle.ViewTipoDePagoTitle_nombre}"/>
                     <h:outputText value="#{bundle.ViewTipoDePagoLabel_descripccion}"/>
-                    <h:outputText value="#{tipoDePagoController.selected.descripccion}" title="#{bundle.ViewTipoDePagoTitle_descripccion}"/>
+                    <h:inputText disabled="true" value="#{tipoDePagoController.selected.descripccion}" title="#{bundle.ViewTipoDePagoTitle_descripccion}"/>
                     <h:outputText value="#{bundle.ViewTipoDePagoLabel_status}"/>
-                    <h:outputText value="#{tipoDePagoController.selected.status}" title="#{bundle.ViewTipoDePagoTitle_status}"/>
+                    <h:inputText disabled="true" value="#{tipoDePagoController.selected.status}" title="#{bundle.ViewTipoDePagoTitle_status}"/>
                 </h:panelGrid>
                 <br />
-                <h:commandLink action="#{tipoDePagoController.destroyAndView}" value="#{bundle.ViewTipoDePagoDestroyLink}"/>
+                <br/>
+                <h:commandButton action="#{tipoDePagoController.destroyAndView}" value="#{bundle.ViewTipoDePagoDestroyLink}"/>
                 <br />
                 <br />
-                <h:link outcome="Edit" value="#{bundle.ViewTipoDePagoEditLink}"/>
+                <h:commandButton action="Edit" value="#{bundle.ViewTipoDePagoEditLink}"/>
                 <br />
-                <h:commandLink action="#{tipoDePagoController.prepareCreate}" value="#{bundle.ViewTipoDePagoCreateLink}" />
+                <br/>
+                <h:commandButton action="#{tipoDePagoController.prepareCreate}" value="#{bundle.ViewTipoDePagoCreateLink}" />
                 <br />
-                <h:commandLink action="#{tipoDePagoController.prepareList}" value="#{bundle.ViewTipoDePagoShowAllLink}"/>
+                <br/>
+                <h:commandButton action="#{tipoDePagoController.prepareList}" value="#{bundle.ViewTipoDePagoShowAllLink}"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.ViewTipoDePagoIndexLink}"/>
+                <h:commandButton action="/plantilla_admin" value="#{bundle.ViewTipoDePagoIndexLink}"/>
 
             </h:form>
         </ui:define>

@@ -28,15 +28,16 @@
                         <f:selectItems value="#{productoController.itemsAvailableSelectOne}"/>
                     </h:selectOneMenu>
                 </h:panelGrid>
-                <h:commandLink action="#{tallaController.update}" value="#{bundle.EditTallaSaveLink}"/>
+                <h:commandButton action="#{tallaController.update}" value="#{bundle.EditTallaSaveLink}"/>
                 <br />
                 <br />
-                <h:link outcome="View" value="#{bundle.EditTallaViewLink}"/>
+                <h:commandButton action="View" value="#{bundle.EditTallaViewLink}"/>
                 <br />
-                <h:commandLink action="#{tallaController.prepareList}" value="#{bundle.EditTallaShowAllLink}" immediate="true"/>
+                <br/>
+                <h:commandButton action="#{tallaController.prepareList}" value="#{bundle.EditTallaShowAllLink}" immediate="true"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.EditTallaIndexLink}" />
+                <h:commandButton action="/plantilla_admin" value="#{bundle.EditTallaIndexLink}" />
             </h:form>
         </ui:define>
     </ui:composition>

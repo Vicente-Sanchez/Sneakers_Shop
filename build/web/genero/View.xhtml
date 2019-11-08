@@ -16,24 +16,27 @@
             <h:form>
                 <h:panelGrid columns="2">
                     <h:outputText value="#{bundle.ViewGeneroLabel_id}"/>
-                    <h:outputText value="#{generoController.selected.id}" title="#{bundle.ViewGeneroTitle_id}"/>
+                    <h:inputText disabled="true" value="#{generoController.selected.id}" title="#{bundle.ViewGeneroTitle_id}"/>
                     <h:outputText value="#{bundle.ViewGeneroLabel_nombre}"/>
-                    <h:outputText value="#{generoController.selected.nombre}" title="#{bundle.ViewGeneroTitle_nombre}"/>
+                    <h:inputText disabled="true" value="#{generoController.selected.nombre}" title="#{bundle.ViewGeneroTitle_nombre}"/>
                     <h:outputText value="#{bundle.ViewGeneroLabel_status}"/>
-                    <h:outputText value="#{generoController.selected.status}" title="#{bundle.ViewGeneroTitle_status}"/>
+                    <h:inputText disabled="true" value="#{generoController.selected.status}" title="#{bundle.ViewGeneroTitle_status}"/>
                 </h:panelGrid>
                 <br />
-                <h:commandLink action="#{generoController.destroyAndView}" value="#{bundle.ViewGeneroDestroyLink}"/>
+                <br/>
+                <h:commandButton action="#{generoController.destroyAndView}" value="#{bundle.ViewGeneroDestroyLink}"/>
                 <br />
                 <br />
-                <h:link outcome="Edit" value="#{bundle.ViewGeneroEditLink}"/>
+                <h:commandButton action="Edit" value="#{bundle.ViewGeneroEditLink}"/>
                 <br />
-                <h:commandLink action="#{generoController.prepareCreate}" value="#{bundle.ViewGeneroCreateLink}" />
+                <br/>
+                <h:commandButton action="#{generoController.prepareCreate}" value="#{bundle.ViewGeneroCreateLink}" />
                 <br />
-                <h:commandLink action="#{generoController.prepareList}" value="#{bundle.ViewGeneroShowAllLink}"/>
+                <br/>
+                <h:commandButton action="#{generoController.prepareList}" value="#{bundle.ViewGeneroShowAllLink}"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.ViewGeneroIndexLink}"/>
+                <h:commandButton action="/plantilla_admin" value="#{bundle.ViewGeneroIndexLink}"/>
 
             </h:form>
         </ui:define>

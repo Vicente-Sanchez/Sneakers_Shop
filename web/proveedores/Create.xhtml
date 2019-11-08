@@ -39,13 +39,14 @@
                     <h:inputText id="status" value="#{proveedoresController.selected.status}" title="#{bundle.CreateProveedoresTitle_status}" required="true" requiredMessage="#{bundle.CreateProveedoresRequiredMessage_status}"/>
                 </h:panelGrid>
                 <br />
-                <h:commandLink action="#{proveedoresController.create}" value="#{bundle.CreateProveedoresSaveLink}" />
+                <br/>
+                <h:commandButton action="#{proveedoresController.create}" value="#{bundle.CreateProveedoresSaveLink}" />
                 <br />
                 <br />
-                <h:commandLink action="#{proveedoresController.prepareList}" value="#{bundle.CreateProveedoresShowAllLink}" immediate="true"/>
+                <h:commandButton action="#{proveedoresController.prepareList}" value="#{bundle.CreateProveedoresShowAllLink}" immediate="true"/>
                 <br />
                 <br />
-                <h:link outcome="/index" value="#{bundle.CreateProveedoresIndexLink}"/>
+                <h:commandButton action="/plantilla_admin" value="#{bundle.CreateProveedoresIndexLink}"/>
             </h:form>
         </ui:define>
     </ui:composition>
