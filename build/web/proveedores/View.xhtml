@@ -14,46 +14,167 @@
                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
             </h:panelGroup>
             <h:form>
-                <h:panelGrid columns="2">
-                    <h:outputText value="#{bundle.ViewProveedoresLabel_id}"/>
-                    <h:inputText disabled="true" value="#{proveedoresController.selected.id}" title="#{bundle.ViewProveedoresTitle_id}"/>
-                    <h:outputText value="#{bundle.ViewProveedoresLabel_razonSocial}"/>
-                    <h:inputText disabled="true" value="#{proveedoresController.selected.razonSocial}" title="#{bundle.ViewProveedoresTitle_razonSocial}"/>
-                    <h:outputText value="#{bundle.ViewProveedoresLabel_rfc}"/>
-                    <h:inputText disabled="true" value="#{proveedoresController.selected.rfc}" title="#{bundle.ViewProveedoresTitle_rfc}"/>
-                    <h:outputText value="#{bundle.ViewProveedoresLabel_numInt}"/>
-                    <h:inputText disabled="true" value="#{proveedoresController.selected.numInt}" title="#{bundle.ViewProveedoresTitle_numInt}"/>
-                    <h:outputText value="#{bundle.ViewProveedoresLabel_numExt}"/>
-                    <h:inputText disabled="true" value="#{proveedoresController.selected.numExt}" title="#{bundle.ViewProveedoresTitle_numExt}"/>
-                    <h:outputText value="#{bundle.ViewProveedoresLabel_colonia}"/>
-                    <h:inputText disabled="true" value="#{proveedoresController.selected.colonia}" title="#{bundle.ViewProveedoresTitle_colonia}"/>
-                    <h:outputText value="#{bundle.ViewProveedoresLabel_cp}"/>
-                    <h:inputText disabled="true" value="#{proveedoresController.selected.cp}" title="#{bundle.ViewProveedoresTitle_cp}"/>
-                    <h:outputText value="#{bundle.ViewProveedoresLabel_telefono1}"/>
-                    <h:inputText disabled="true" value="#{proveedoresController.selected.telefono1}" title="#{bundle.ViewProveedoresTitle_telefono1}"/>
-                    <h:outputText value="#{bundle.ViewProveedoresLabel_telefono2}"/>
-                    <h:inputText disabled="true" value="#{proveedoresController.selected.telefono2}" title="#{bundle.ViewProveedoresTitle_telefono2}"/>
-                    <h:outputText value="#{bundle.ViewProveedoresLabel_email}"/>
-                    <h:inputText disabled="true" value="#{proveedoresController.selected.email}" title="#{bundle.ViewProveedoresTitle_email}"/>
-                    <h:outputText value="#{bundle.ViewProveedoresLabel_status}"/>
-                    <h:inputText disabled="true" value="#{proveedoresController.selected.status}" title="#{bundle.ViewProveedoresTitle_status}"/>
-                </h:panelGrid>
-                <br />
-                <br/>
-                <h:commandButton action="#{proveedoresController.destroyAndView}" value="#{bundle.ViewProveedoresDestroyLink}"/>
-                <br />
-                <br />
-                <h:commandButton action="Edit" value="#{bundle.ViewProveedoresEditLink}"/>
-                <br />
-                <br/>
-                <h:commandButton action="#{proveedoresController.prepareCreate}" value="#{bundle.ViewProveedoresCreateLink}" />
-                <br />
-                <br/>
-                <h:commandButton action="#{proveedoresController.prepareList}" value="#{bundle.ViewProveedoresShowAllLink}"/>
-                <br />
-                <br />
-                <h:commandButton action="/plantilla_admin" value="#{bundle.ViewProveedoresIndexLink}"/>
-
+                <div class="container">
+                    <div class="card">
+                        <div class="card-header">
+                            <h:outputText value="#{bundle.ViewProveedoresTitle}"></h:outputText>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputText value="#{bundle.ViewProveedoresLabel_id}"/>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText disabled="true" value="#{proveedoresController.selected.id}" title="#{bundle.ViewProveedoresTitle_id}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputText value="#{bundle.ViewProveedoresLabel_razonSocial}"/>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText disabled="true" value="#{proveedoresController.selected.razonSocial}" title="#{bundle.ViewProveedoresTitle_razonSocial}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputText value="#{bundle.ViewProveedoresLabel_rfc}"/>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText disabled="true" value="#{proveedoresController.selected.rfc}" title="#{bundle.ViewProveedoresTitle_rfc}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputText value="#{bundle.ViewProveedoresLabel_numInt}"/>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText disabled="true" value="#{proveedoresController.selected.numInt}" title="#{bundle.ViewProveedoresTitle_numInt}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputText value="#{bundle.ViewProveedoresLabel_numExt}"/>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText disabled="true" value="#{proveedoresController.selected.numExt}" title="#{bundle.ViewProveedoresTitle_numExt}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputText value="#{bundle.ViewProveedoresLabel_colonia}"/>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText disabled="true" value="#{proveedoresController.selected.colonia}" title="#{bundle.ViewProveedoresTitle_colonia}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputText value="#{bundle.ViewProveedoresLabel_cp}"/>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText disabled="true" value="#{proveedoresController.selected.cp}" title="#{bundle.ViewProveedoresTitle_cp}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputText value="#{bundle.ViewProveedoresLabel_telefono1}"/>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText disabled="true" value="#{proveedoresController.selected.telefono1}" title="#{bundle.ViewProveedoresTitle_telefono1}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputText value="#{bundle.ViewProveedoresLabel_telefono2}"/>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText disabled="true" value="#{proveedoresController.selected.telefono2}" title="#{bundle.ViewProveedoresTitle_telefono2}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputText value="#{bundle.ViewProveedoresLabel_email}"/>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText disabled="true" value="#{proveedoresController.selected.email}" title="#{bundle.ViewProveedoresTitle_email}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputText value="#{bundle.ViewProveedoresLabel_status}"/>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText disabled="true" value="#{proveedoresController.selected.status}" title="#{bundle.ViewProveedoresTitle_status}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="float: right;">
+                                <div class="">
+                                    <td>
+                                        <h:commandButton action="#{proveedoresController.destroyAndView}" value="#{bundle.ViewProveedoresDestroyLink}" class="btn-danger"/>
+                                    </td>
+                                    <td>
+                                        <h:commandButton action="Edit" value="#{bundle.ViewProveedoresEditLink}" class="btn-warning"/>
+                                    </td>
+                                    <td>
+                                        <h:commandButton action="#{proveedoresController.prepareCreate}" value="#{bundle.ViewProveedoresCreateLink}" class="btn-success"/>
+                                    </td>
+                                    <td>
+                                        <h:commandButton action="#{proveedoresController.prepareList}" value="#{bundle.ViewProveedoresShowAllLink}" class="btn-info"/>
+                                    </td>
+                                    <td>
+                                        <h:commandButton action="/plantilla_admin" value="#{bundle.ViewProveedoresIndexLink}" class="btn-primary"/>
+                                    </td>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </h:form>
         </ui:define>
     </ui:composition>

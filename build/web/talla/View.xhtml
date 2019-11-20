@@ -14,34 +14,95 @@
                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
             </h:panelGroup>
             <h:form>
-                <h:panelGrid columns="2">
-                    <h:outputText value="#{bundle.ViewTallaLabel_id}"/>
-                    <h:inputText disabled="true" value="#{tallaController.selected.id}" title="#{bundle.ViewTallaTitle_id}"/>
-                    <h:outputText value="#{bundle.ViewTallaLabel_numeroTalla}"/>
-                    <h:inputText disabled="true" value="#{tallaController.selected.numeroTalla}" title="#{bundle.ViewTallaTitle_numeroTalla}"/>
-                    <h:outputText value="#{bundle.ViewTallaLabel_cantidad}"/>
-                    <h:inputText disabled="true" value="#{tallaController.selected.cantidad}" title="#{bundle.ViewTallaTitle_cantidad}"/>
-                    <h:outputText value="#{bundle.ViewTallaLabel_status}"/>
-                    <h:inputText disabled="true" value="#{tallaController.selected.status}" title="#{bundle.ViewTallaTitle_status}"/>
-                    <h:outputText value="#{bundle.ViewTallaLabel_idProducto}"/>
-                    <h:inputText disabled="true" value="#{tallaController.selected.idProducto}" title="#{bundle.ViewTallaTitle_idProducto}"/>
-                </h:panelGrid>
-                <br />
-                <br/>
-                <h:commandButton action="#{tallaController.destroyAndView}" value="#{bundle.ViewTallaDestroyLink}"/>
-                <br />
-                <br />
-                <h:commandButton action="Edit" value="#{bundle.ViewTallaEditLink}"/>
-                <br />
-                <br/>
-                <h:commandButton action="#{tallaController.prepareCreate}" value="#{bundle.ViewTallaCreateLink}" />
-                <br />
-                <br/>
-                <h:commandButton action="#{tallaController.prepareList}" value="#{bundle.ViewTallaShowAllLink}"/>
-                <br />
-                <br />
-                <h:commandButton action="/plantilla_admin" value="#{bundle.ViewTallaIndexLink}"/>
-
+                <div class="container">
+                    <div class="card">
+                        <div class="card-header">
+                            <h:outputText value="#{bundle.ViewCategoriasTitle}"></h:outputText>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputText value="#{bundle.ViewTallaLabel_id}"/>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText disabled="true" value="#{tallaController.selected.id}" title="#{bundle.ViewTallaTitle_id}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputText value="#{bundle.ViewTallaLabel_numeroTalla}"/>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText disabled="true" value="#{tallaController.selected.numeroTalla}" title="#{bundle.ViewTallaTitle_numeroTalla}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputText value="#{bundle.ViewTallaLabel_cantidad}"/>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText disabled="true" value="#{tallaController.selected.cantidad}" title="#{bundle.ViewTallaTitle_cantidad}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputText value="#{bundle.ViewTallaLabel_status}"/>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText disabled="true" value="#{tallaController.selected.status}" title="#{bundle.ViewTallaTitle_status}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputText value="#{bundle.ViewTallaLabel_idProducto}"/>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText disabled="true" value="#{tallaController.selected.idProducto}" title="#{bundle.ViewTallaTitle_idProducto}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="float: right;">
+                                <div class="">
+                                    <td>
+                                        <h:commandButton action="#{tallaController.destroyAndView}" value="#{bundle.ViewTallaDestroyLink}" class="btn-danger"/>
+                                    </td>
+                                    <td>
+                                        <h:commandButton action="Edit" value="#{bundle.ViewTallaEditLink}" class="btn-warning"/>
+                                    </td>
+                                    <td>
+                                        <h:commandButton action="#{tallaController.prepareCreate}" value="#{bundle.ViewTallaCreateLink}" class="btn-success"/>
+                                    </td>
+                                    <td>
+                                        <h:commandButton action="#{tallaController.prepareList}" value="#{bundle.ViewTallaShowAllLink}" class="btn-info"/>
+                                    </td>
+                                    <td>
+                                        <h:commandButton action="/plantilla_admin" value="#{bundle.ViewTallaIndexLink}" class="btn-primary"/>
+                                    </td>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </h:form>
         </ui:define>
     </ui:composition>

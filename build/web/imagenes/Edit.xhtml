@@ -14,28 +14,78 @@
                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
             </h:panelGroup>
             <h:form>
-                <h:panelGrid columns="2">
-                    <h:outputLabel value="#{bundle.EditImagenesLabel_id}" for="id" />
-                    <h:inputText id="id" value="#{imagenesController.selected.id}" title="#{bundle.EditImagenesTitle_id}" required="true" requiredMessage="#{bundle.EditImagenesRequiredMessage_id}"/>
-                    <h:outputLabel value="#{bundle.EditImagenesLabel_ruta}" for="ruta" />
-                    <h:inputText id="ruta" value="#{imagenesController.selected.ruta}" title="#{bundle.EditImagenesTitle_ruta}" required="true" requiredMessage="#{bundle.EditImagenesRequiredMessage_ruta}"/>
-                    <h:outputLabel value="#{bundle.EditImagenesLabel_status}" for="status" />
-                    <h:inputText id="status" value="#{imagenesController.selected.status}" title="#{bundle.EditImagenesTitle_status}" required="true" requiredMessage="#{bundle.EditImagenesRequiredMessage_status}"/>
-                    <h:outputLabel value="#{bundle.EditImagenesLabel_idProd}" for="idProd" />
-                    <h:selectOneMenu id="idProd" value="#{imagenesController.selected.idProd}" title="#{bundle.EditImagenesTitle_idProd}" required="true" requiredMessage="#{bundle.EditImagenesRequiredMessage_idProd}">
-                        <f:selectItems value="#{productoController.itemsAvailableSelectOne}"/>
-                    </h:selectOneMenu>
-                </h:panelGrid>
-                <h:commandButton action="#{imagenesController.update}" value="#{bundle.EditImagenesSaveLink}"/>
-                <br />
-                <br />
-                <h:commandButton action="View" value="#{bundle.EditImagenesViewLink}"/>
-                <br />
-                <br/>
-                <h:commandButton action="#{imagenesController.prepareList}" value="#{bundle.EditImagenesShowAllLink}" immediate="true"/>
-                <br />
-                <br />
-                <h:commandButton action="/plantilla_admin" value="#{bundle.EditImagenesIndexLink}" />
+                <div class="container">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputLabel value="#{bundle.EditImagenesLabel_id}" for="id" />
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText id="id" value="#{imagenesController.selected.id}" title="#{bundle.EditImagenesTitle_id}" required="true" requiredMessage="#{bundle.EditImagenesRequiredMessage_id}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputLabel value="#{bundle.EditImagenesLabel_ruta}" for="ruta" />
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText id="ruta" value="#{imagenesController.selected.ruta}" title="#{bundle.EditImagenesTitle_ruta}" required="true" requiredMessage="#{bundle.EditImagenesRequiredMessage_ruta}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputLabel value="#{bundle.EditImagenesLabel_status}" for="status" />
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText id="status" value="#{imagenesController.selected.status}" title="#{bundle.EditImagenesTitle_status}" required="true" requiredMessage="#{bundle.EditImagenesRequiredMessage_status}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputLabel value="#{bundle.EditImagenesLabel_idProd}" for="idProd" />
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:selectOneMenu id="idProd" value="#{imagenesController.selected.idProd}" title="#{bundle.EditImagenesTitle_idProd}" required="true" requiredMessage="#{bundle.EditImagenesRequiredMessage_idProd}">
+                                                <f:selectItems value="#{productoController.itemsAvailableSelectOne}"/>
+                                            </h:selectOneMenu>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="float: right;">
+                                <td>
+                                    <h:commandButton action="#{imagenesController.update}" value="#{bundle.EditImagenesSaveLink}" class="btn-success"/>
+                                </td>
+                                <td>
+                                    <h:commandButton action="View" value="#{bundle.EditImagenesViewLink}" class="btn-info"/>
+                                </td>
+                                <td>
+                                    <h:commandButton action="#{imagenesController.prepareList}" value="#{bundle.EditImagenesShowAllLink}" immediate="true" class="btn-warning"/>
+                                </td>
+                                <td>
+                                    <h:commandButton action="/plantilla_admin" value="#{bundle.EditImagenesIndexLink}" class="btn-primary"/>
+                                </td>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </h:form>
         </ui:define>
     </ui:composition>

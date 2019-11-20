@@ -14,32 +14,84 @@
                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
             </h:panelGroup>
             <h:form>
-                <h:panelGrid columns="2">
-                    <h:outputText value="#{bundle.ViewTipoDePagoLabel_id}"/>
-                    <h:inputText disabled="true" value="#{tipoDePagoController.selected.id}" title="#{bundle.ViewTipoDePagoTitle_id}"/>
-                    <h:outputText value="#{bundle.ViewTipoDePagoLabel_nombre}"/>
-                    <h:inputText disabled="true" value="#{tipoDePagoController.selected.nombre}" title="#{bundle.ViewTipoDePagoTitle_nombre}"/>
-                    <h:outputText value="#{bundle.ViewTipoDePagoLabel_descripccion}"/>
-                    <h:inputText disabled="true" value="#{tipoDePagoController.selected.descripccion}" title="#{bundle.ViewTipoDePagoTitle_descripccion}"/>
-                    <h:outputText value="#{bundle.ViewTipoDePagoLabel_status}"/>
-                    <h:inputText disabled="true" value="#{tipoDePagoController.selected.status}" title="#{bundle.ViewTipoDePagoTitle_status}"/>
-                </h:panelGrid>
-                <br />
-                <br/>
-                <h:commandButton action="#{tipoDePagoController.destroyAndView}" value="#{bundle.ViewTipoDePagoDestroyLink}"/>
-                <br />
-                <br />
-                <h:commandButton action="Edit" value="#{bundle.ViewTipoDePagoEditLink}"/>
-                <br />
-                <br/>
-                <h:commandButton action="#{tipoDePagoController.prepareCreate}" value="#{bundle.ViewTipoDePagoCreateLink}" />
-                <br />
-                <br/>
-                <h:commandButton action="#{tipoDePagoController.prepareList}" value="#{bundle.ViewTipoDePagoShowAllLink}"/>
-                <br />
-                <br />
-                <h:commandButton action="/plantilla_admin" value="#{bundle.ViewTipoDePagoIndexLink}"/>
-
+                <div class="container">
+                    <div class="card">
+                        <div class="card-header">
+                            <h:outputText value="#{bundle.ViewCategoriasTitle}"></h:outputText>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputText value="#{bundle.ViewTipoDePagoLabel_id}"/>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText disabled="true" value="#{tipoDePagoController.selected.id}" title="#{bundle.ViewTipoDePagoTitle_id}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputText value="#{bundle.ViewTipoDePagoLabel_nombre}"/>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText disabled="true" value="#{tipoDePagoController.selected.nombre}" title="#{bundle.ViewTipoDePagoTitle_nombre}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputText value="#{bundle.ViewTipoDePagoLabel_descripccion}"/>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText disabled="true" value="#{tipoDePagoController.selected.descripccion}" title="#{bundle.ViewTipoDePagoTitle_descripccion}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputText value="#{bundle.ViewTipoDePagoLabel_status}"/>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText disabled="true" value="#{tipoDePagoController.selected.status}" title="#{bundle.ViewTipoDePagoTitle_status}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="float: right;">
+                                <div class="">
+                                    <td>
+                                        <h:commandButton action="#{tipoDePagoController.destroyAndView}" value="#{bundle.ViewTipoDePagoDestroyLink}" class="btn-danger"/>
+                                    </td>
+                                    <td>
+                                        <h:commandButton action="Edit" value="#{bundle.ViewTipoDePagoEditLink}" class="btn-warning"/>
+                                    </td>
+                                    <td>
+                                        <h:commandButton action="#{tipoDePagoController.prepareCreate}" value="#{bundle.ViewTipoDePagoCreateLink}" class="btn-success"/>
+                                    </td>
+                                    <td>
+                                        <h:commandButton action="#{tipoDePagoController.prepareList}" value="#{bundle.ViewTipoDePagoShowAllLink}" class="btn-info"/>
+                                    </td>
+                                    <td>
+                                        <h:commandButton action="/plantilla_admin" value="#{bundle.ViewTipoDePagoIndexLink}" class="btn-primary"/>
+                                    </td>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </h:form>
         </ui:define>
     </ui:composition>

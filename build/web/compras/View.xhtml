@@ -14,40 +14,121 @@
                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
             </h:panelGroup>
             <h:form>
-                <h:panelGrid columns="2">
-                    <h:outputText value="#{bundle.ViewComprasLabel_id}"/>
-                    <h:inputText disabled="true" value="#{comprasController.selected.id}" title="#{bundle.ViewComprasTitle_id}"/>
-                    <h:outputText value="#{bundle.ViewComprasLabel_fecha}"/>
-                    <h:inputText disabled="true" value="#{comprasController.selected.fecha}" title="#{bundle.ViewComprasTitle_fecha}">
-                        <f:convertDateTime pattern="MM/dd/yyyy" />
-                    </h:inputText>>
-                    <h:outputText value="#{bundle.ViewComprasLabel_subtotal}"/>
-                    <h:inputText disabled="true" value="#{comprasController.selected.subtotal}" title="#{bundle.ViewComprasTitle_subtotal}"/>
-                    <h:outputText value="#{bundle.ViewComprasLabel_iva}"/>
-                    <h:inputText disabled="true" value="#{comprasController.selected.iva}" title="#{bundle.ViewComprasTitle_iva}"/>
-                    <h:outputText value="#{bundle.ViewComprasLabel_total}"/>
-                    <h:inputText disabled="true" value="#{comprasController.selected.total}" title="#{bundle.ViewComprasTitle_total}"/>
-                    <h:outputText value="#{bundle.ViewComprasLabel_status}"/>
-                    <h:inputText disabled="true" value="#{comprasController.selected.status}" title="#{bundle.ViewComprasTitle_status}"/>
-                    <h:outputText value="#{bundle.ViewComprasLabel_idProv}"/>
-                    <h:inputText disabled="true" value="#{comprasController.selected.idProv}" title="#{bundle.ViewComprasTitle_idProv}"/>
-                </h:panelGrid>
-                <br />
-                <br/>
-                <h:commandButton action="#{comprasController.destroyAndView}" value="#{bundle.ViewComprasDestroyLink}"/>
-                <br />
-                <br />
-                <h:commandButton action="Edit" value="#{bundle.ViewComprasEditLink}"/>
-                <br />
-                <br/>
-                <h:commandButton action="#{comprasController.prepareCreate}" value="#{bundle.ViewComprasCreateLink}" />
-                <br />
-                <br/>
-                <h:commandButton action="#{comprasController.prepareList}" value="#{bundle.ViewComprasShowAllLink}"/>
-                <br />
-                <br />
-                <h:commandButton action="/plantilla_admin" value="#{bundle.ViewComprasIndexLink}"/>
-
+                <div class="container">
+                    <div class="card">
+                        <div class="card-header">
+                            <h:outputText value="#{bundle.ViewComprasTitle}"></h:outputText>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputText value="#{bundle.ViewComprasLabel_id}"/>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText disabled="true" value="#{comprasController.selected.id}" title="#{bundle.ViewComprasTitle_id}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputText value="#{bundle.ViewComprasLabel_fecha}"/>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText disabled="true" value="#{comprasController.selected.fecha}" title="#{bundle.ViewComprasTitle_fecha}">
+                                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                                            </h:inputText>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputText value="#{bundle.ViewComprasLabel_subtotal}"/>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText disabled="true" value="#{comprasController.selected.subtotal}" title="#{bundle.ViewComprasTitle_subtotal}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputText value="#{bundle.ViewComprasLabel_iva}"/>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText disabled="true" value="#{comprasController.selected.iva}" title="#{bundle.ViewComprasTitle_iva}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputText value="#{bundle.ViewComprasLabel_total}"/>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText disabled="true" value="#{comprasController.selected.total}" title="#{bundle.ViewComprasTitle_total}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputText value="#{bundle.ViewComprasLabel_status}"/>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText disabled="true" value="#{comprasController.selected.status}" title="#{bundle.ViewComprasTitle_status}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputText value="#{bundle.ViewComprasLabel_idProv}"/>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText disabled="true" value="#{comprasController.selected.idProv}" title="#{bundle.ViewComprasTitle_idProv}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="float: right;">
+                                <div class="">
+                                    <td>
+                                        <h:commandButton action="#{comprasController.destroyAndView}" value="#{bundle.ViewComprasDestroyLink}" class="btn-danger"/>
+                                    </td>
+                                    <td>
+                                        <h:commandButton action="Edit" value="#{bundle.ViewComprasEditLink}" class="btn-warning"/>
+                                    </td>
+                                    <td>
+                                        <h:commandButton action="#{comprasController.prepareCreate}" value="#{bundle.ViewComprasCreateLink}" class="btn-success"/>
+                                    </td>
+                                    <td>
+                                        <h:commandButton action="#{comprasController.prepareList}" value="#{bundle.ViewComprasShowAllLink}" class="btn-info"/>
+                                    </td>
+                                    <td>
+                                        <h:commandButton action="/plantilla_admin" value="#{bundle.ViewComprasIndexLink}" class="btn-primary"/>
+                                    </td>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </h:form>
         </ui:define>
     </ui:composition>

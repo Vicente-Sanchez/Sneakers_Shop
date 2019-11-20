@@ -14,29 +14,97 @@
                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
             </h:panelGroup>
             <h:form>
-                <h:panelGrid columns="2">
-                    <h:outputLabel value="#{bundle.CreateUsuarioLabel_id}" for="id" />
-                    <h:inputText id="id" value="#{usuarioController.selected.id}" title="#{bundle.CreateUsuarioTitle_id}" required="true" requiredMessage="#{bundle.CreateUsuarioRequiredMessage_id}"/>
-                    <h:outputLabel value="#{bundle.CreateUsuarioLabel_nombre}" for="nombre" />
-                    <h:inputText id="nombre" value="#{usuarioController.selected.nombre}" title="#{bundle.CreateUsuarioTitle_nombre}" required="true" requiredMessage="#{bundle.CreateUsuarioRequiredMessage_nombre}"/>
-                    <h:outputLabel value="#{bundle.CreateUsuarioLabel_usu}" for="usu" />
-                    <h:inputText id="usu" value="#{usuarioController.selected.usu}" title="#{bundle.CreateUsuarioTitle_usu}" required="true" requiredMessage="#{bundle.CreateUsuarioRequiredMessage_usu}"/>
-                    <h:outputLabel value="#{bundle.CreateUsuarioLabel_pasword}" for="pasword" />
-                    <h:inputText id="pasword" value="#{usuarioController.selected.pasword}" title="#{bundle.CreateUsuarioTitle_pasword}" required="true" requiredMessage="#{bundle.CreateUsuarioRequiredMessage_pasword}"/>
-                    <h:outputLabel value="#{bundle.CreateUsuarioLabel_nivelUsuario}" for="nivelUsuario" />
-                    <h:inputText id="nivelUsuario" value="#{usuarioController.selected.nivelUsuario}" title="#{bundle.CreateUsuarioTitle_nivelUsuario}" required="true" requiredMessage="#{bundle.CreateUsuarioRequiredMessage_nivelUsuario}"/>
-                    <h:outputLabel value="#{bundle.CreateUsuarioLabel_status}" for="status" />
-                    <h:inputText id="status" value="#{usuarioController.selected.status}" title="#{bundle.CreateUsuarioTitle_status}" required="true" requiredMessage="#{bundle.CreateUsuarioRequiredMessage_status}"/>
-                </h:panelGrid>
-                <br />
-                <br/>
-                <h:commandButton action="#{usuarioController.create}" value="#{bundle.CreateUsuarioSaveLink}" />
-                <br />
-                <br />
-                <h:commandButton action="#{usuarioController.prepareList}" value="#{bundle.CreateUsuarioShowAllLink}" immediate="true"/>
-                <br />
-                <br />
-                <h:commandButton action="/plantilla_admin" value="#{bundle.CreateUsuarioIndexLink}"/>
+                <div class="container">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputLabel value="#{bundle.CreateUsuarioLabel_id}" for="id" />
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText id="id" value="#{usuarioController.selected.id}" title="#{bundle.CreateUsuarioTitle_id}" required="true" requiredMessage="#{bundle.CreateUsuarioRequiredMessage_id}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputLabel value="#{bundle.CreateUsuarioLabel_nombre}" for="nombre" />
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText id="nombre" value="#{usuarioController.selected.nombre}" title="#{bundle.CreateUsuarioTitle_nombre}" required="true" requiredMessage="#{bundle.CreateUsuarioRequiredMessage_nombre}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputLabel value="#{bundle.CreateUsuarioLabel_usu}" for="usu" />
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText id="usu" value="#{usuarioController.selected.usu}" title="#{bundle.CreateUsuarioTitle_usu}" required="true" requiredMessage="#{bundle.CreateUsuarioRequiredMessage_usu}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputLabel value="#{bundle.CreateUsuarioLabel_pasword}" for="pasword" />
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText id="pasword" value="#{usuarioController.selected.pasword}" title="#{bundle.CreateUsuarioTitle_pasword}" required="true" requiredMessage="#{bundle.CreateUsuarioRequiredMessage_pasword}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputLabel value="#{bundle.CreateUsuarioLabel_nivelUsuario}" for="nivelUsuario" />
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText id="nivelUsuario" value="#{usuarioController.selected.nivelUsuario}" title="#{bundle.CreateUsuarioTitle_nivelUsuario}" required="true" requiredMessage="#{bundle.CreateUsuarioRequiredMessage_nivelUsuario}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputLabel value="#{bundle.CreateUsuarioLabel_status}" for="status" />
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText id="status" value="#{usuarioController.selected.status}" title="#{bundle.CreateUsuarioTitle_status}" required="true" requiredMessage="#{bundle.CreateUsuarioRequiredMessage_status}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="float: right;">
+                                <td>
+                                    <h:commandButton action="#{usuarioController.create}" value="#{bundle.CreateUsuarioSaveLink}" class="btn-success"/>
+                                </td>
+                                <td>
+                                    <h:commandButton action="#{usuarioController.prepareList}" value="#{bundle.CreateUsuarioShowAllLink}" immediate="true" class="btn-info"/>
+                                </td>
+                                <td>
+                                    <h:commandButton action="/plantilla_admin" value="#{bundle.CreateUsuarioIndexLink}" class="btn-info"/>
+                                </td>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </h:form>
         </ui:define>
     </ui:composition>

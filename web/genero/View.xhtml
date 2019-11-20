@@ -14,30 +14,71 @@
                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
             </h:panelGroup>
             <h:form>
-                <h:panelGrid columns="2">
-                    <h:outputText value="#{bundle.ViewGeneroLabel_id}"/>
-                    <h:inputText disabled="true" value="#{generoController.selected.id}" title="#{bundle.ViewGeneroTitle_id}"/>
-                    <h:outputText value="#{bundle.ViewGeneroLabel_nombre}"/>
-                    <h:inputText disabled="true" value="#{generoController.selected.nombre}" title="#{bundle.ViewGeneroTitle_nombre}"/>
-                    <h:outputText value="#{bundle.ViewGeneroLabel_status}"/>
-                    <h:inputText disabled="true" value="#{generoController.selected.status}" title="#{bundle.ViewGeneroTitle_status}"/>
-                </h:panelGrid>
-                <br />
-                <br/>
-                <h:commandButton action="#{generoController.destroyAndView}" value="#{bundle.ViewGeneroDestroyLink}"/>
-                <br />
-                <br />
-                <h:commandButton action="Edit" value="#{bundle.ViewGeneroEditLink}"/>
-                <br />
-                <br/>
-                <h:commandButton action="#{generoController.prepareCreate}" value="#{bundle.ViewGeneroCreateLink}" />
-                <br />
-                <br/>
-                <h:commandButton action="#{generoController.prepareList}" value="#{bundle.ViewGeneroShowAllLink}"/>
-                <br />
-                <br />
-                <h:commandButton action="/plantilla_admin" value="#{bundle.ViewGeneroIndexLink}"/>
-
+                <div class="container">
+                    <div class="card">
+                        <div class="card-header">
+                            <h:outputText value="#{bundle.ViewGeneroTitle}"></h:outputText>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputText value="#{bundle.ViewGeneroLabel_id}"/>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText disabled="true" value="#{generoController.selected.id}" title="#{bundle.ViewGeneroTitle_id}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputText value="#{bundle.ViewGeneroLabel_nombre}"/>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText disabled="true" value="#{generoController.selected.nombre}" title="#{bundle.ViewGeneroTitle_nombre}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputText value="#{bundle.ViewGeneroLabel_status}"/>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText disabled="true" value="#{generoController.selected.status}" title="#{bundle.ViewGeneroTitle_status}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="float: right;">
+                                <div class="">
+                                    <td>
+                                        <h:commandButton action="#{generoController.destroyAndView}" value="#{bundle.ViewGeneroDestroyLink}" class="btn-danger"/>
+                                    </td>
+                                    <td>
+                                        <h:commandButton action="Edit" value="#{bundle.ViewGeneroEditLink}" class="btn-warning"/>
+                                    </td>
+                                    <td>
+                                        <h:commandButton action="#{generoController.prepareCreate}" value="#{bundle.ViewGeneroCreateLink}" class="btn-success"/>
+                                    </td>
+                                    <td>
+                                        <h:commandButton action="#{generoController.prepareList}" value="#{bundle.ViewGeneroShowAllLink}" class="btn-info"/>
+                                    </td>
+                                    <td>
+                                        <h:commandButton action="/plantilla_admin" value="#{bundle.ViewGeneroIndexLink}" class="btn-primary"/>
+                                    </td>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </h:form>
         </ui:define>
     </ui:composition>

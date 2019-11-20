@@ -14,42 +14,134 @@
                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
             </h:panelGroup>
             <h:form>
-                <h:panelGrid columns="2">
-                    <h:outputText value="#{bundle.ViewVentasLabel_id}"/>
-                    <h:inputText disabled="true" value="#{ventasController.selected.id}" title="#{bundle.ViewVentasTitle_id}"/>
-                    <h:outputText value="#{bundle.ViewVentasLabel_fecha}"/>
-                    <h:inputText disabled="true" value="#{ventasController.selected.fecha}" title="#{bundle.ViewVentasTitle_fecha}">
-                        <f:convertDateTime pattern="MM/dd/yyyy" />
-                    </h:inputText>>
-                    <h:outputText value="#{bundle.ViewVentasLabel_idCliente}"/>
-                    <h:inputText disabled="true" value="#{ventasController.selected.idCliente}" title="#{bundle.ViewVentasTitle_idCliente}"/>
-                    <h:outputText value="#{bundle.ViewVentasLabel_subtotal}"/>
-                    <h:inputText disabled="true" value="#{ventasController.selected.subtotal}" title="#{bundle.ViewVentasTitle_subtotal}"/>
-                    <h:outputText value="#{bundle.ViewVentasLabel_iva}"/>
-                    <h:inputText disabled="true" value="#{ventasController.selected.iva}" title="#{bundle.ViewVentasTitle_iva}"/>
-                    <h:outputText value="#{bundle.ViewVentasLabel_total}"/>
-                    <h:inputText disabled="true" value="#{ventasController.selected.total}" title="#{bundle.ViewVentasTitle_total}"/>
-                    <h:outputText value="#{bundle.ViewVentasLabel_status}"/>
-                    <h:inputText disabled="true" value="#{ventasController.selected.status}" title="#{bundle.ViewVentasTitle_status}"/>
-                    <h:outputText value="#{bundle.ViewVentasLabel_idTipodepago}"/>
-                    <h:inputText disabled="true" value="#{ventasController.selected.idTipodepago}" title="#{bundle.ViewVentasTitle_idTipodepago}"/>
-                </h:panelGrid>
-                <br />
-                <br/>
-                <h:commandLink action="#{ventasController.destroyAndView}" value="#{bundle.ViewVentasDestroyLink}"/>
-                <br />
-                <br />
-                <h:commandButton action="Edit" value="#{bundle.ViewVentasEditLink}"/>
-                <br />
-                <br/>
-                <h:commandButton action="#{ventasController.prepareCreate}" value="#{bundle.ViewVentasCreateLink}" />
-                <br />
-                <br/>
-                <h:commandButton action="#{ventasController.prepareList}" value="#{bundle.ViewVentasShowAllLink}"/>
-                <br />
-                <br />
-                <h:commandButton action="/plantilla_admin" value="#{bundle.ViewVentasIndexLink}"/>
-
+                <div class="container">
+                    <div class="card">
+                        <div class="card-header">
+                            <h:outputText value="#{bundle.ViewVentasTitle}"></h:outputText>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputText value="#{bundle.ViewVentasLabel_id}"/>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText disabled="true" value="#{ventasController.selected.id}" title="#{bundle.ViewVentasTitle_id}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputText value="#{bundle.ViewVentasLabel_fecha}"/>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText disabled="true" value="#{ventasController.selected.fecha}" title="#{bundle.ViewVentasTitle_fecha}">
+                                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                                            </h:inputText>>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputText value="#{bundle.ViewVentasLabel_idCliente}"/>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText disabled="true" value="#{ventasController.selected.idCliente}" title="#{bundle.ViewVentasTitle_idCliente}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputText value="#{bundle.ViewVentasLabel_subtotal}"/>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText disabled="true" value="#{ventasController.selected.subtotal}" title="#{bundle.ViewVentasTitle_subtotal}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputText value="#{bundle.ViewVentasLabel_iva}"/>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText disabled="true" value="#{ventasController.selected.iva}" title="#{bundle.ViewVentasTitle_iva}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputText value="#{bundle.ViewVentasLabel_total}"/>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText disabled="true" value="#{ventasController.selected.total}" title="#{bundle.ViewVentasTitle_total}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputText value="#{bundle.ViewVentasLabel_status}"/>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText disabled="true" value="#{ventasController.selected.status}" title="#{bundle.ViewVentasTitle_status}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputText value="#{bundle.ViewVentasLabel_idTipodepago}"/>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText disabled="true" value="#{ventasController.selected.idTipodepago}" title="#{bundle.ViewVentasTitle_idTipodepago}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="float: right;">
+                                <div class="">
+                                    <td>
+                                        <h:commandButton action="#{ventasController.destroyAndView}" value="#{bundle.ViewVentasDestroyLink}" class="btn-danger"/>
+                                    </td>
+                                    <td>
+                                        <h:commandButton action="Edit" value="#{bundle.ViewVentasEditLink}" class="btn-warning"/>
+                                    </td>
+                                    <td>
+                                        <h:commandButton action="#{ventasController.prepareCreate}" value="#{bundle.ViewVentasCreateLink}" class="btn-success"/>
+                                    </td>
+                                    <td>
+                                        <h:commandButton action="#{ventasController.prepareList}" value="#{bundle.ViewVentasShowAllLink}" class="btn-info"/>
+                                    </td>
+                                    <td>
+                                        <h:commandButton action="/plantilla_admin" value="#{bundle.ViewVentasIndexLink}" class="btn-primary"/>
+                                    </td>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </h:form>
         </ui:define>
     </ui:composition>

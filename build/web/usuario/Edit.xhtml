@@ -14,30 +14,100 @@
                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
             </h:panelGroup>
             <h:form>
-                <h:panelGrid columns="2">
-                    <h:outputLabel value="#{bundle.EditUsuarioLabel_id}" for="id" />
-                    <h:inputText id="id" value="#{usuarioController.selected.id}" title="#{bundle.EditUsuarioTitle_id}" required="true" requiredMessage="#{bundle.EditUsuarioRequiredMessage_id}"/>
-                    <h:outputLabel value="#{bundle.EditUsuarioLabel_nombre}" for="nombre" />
-                    <h:inputText id="nombre" value="#{usuarioController.selected.nombre}" title="#{bundle.EditUsuarioTitle_nombre}" required="true" requiredMessage="#{bundle.EditUsuarioRequiredMessage_nombre}"/>
-                    <h:outputLabel value="#{bundle.EditUsuarioLabel_usu}" for="usu" />
-                    <h:inputText id="usu" value="#{usuarioController.selected.usu}" title="#{bundle.EditUsuarioTitle_usu}" required="true" requiredMessage="#{bundle.EditUsuarioRequiredMessage_usu}"/>
-                    <h:outputLabel value="#{bundle.EditUsuarioLabel_pasword}" for="pasword" />
-                    <h:inputText id="pasword" value="#{usuarioController.selected.pasword}" title="#{bundle.EditUsuarioTitle_pasword}" required="true" requiredMessage="#{bundle.EditUsuarioRequiredMessage_pasword}"/>
-                    <h:outputLabel value="#{bundle.EditUsuarioLabel_nivelUsuario}" for="nivelUsuario" />
-                    <h:inputText id="nivelUsuario" value="#{usuarioController.selected.nivelUsuario}" title="#{bundle.EditUsuarioTitle_nivelUsuario}" required="true" requiredMessage="#{bundle.EditUsuarioRequiredMessage_nivelUsuario}"/>
-                    <h:outputLabel value="#{bundle.EditUsuarioLabel_status}" for="status" />
-                    <h:inputText id="status" value="#{usuarioController.selected.status}" title="#{bundle.EditUsuarioTitle_status}" required="true" requiredMessage="#{bundle.EditUsuarioRequiredMessage_status}"/>
-                </h:panelGrid>
-                <h:commandButton action="#{usuarioController.update}" value="#{bundle.EditUsuarioSaveLink}"/>
-                <br />
-                <br />
-                <h:commandButton action="View" value="#{bundle.EditUsuarioViewLink}"/>
-                <br />
-                <br/>
-                <h:commandButton action="#{usuarioController.prepareList}" value="#{bundle.EditUsuarioShowAllLink}" immediate="true"/>
-                <br />
-                <br />
-                <h:commandButton action="/plantilla_admin" value="#{bundle.EditUsuarioIndexLink}" />
+                <div class="container">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputLabel value="#{bundle.EditUsuarioLabel_id}" for="id" />
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText id="id" value="#{usuarioController.selected.id}" title="#{bundle.EditUsuarioTitle_id}" required="true" requiredMessage="#{bundle.EditUsuarioRequiredMessage_id}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputLabel value="#{bundle.EditUsuarioLabel_nombre}" for="nombre" />
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText id="nombre" value="#{usuarioController.selected.nombre}" title="#{bundle.EditUsuarioTitle_nombre}" required="true" requiredMessage="#{bundle.EditUsuarioRequiredMessage_nombre}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputLabel value="#{bundle.EditUsuarioLabel_usu}" for="usu" />
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText id="usu" value="#{usuarioController.selected.usu}" title="#{bundle.EditUsuarioTitle_usu}" required="true" requiredMessage="#{bundle.EditUsuarioRequiredMessage_usu}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputLabel value="#{bundle.EditUsuarioLabel_pasword}" for="pasword" />
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText id="pasword" value="#{usuarioController.selected.pasword}" title="#{bundle.EditUsuarioTitle_pasword}" required="true" requiredMessage="#{bundle.EditUsuarioRequiredMessage_pasword}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputLabel value="#{bundle.EditUsuarioLabel_nivelUsuario}" for="nivelUsuario" />
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText id="nivelUsuario" value="#{usuarioController.selected.nivelUsuario}" title="#{bundle.EditUsuarioTitle_nivelUsuario}" required="true" requiredMessage="#{bundle.EditUsuarioRequiredMessage_nivelUsuario}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputLabel value="#{bundle.EditUsuarioLabel_status}" for="status" />
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText id="status" value="#{usuarioController.selected.status}" title="#{bundle.EditUsuarioTitle_status}" required="true" requiredMessage="#{bundle.EditUsuarioRequiredMessage_status}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="float: right;">
+                                <td>
+                                    <h:commandButton action="#{usuarioController.update}" value="#{bundle.EditUsuarioSaveLink}" class="btn-success"/>
+                                </td>
+                                <td>
+                                    <h:commandButton action="View" value="#{bundle.EditUsuarioViewLink}" class="btn-info"/>
+                                </td>
+                                <td>
+                                    <h:commandButton action="#{usuarioController.prepareList}" value="#{bundle.EditUsuarioShowAllLink}" immediate="true" class="btn-warning"/>
+                                </td>
+                                <td>
+                                    <h:commandButton action="/plantilla_admin" value="#{bundle.EditUsuarioIndexLink}" class="btn-primary"/>
+                                </td>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </h:form>
         </ui:define>
     </ui:composition>

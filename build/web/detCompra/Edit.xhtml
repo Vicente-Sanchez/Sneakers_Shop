@@ -14,35 +14,115 @@
                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
             </h:panelGroup>
             <h:form>
-                <h:panelGrid columns="2">
-                    <h:outputLabel value="#{bundle.EditDetCompraLabel_id}" for="id" />
-                    <h:inputText id="id" value="#{detCompraController.selected.id}" title="#{bundle.EditDetCompraTitle_id}" required="true" requiredMessage="#{bundle.EditDetCompraRequiredMessage_id}"/>
-                    <h:outputLabel value="#{bundle.EditDetCompraLabel_cantidad}" for="cantidad" />
-                    <h:inputText id="cantidad" value="#{detCompraController.selected.cantidad}" title="#{bundle.EditDetCompraTitle_cantidad}" required="true" requiredMessage="#{bundle.EditDetCompraRequiredMessage_cantidad}"/>
-                    <h:outputLabel value="#{bundle.EditDetCompraLabel_precioCompra}" for="precioCompra" />
-                    <h:inputText id="precioCompra" value="#{detCompraController.selected.precioCompra}" title="#{bundle.EditDetCompraTitle_precioCompra}" required="true" requiredMessage="#{bundle.EditDetCompraRequiredMessage_precioCompra}"/>
-                    <h:outputLabel value="#{bundle.EditDetCompraLabel_precioVenta}" for="precioVenta" />
-                    <h:inputText id="precioVenta" value="#{detCompraController.selected.precioVenta}" title="#{bundle.EditDetCompraTitle_precioVenta}" required="true" requiredMessage="#{bundle.EditDetCompraRequiredMessage_precioVenta}"/>
-                    <h:outputLabel value="#{bundle.EditDetCompraLabel_status}" for="status" />
-                    <h:inputText id="status" value="#{detCompraController.selected.status}" title="#{bundle.EditDetCompraTitle_status}" required="true" requiredMessage="#{bundle.EditDetCompraRequiredMessage_status}"/>
-                    <h:outputLabel value="#{bundle.EditDetCompraLabel_idComp}" for="idComp" />
-                    <h:selectOneMenu id="idComp" value="#{detCompraController.selected.idComp}" title="#{bundle.EditDetCompraTitle_idComp}" required="true" requiredMessage="#{bundle.EditDetCompraRequiredMessage_idComp}">
-                        <f:selectItems value="#{comprasController.itemsAvailableSelectOne}"/>
-                    </h:selectOneMenu>
-                    <h:outputLabel value="#{bundle.EditDetCompraLabel_idProd}" for="idProd" />
-                    <h:selectOneMenu id="idProd" value="#{detCompraController.selected.idProd}" title="#{bundle.EditDetCompraTitle_idProd}" required="true" requiredMessage="#{bundle.EditDetCompraRequiredMessage_idProd}">
-                        <f:selectItems value="#{productoController.itemsAvailableSelectOne}"/>
-                    </h:selectOneMenu>
-                </h:panelGrid>
-                <h:commandButton action="#{detCompraController.update}" value="#{bundle.EditDetCompraSaveLink}"/>
-                <br />
-                <br />
-                <h:commandButton action="View" value="#{bundle.EditDetCompraViewLink}"/>
-                <br />
-                <h:commandButton action="#{detCompraController.prepareList}" value="#{bundle.EditDetCompraShowAllLink}" immediate="true"/>
-                <br />
-                <br />
-                <h:commandButton action="/plantilla_admin" value="#{bundle.EditDetCompraIndexLink}" />
+                <div class="container">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputLabel value="#{bundle.EditDetCompraLabel_id}" for="id" />
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText id="id" value="#{detCompraController.selected.id}" title="#{bundle.EditDetCompraTitle_id}" required="true" requiredMessage="#{bundle.EditDetCompraRequiredMessage_id}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputLabel value="#{bundle.EditDetCompraLabel_cantidad}" for="cantidad" />
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText id="cantidad" value="#{detCompraController.selected.cantidad}" title="#{bundle.EditDetCompraTitle_cantidad}" required="true" requiredMessage="#{bundle.EditDetCompraRequiredMessage_cantidad}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputLabel value="#{bundle.EditDetCompraLabel_precioCompra}" for="precioCompra" />
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText id="precioCompra" value="#{detCompraController.selected.precioCompra}" title="#{bundle.EditDetCompraTitle_precioCompra}" required="true" requiredMessage="#{bundle.EditDetCompraRequiredMessage_precioCompra}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputLabel value="#{bundle.EditDetCompraLabel_precioVenta}" for="precioVenta" />
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText id="precioVenta" value="#{detCompraController.selected.precioVenta}" title="#{bundle.EditDetCompraTitle_precioVenta}" required="true" requiredMessage="#{bundle.EditDetCompraRequiredMessage_precioVenta}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputLabel value="#{bundle.EditDetCompraLabel_status}" for="status" />
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText id="status" value="#{detCompraController.selected.status}" title="#{bundle.EditDetCompraTitle_status}" required="true" requiredMessage="#{bundle.EditDetCompraRequiredMessage_status}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputLabel value="#{bundle.EditDetCompraLabel_idComp}" for="idComp" />
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:selectOneMenu id="idComp" value="#{detCompraController.selected.idComp}" title="#{bundle.EditDetCompraTitle_idComp}" required="true" requiredMessage="#{bundle.EditDetCompraRequiredMessage_idComp}">
+                                                <f:selectItems value="#{comprasController.itemsAvailableSelectOne}"/>
+                                            </h:selectOneMenu>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputLabel value="#{bundle.EditDetCompraLabel_idProd}" for="idProd" />
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:selectOneMenu id="idProd" value="#{detCompraController.selected.idProd}" title="#{bundle.EditDetCompraTitle_idProd}" required="true" requiredMessage="#{bundle.EditDetCompraRequiredMessage_idProd}">
+                                                <f:selectItems value="#{productoController.itemsAvailableSelectOne}"/>
+                                            </h:selectOneMenu>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="float: right;">
+                                <td>
+                                    <h:commandButton action="#{detCompraController.update}" value="#{bundle.EditDetCompraSaveLink}" class="btn-success"/>
+                                </td>
+                                <td>
+                                    <h:commandButton action="View" value="#{bundle.EditDetCompraViewLink}" class="btn-info"/>
+                                </td>
+                                <td>
+                                    <h:commandButton action="#{detCompraController.prepareList}" value="#{bundle.EditDetCompraShowAllLink}" immediate="true" class="btn-warning"/>
+                                </td>
+                                <td>
+                                    <h:commandButton action="/plantilla_admin" value="#{bundle.EditDetCompraIndexLink}" class="btn-primary"/>
+                                </td>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </h:form>
         </ui:define>
     </ui:composition>

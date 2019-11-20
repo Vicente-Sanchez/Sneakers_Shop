@@ -11,57 +11,66 @@
         </ui:define>
         <ui:define name="content">
             <h:form styleClass="jsfcrud_list_form">
-                <h:panelGroup id="messagePanel" layout="block">
-                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
-                </h:panelGroup>
-                <h:outputText escape="false" value="#{bundle.ListTipoDePagoEmpty}" rendered="#{tipoDePagoController.items.rowCount == 0}"/>
-                <h:panelGroup rendered="#{tipoDePagoController.items.rowCount > 0}">
-                    <h:outputText value="#{tipoDePagoController.pagination.pageFirstItem + 1}..#{tipoDePagoController.pagination.pageLastItem + 1}/#{tipoDePagoController.pagination.itemsCount}"/>&nbsp;
-                    <h:commandButton action="#{tipoDePagoController.previous}" value="#{bundle.Previous} #{tipoDePagoController.pagination.pageSize}" rendered="#{tipoDePagoController.pagination.hasPreviousPage}"/>&nbsp;
-                    <h:commandButton action="#{tipoDePagoController.next}" value="#{bundle.Next} #{tipoDePagoController.pagination.pageSize}" rendered="#{tipoDePagoController.pagination.hasNextPage}"/>&nbsp;
-                    <h:dataTable value="#{tipoDePagoController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
-                        <h:column>
-                            <f:facet name="header">
-                                <h:outputText value="#{bundle.ListTipoDePagoTitle_id}"/>
-                            </f:facet>
-                            <h:outputText value="#{item.id}"/>
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header">
-                                <h:outputText value="#{bundle.ListTipoDePagoTitle_nombre}"/>
-                            </f:facet>
-                            <h:outputText value="#{item.nombre}"/>
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header">
-                                <h:outputText value="#{bundle.ListTipoDePagoTitle_descripccion}"/>
-                            </f:facet>
-                            <h:outputText value="#{item.descripccion}"/>
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header">
-                                <h:outputText value="#{bundle.ListTipoDePagoTitle_status}"/>
-                            </f:facet>
-                            <h:outputText value="#{item.status}"/>
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header">
-                                <h:outputText value="&nbsp;"/>
-                            </f:facet>
-                            <h:commandButton action="#{tipoDePagoController.prepareView}" value="#{bundle.ListTipoDePagoViewLink}"/>
-                            <h:outputText value=" "/>
-                            <h:commandButton action="#{tipoDePagoController.prepareEdit}" value="#{bundle.ListTipoDePagoEditLink}"/>
-                            <h:outputText value=" "/>
-                            <h:commandButton action="#{tipoDePagoController.destroy}" value="#{bundle.ListTipoDePagoDestroyLink}"/>
-                        </h:column>
-                    </h:dataTable>
-                </h:panelGroup>
-                <br />
-                <br/>
-                <h:commandButton action="#{tipoDePagoController.prepareCreate}" value="#{bundle.ListTipoDePagoCreateLink}"/>
-                <br />
-                <br />
-                <h:commandButton action="/plantilla_admin" value="#{bundle.ListTipoDePagoIndexLink}"/>
+                <div class="container">
+                    <div class="card">
+                        <div class="card-header">
+                            <h:outputText value="#{bundle.ListTipoDePagoTitle}"></h:outputText>
+                        </div>
+                        <div class="card-body">
+                            <h:panelGroup id="messagePanel" layout="block">
+                                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                            </h:panelGroup>
+                            <h:outputText escape="false" value="#{bundle.ListTipoDePagoEmpty}" rendered="#{tipoDePagoController.items.rowCount == 0}"/>
+                            <h:panelGroup rendered="#{tipoDePagoController.items.rowCount > 0}">
+                                <h:outputText value="#{tipoDePagoController.pagination.pageFirstItem + 1}..#{tipoDePagoController.pagination.pageLastItem + 1}/#{tipoDePagoController.pagination.itemsCount}"/>&nbsp;
+                                <h:commandButton action="#{tipoDePagoController.previous}" value="#{bundle.Previous} #{tipoDePagoController.pagination.pageSize}" rendered="#{tipoDePagoController.pagination.hasPreviousPage}"/>&nbsp;
+                                <h:commandButton action="#{tipoDePagoController.next}" value="#{bundle.Next} #{tipoDePagoController.pagination.pageSize}" rendered="#{tipoDePagoController.pagination.hasNextPage}"/>&nbsp;
+                                <h:dataTable value="#{tipoDePagoController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                                    <h:column>
+                                        <f:facet name="header">
+                                            <h:outputText value="#{bundle.ListTipoDePagoTitle_id}"/>
+                                        </f:facet>
+                                        <h:outputText value="#{item.id}"/>
+                                    </h:column>
+                                    <h:column>
+                                        <f:facet name="header">
+                                            <h:outputText value="#{bundle.ListTipoDePagoTitle_nombre}"/>
+                                        </f:facet>
+                                        <h:outputText value="#{item.nombre}"/>
+                                    </h:column>
+                                    <h:column>
+                                        <f:facet name="header">
+                                            <h:outputText value="#{bundle.ListTipoDePagoTitle_descripccion}"/>
+                                        </f:facet>
+                                        <h:outputText value="#{item.descripccion}"/>
+                                    </h:column>
+                                    <h:column>
+                                        <f:facet name="header">
+                                            <h:outputText value="#{bundle.ListTipoDePagoTitle_status}"/>
+                                        </f:facet>
+                                        <h:outputText value="#{item.status}"/>
+                                    </h:column>
+                                    <h:column>
+                                        <f:facet name="header">
+                                            <h:outputText value="&nbsp;"/>
+                                        </f:facet>
+                                        <h:commandButton action="#{tipoDePagoController.prepareView}" value="#{bundle.ListTipoDePagoViewLink}" class="btn-success"/>
+                                        <h:outputText value=" "/>
+                                        <h:commandButton action="#{tipoDePagoController.prepareEdit}" value="#{bundle.ListTipoDePagoEditLink}" class="btn-warning"/>
+                                        <h:outputText value=" "/>
+                                        <h:commandButton action="#{tipoDePagoController.destroy}" value="#{bundle.ListTipoDePagoDestroyLink}" class="btn-danger"/>
+                                    </h:column>
+                                </h:dataTable>
+                            </h:panelGroup>
+                            <br/>
+                            <div class="row">
+                                <h:commandButton action="#{tipoDePagoController.prepareCreate}" value="#{bundle.ListTipoDePagoCreateLink}" class="btn-success"/>
+
+                                <h:commandButton action="/plantilla_admin" value="#{bundle.ListTipoDePagoIndexLink}" class="btn-primary"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </h:form>
         </ui:define>
     </ui:composition>
