@@ -14,35 +14,112 @@
                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
             </h:panelGroup>
             <h:form>
-                <h:panelGrid columns="2">
-                    <h:outputLabel value="#{bundle.CreateComprasLabel_id}" for="id" />
-                    <h:inputText id="id" value="#{comprasController.selected.id}" title="#{bundle.CreateComprasTitle_id}" required="true" requiredMessage="#{bundle.CreateComprasRequiredMessage_id}"/>
-                    <h:outputLabel value="#{bundle.CreateComprasLabel_fecha}" for="fecha" />
-                    <h:inputText id="fecha" value="#{comprasController.selected.fecha}" title="#{bundle.CreateComprasTitle_fecha}" required="true" requiredMessage="#{bundle.CreateComprasRequiredMessage_fecha}">
-                        <f:convertDateTime pattern="MM/dd/yyyy" />
-                    </h:inputText>
-                    <h:outputLabel value="#{bundle.CreateComprasLabel_subtotal}" for="subtotal" />
-                    <h:inputText id="subtotal" value="#{comprasController.selected.subtotal}" title="#{bundle.CreateComprasTitle_subtotal}" required="true" requiredMessage="#{bundle.CreateComprasRequiredMessage_subtotal}"/>
-                    <h:outputLabel value="#{bundle.CreateComprasLabel_iva}" for="iva" />
-                    <h:inputText id="iva" value="#{comprasController.selected.iva}" title="#{bundle.CreateComprasTitle_iva}" required="true" requiredMessage="#{bundle.CreateComprasRequiredMessage_iva}"/>
-                    <h:outputLabel value="#{bundle.CreateComprasLabel_total}" for="total" />
-                    <h:inputText id="total" value="#{comprasController.selected.total}" title="#{bundle.CreateComprasTitle_total}" required="true" requiredMessage="#{bundle.CreateComprasRequiredMessage_total}"/>
-                    <h:outputLabel value="#{bundle.CreateComprasLabel_status}" for="status" />
-                    <h:inputText id="status" value="#{comprasController.selected.status}" title="#{bundle.CreateComprasTitle_status}" required="true" requiredMessage="#{bundle.CreateComprasRequiredMessage_status}"/>
-                    <h:outputLabel value="#{bundle.CreateComprasLabel_idProv}" for="idProv" />
-                    <h:selectOneMenu id="idProv" value="#{comprasController.selected.idProv}" title="#{bundle.CreateComprasTitle_idProv}" required="true" requiredMessage="#{bundle.CreateComprasRequiredMessage_idProv}">
-                        <f:selectItems value="#{proveedoresController.itemsAvailableSelectOne}"/>
-                    </h:selectOneMenu>
-                </h:panelGrid>
-                <br />
-                <br />
-                <h:commandButton action="#{comprasController.create}" value="#{bundle.CreateComprasSaveLink}" />
-                <br />
-                <br />
-                <h:commandButton action="#{comprasController.prepareList}" value="#{bundle.CreateComprasShowAllLink}" immediate="true"/>
-                <br />
-                <br />
-                <h:commandButton action="/plantilla_admin" value="#{bundle.CreateComprasIndexLink}"/>
+                <div class="container">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputLabel value="#{bundle.CreateComprasLabel_id}" for="id" />
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText id="id" value="#{comprasController.selected.id}" title="#{bundle.CreateComprasTitle_id}" required="true" requiredMessage="#{bundle.CreateComprasRequiredMessage_id}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputLabel value="#{bundle.CreateComprasLabel_fecha}" for="fecha" />
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText id="fecha" value="#{comprasController.selected.fecha}" title="#{bundle.CreateComprasTitle_fecha}" required="true" requiredMessage="#{bundle.CreateComprasRequiredMessage_fecha}">
+                                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                                            </h:inputText>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputLabel value="#{bundle.CreateComprasLabel_subtotal}" for="subtotal" />
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText id="subtotal" value="#{comprasController.selected.subtotal}" title="#{bundle.CreateComprasTitle_subtotal}" required="true" requiredMessage="#{bundle.CreateComprasRequiredMessage_subtotal}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputLabel value="#{bundle.CreateComprasLabel_iva}" for="iva" />
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText id="iva" value="#{comprasController.selected.iva}" title="#{bundle.CreateComprasTitle_iva}" required="true" requiredMessage="#{bundle.CreateComprasRequiredMessage_iva}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputLabel value="#{bundle.CreateComprasLabel_total}" for="total" />
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText id="total" value="#{comprasController.selected.total}" title="#{bundle.CreateComprasTitle_total}" required="true" requiredMessage="#{bundle.CreateComprasRequiredMessage_total}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputLabel value="#{bundle.CreateComprasLabel_status}" for="status" />
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText id="status" value="#{comprasController.selected.status}" title="#{bundle.CreateComprasTitle_status}" required="true" requiredMessage="#{bundle.CreateComprasRequiredMessage_status}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputLabel value="#{bundle.CreateComprasLabel_idProv}" for="idProv" />
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:selectOneMenu id="idProv" value="#{comprasController.selected.idProv}" title="#{bundle.CreateComprasTitle_idProv}" required="true" requiredMessage="#{bundle.CreateComprasRequiredMessage_idProv}">
+                                                <f:selectItems value="#{proveedoresController.itemsAvailableSelectOne}"/>
+                                            </h:selectOneMenu>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="float: right;">
+                                <td>
+                                    <h:commandButton action="#{comprasController.create}" value="#{bundle.CreateComprasSaveLink}" class="btn-success"/>
+                                </td>
+                                <td>
+                                    <h:commandButton action="#{comprasController.prepareList}" value="#{bundle.CreateComprasShowAllLink}" immediate="true" class="btn-info"/>
+                                </td>
+                                <td>
+                                    <h:commandButton action="/plantilla_admin" value="#{bundle.CreateComprasIndexLink}" class="btn-primary"/>
+                                </td>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </h:form>
         </ui:define>
     </ui:composition>

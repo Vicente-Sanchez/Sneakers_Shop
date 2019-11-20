@@ -14,35 +14,112 @@
                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
             </h:panelGroup>
             <h:form>
-                <h:panelGrid columns="2">
-                    <h:outputLabel value="#{bundle.CreateDetVentaLabel_id}" for="id" />
-                    <h:inputText id="id" value="#{detVentaController.selected.id}" title="#{bundle.CreateDetVentaTitle_id}" required="true" requiredMessage="#{bundle.CreateDetVentaRequiredMessage_id}"/>
-                    <h:outputLabel value="#{bundle.CreateDetVentaLabel_cantidad}" for="cantidad" />
-                    <h:inputText id="cantidad" value="#{detVentaController.selected.cantidad}" title="#{bundle.CreateDetVentaTitle_cantidad}" required="true" requiredMessage="#{bundle.CreateDetVentaRequiredMessage_cantidad}"/>
-                    <h:outputLabel value="#{bundle.CreateDetVentaLabel_precioCompra}" for="precioCompra" />
-                    <h:inputText id="precioCompra" value="#{detVentaController.selected.precioCompra}" title="#{bundle.CreateDetVentaTitle_precioCompra}" required="true" requiredMessage="#{bundle.CreateDetVentaRequiredMessage_precioCompra}"/>
-                    <h:outputLabel value="#{bundle.CreateDetVentaLabel_precioVenta}" for="precioVenta" />
-                    <h:inputText id="precioVenta" value="#{detVentaController.selected.precioVenta}" title="#{bundle.CreateDetVentaTitle_precioVenta}" required="true" requiredMessage="#{bundle.CreateDetVentaRequiredMessage_precioVenta}"/>
-                    <h:outputLabel value="#{bundle.CreateDetVentaLabel_status}" for="status" />
-                    <h:inputText id="status" value="#{detVentaController.selected.status}" title="#{bundle.CreateDetVentaTitle_status}" required="true" requiredMessage="#{bundle.CreateDetVentaRequiredMessage_status}"/>
-                    <h:outputLabel value="#{bundle.CreateDetVentaLabel_idProd}" for="idProd" />
-                    <h:selectOneMenu id="idProd" value="#{detVentaController.selected.idProd}" title="#{bundle.CreateDetVentaTitle_idProd}" required="true" requiredMessage="#{bundle.CreateDetVentaRequiredMessage_idProd}">
-                        <f:selectItems value="#{productoController.itemsAvailableSelectOne}"/>
-                    </h:selectOneMenu>
-                    <h:outputLabel value="#{bundle.CreateDetVentaLabel_idVenta}" for="idVenta" />
-                    <h:selectOneMenu id="idVenta" value="#{detVentaController.selected.idVenta}" title="#{bundle.CreateDetVentaTitle_idVenta}" required="true" requiredMessage="#{bundle.CreateDetVentaRequiredMessage_idVenta}">
-                        <f:selectItems value="#{ventasController.itemsAvailableSelectOne}"/>
-                    </h:selectOneMenu>
-                </h:panelGrid>
-                <br />
-                <br/>
-                <h:commandButton action="#{detVentaController.create}" value="#{bundle.CreateDetVentaSaveLink}" />
-                <br />
-                <br />
-                <h:commandButton action="#{detVentaController.prepareList}" value="#{bundle.CreateDetVentaShowAllLink}" immediate="true"/>
-                <br />
-                <br />
-                <h:commandButton action="/plantilla_admin" value="#{bundle.CreateDetVentaIndexLink}"/>
+                <div class="container">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputLabel value="#{bundle.CreateDetVentaLabel_id}" for="id" />
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText id="id" value="#{detVentaController.selected.id}" title="#{bundle.CreateDetVentaTitle_id}" required="true" requiredMessage="#{bundle.CreateDetVentaRequiredMessage_id}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputLabel value="#{bundle.CreateDetVentaLabel_cantidad}" for="cantidad" />
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText id="cantidad" value="#{detVentaController.selected.cantidad}" title="#{bundle.CreateDetVentaTitle_cantidad}" required="true" requiredMessage="#{bundle.CreateDetVentaRequiredMessage_cantidad}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputLabel value="#{bundle.CreateDetVentaLabel_precioCompra}" for="precioCompra" />
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText id="precioCompra" value="#{detVentaController.selected.precioCompra}" title="#{bundle.CreateDetVentaTitle_precioCompra}" required="true" requiredMessage="#{bundle.CreateDetVentaRequiredMessage_precioCompra}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputLabel value="#{bundle.CreateDetVentaLabel_precioVenta}" for="precioVenta" />
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText id="precioVenta" value="#{detVentaController.selected.precioVenta}" title="#{bundle.CreateDetVentaTitle_precioVenta}" required="true" requiredMessage="#{bundle.CreateDetVentaRequiredMessage_precioVenta}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputLabel value="#{bundle.CreateDetVentaLabel_status}" for="status" />
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText id="status" value="#{detVentaController.selected.status}" title="#{bundle.CreateDetVentaTitle_status}" required="true" requiredMessage="#{bundle.CreateDetVentaRequiredMessage_status}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputLabel value="#{bundle.CreateDetVentaLabel_idProd}" for="idProd" />
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:selectOneMenu id="idProd" value="#{detVentaController.selected.idProd}" title="#{bundle.CreateDetVentaTitle_idProd}" required="true" requiredMessage="#{bundle.CreateDetVentaRequiredMessage_idProd}">
+                                                <f:selectItems value="#{productoController.itemsAvailableSelectOne}"/>
+                                            </h:selectOneMenu>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputLabel value="#{bundle.CreateDetVentaLabel_idVenta}" for="idVenta" />
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:selectOneMenu id="idVenta" value="#{detVentaController.selected.idVenta}" title="#{bundle.CreateDetVentaTitle_idVenta}" required="true" requiredMessage="#{bundle.CreateDetVentaRequiredMessage_idVenta}">
+                                                <f:selectItems value="#{ventasController.itemsAvailableSelectOne}"/>
+                                            </h:selectOneMenu>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="float: right;">
+                                <td>
+                                    <h:commandButton action="#{detVentaController.create}" value="#{bundle.CreateDetVentaSaveLink}" class="btn-success"/>
+                                </td>
+                                <td>
+                                    <h:commandButton action="#{detVentaController.prepareList}" value="#{bundle.CreateDetVentaShowAllLink}" immediate="true" class="btn-info"/>
+                                </td>
+                                <td>
+                                    <h:commandButton action="/plantilla_admin" value="#{bundle.CreateDetVentaIndexLink}" class="btn-primary"/>
+                                </td>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </h:form>
         </ui:define>
     </ui:composition>

@@ -14,30 +14,89 @@
                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
             </h:panelGroup>
             <h:form>
-                <h:panelGrid columns="2">
-                    <h:outputLabel value="#{bundle.EditTallaLabel_id}" for="id" />
-                    <h:inputText id="id" value="#{tallaController.selected.id}" title="#{bundle.EditTallaTitle_id}" required="true" requiredMessage="#{bundle.EditTallaRequiredMessage_id}"/>
-                    <h:outputLabel value="#{bundle.EditTallaLabel_numeroTalla}" for="numeroTalla" />
-                    <h:inputText id="numeroTalla" value="#{tallaController.selected.numeroTalla}" title="#{bundle.EditTallaTitle_numeroTalla}" required="true" requiredMessage="#{bundle.EditTallaRequiredMessage_numeroTalla}"/>
-                    <h:outputLabel value="#{bundle.EditTallaLabel_cantidad}" for="cantidad" />
-                    <h:inputText id="cantidad" value="#{tallaController.selected.cantidad}" title="#{bundle.EditTallaTitle_cantidad}" required="true" requiredMessage="#{bundle.EditTallaRequiredMessage_cantidad}"/>
-                    <h:outputLabel value="#{bundle.EditTallaLabel_status}" for="status" />
-                    <h:inputText id="status" value="#{tallaController.selected.status}" title="#{bundle.EditTallaTitle_status}" required="true" requiredMessage="#{bundle.EditTallaRequiredMessage_status}"/>
-                    <h:outputLabel value="#{bundle.EditTallaLabel_idProducto}" for="idProducto" />
-                    <h:selectOneMenu id="idProducto" value="#{tallaController.selected.idProducto}" title="#{bundle.EditTallaTitle_idProducto}" required="true" requiredMessage="#{bundle.EditTallaRequiredMessage_idProducto}">
-                        <f:selectItems value="#{productoController.itemsAvailableSelectOne}"/>
-                    </h:selectOneMenu>
-                </h:panelGrid>
-                <h:commandButton action="#{tallaController.update}" value="#{bundle.EditTallaSaveLink}"/>
-                <br />
-                <br />
-                <h:commandButton action="View" value="#{bundle.EditTallaViewLink}"/>
-                <br />
-                <br/>
-                <h:commandButton action="#{tallaController.prepareList}" value="#{bundle.EditTallaShowAllLink}" immediate="true"/>
-                <br />
-                <br />
-                <h:commandButton action="/plantilla_admin" value="#{bundle.EditTallaIndexLink}" />
+                <div class="container">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputLabel value="#{bundle.EditTallaLabel_id}" for="id" />
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText id="id" value="#{tallaController.selected.id}" title="#{bundle.EditTallaTitle_id}" required="true" requiredMessage="#{bundle.EditTallaRequiredMessage_id}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputLabel value="#{bundle.EditTallaLabel_numeroTalla}" for="numeroTalla" />
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText id="numeroTalla" value="#{tallaController.selected.numeroTalla}" title="#{bundle.EditTallaTitle_numeroTalla}" required="true" requiredMessage="#{bundle.EditTallaRequiredMessage_numeroTalla}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputLabel value="#{bundle.EditTallaLabel_cantidad}" for="cantidad" />
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText id="cantidad" value="#{tallaController.selected.cantidad}" title="#{bundle.EditTallaTitle_cantidad}" required="true" requiredMessage="#{bundle.EditTallaRequiredMessage_cantidad}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputLabel value="#{bundle.EditTallaLabel_status}" for="status" />
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText id="status" value="#{tallaController.selected.status}" title="#{bundle.EditTallaTitle_status}" required="true" requiredMessage="#{bundle.EditTallaRequiredMessage_status}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputLabel value="#{bundle.EditTallaLabel_idProducto}" for="idProducto" />
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:selectOneMenu id="idProducto" value="#{tallaController.selected.idProducto}" title="#{bundle.EditTallaTitle_idProducto}" required="true" requiredMessage="#{bundle.EditTallaRequiredMessage_idProducto}">
+                                                <f:selectItems value="#{productoController.itemsAvailableSelectOne}"/>
+                                            </h:selectOneMenu>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="float: right;">
+                                <td>
+                                    <h:commandButton action="#{tallaController.update}" value="#{bundle.EditTallaSaveLink}" class="btn-success"/>
+                                </td>
+                                <td>
+                                    <h:commandButton action="View" value="#{bundle.EditTallaViewLink}" class="btn-info"/>
+                                </td>
+                                <td>
+                                    <h:commandButton action="#{tallaController.prepareList}" value="#{bundle.EditTallaShowAllLink}" immediate="true" class="btn-warning"/>
+                                </td>
+                                <td>
+                                    <h:commandButton action="/plantilla_admin" value="#{bundle.EditTallaIndexLink}" class="btn-primary"/>
+                                </td>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </h:form>
         </ui:define>
     </ui:composition>

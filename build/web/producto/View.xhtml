@@ -14,40 +14,132 @@
                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
             </h:panelGroup>
             <h:form>
-                <h:panelGrid columns="2">
-                    <h:outputText value="#{bundle.ViewProductoLabel_id}"/>
-                    <h:inputText disabled="true" value="#{productoController.selected.id}" title="#{bundle.ViewProductoTitle_id}"/>
-                    <h:outputText value="#{bundle.ViewProductoLabel_nombreProd}"/>
-                    <h:inputText disabled="true" value="#{productoController.selected.nombreProd}" title="#{bundle.ViewProductoTitle_nombreProd}"/>
-                    <h:outputText value="#{bundle.ViewProductoLabel_descripProd}"/>
-                    <h:inputText disabled="true" value="#{productoController.selected.descripProd}" title="#{bundle.ViewProductoTitle_descripProd}"/>
-                    <h:outputText value="#{bundle.ViewProductoLabel_precioProd}"/>
-                    <h:inputText disabled="true" value="#{productoController.selected.precioProd}" title="#{bundle.ViewProductoTitle_precioProd}"/>
-                    <h:outputText value="#{bundle.ViewProductoLabel_status}"/>
-                    <h:inputText disabled="true" value="#{productoController.selected.status}" title="#{bundle.ViewProductoTitle_status}"/>
-                    <h:outputText value="#{bundle.ViewProductoLabel_idCategoria}"/>
-                    <h:inputText disabled="true" value="#{productoController.selected.idCategoria}" title="#{bundle.ViewProductoTitle_idCategoria}"/>
-                    <h:outputText value="#{bundle.ViewProductoLabel_idGen}"/>
-                    <h:inputText disabled="true" value="#{productoController.selected.idGen}" title="#{bundle.ViewProductoTitle_idGen}"/>
-                    <h:outputText value="#{bundle.ViewProductoLabel_idProv}"/>
-                    <h:inputText disabled="true" value="#{productoController.selected.idProv}" title="#{bundle.ViewProductoTitle_idProv}"/>
-                </h:panelGrid>
-                <br />
-                <br/>
-                <h:commandButton action="#{productoController.destroyAndView}" value="#{bundle.ViewProductoDestroyLink}"/>
-                <br />
-                <br />
-                <h:commandButton action="Edit" value="#{bundle.ViewProductoEditLink}"/>
-                <br />
-                <br/>
-                <h:commandButton action="#{productoController.prepareCreate}" value="#{bundle.ViewProductoCreateLink}" />
-                <br />
-                <br/>
-                <h:commandButton action="#{productoController.prepareList}" value="#{bundle.ViewProductoShowAllLink}"/>
-                <br />
-                <br />
-                <h:commandButton action="/plantilla_admin" value="#{bundle.ViewProductoIndexLink}"/>
-
+                <div class="container">
+                    <div class="card">
+                        <div class="card-header">
+                            <h:outputText value="#{bundle.ViewProductoTitle}"></h:outputText>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputText value="#{bundle.ViewProductoLabel_id}"/>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText disabled="true" value="#{productoController.selected.id}" title="#{bundle.ViewProductoTitle_id}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputText value="#{bundle.ViewProductoLabel_nombreProd}"/>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText disabled="true" value="#{productoController.selected.nombreProd}" title="#{bundle.ViewProductoTitle_nombreProd}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputText value="#{bundle.ViewProductoLabel_descripProd}"/>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText disabled="true" value="#{productoController.selected.descripProd}" title="#{bundle.ViewProductoTitle_descripProd}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputText value="#{bundle.ViewProductoLabel_precioProd}"/>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText disabled="true" value="#{productoController.selected.precioProd}" title="#{bundle.ViewProductoTitle_precioProd}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputText value="#{bundle.ViewProductoLabel_status}"/>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText disabled="true" value="#{productoController.selected.status}" title="#{bundle.ViewProductoTitle_status}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputText value="#{bundle.ViewProductoLabel_idCategoria}"/>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText disabled="true" value="#{productoController.selected.idCategoria}" title="#{bundle.ViewProductoTitle_idCategoria}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputText value="#{bundle.ViewProductoLabel_idGen}"/>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText disabled="true" value="#{productoController.selected.idGen}" title="#{bundle.ViewProductoTitle_idGen}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputText value="#{bundle.ViewProductoLabel_idProv}"/>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText disabled="true" value="#{productoController.selected.idProv}" title="#{bundle.ViewProductoTitle_idProv}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="float: right;">
+                                <div class="">
+                                    <td>
+                                        <h:commandButton action="#{productoController.destroyAndView}" value="#{bundle.ViewProductoDestroyLink}" class="btn-danger"/>
+                                    </td>
+                                    <td>
+                                        <h:commandButton action="Edit" value="#{bundle.ViewProductoEditLink}" class="btn-warning"/>
+                                    </td>
+                                    <td>
+                                        <h:commandButton action="#{productoController.prepareCreate}" value="#{bundle.ViewProductoCreateLink}" class="btn-success"/>
+                                    </td>
+                                    <td>
+                                        <h:commandButton action="#{productoController.prepareList}" value="#{bundle.ViewProductoShowAllLink}" class="btn-info"/>
+                                    </td>
+                                    <td>
+                                        <h:commandButton action="/plantilla_admin" value="#{bundle.ViewProductoIndexLink}" class="btn-primary"/>
+                                    </td>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </h:form>
         </ui:define>
     </ui:composition>

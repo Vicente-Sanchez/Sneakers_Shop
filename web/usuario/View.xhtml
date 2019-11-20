@@ -14,36 +14,108 @@
                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
             </h:panelGroup>
             <h:form>
-                <h:panelGrid columns="2">
-                    <h:outputText value="#{bundle.ViewUsuarioLabel_id}"/>
-                    <h:inputText disabled="true" value="#{usuarioController.selected.id}" title="#{bundle.ViewUsuarioTitle_id}"/>
-                    <h:outputText value="#{bundle.ViewUsuarioLabel_nombre}"/>
-                    <h:inputText disabled="true" value="#{usuarioController.selected.nombre}" title="#{bundle.ViewUsuarioTitle_nombre}"/>
-                    <h:outputText value="#{bundle.ViewUsuarioLabel_usu}"/>
-                    <h:inputText disabled="true" value="#{usuarioController.selected.usu}" title="#{bundle.ViewUsuarioTitle_usu}"/>
-                    <h:outputText value="#{bundle.ViewUsuarioLabel_pasword}"/>
-                    <h:inputText disabled="true" value="#{usuarioController.selected.pasword}" title="#{bundle.ViewUsuarioTitle_pasword}"/>
-                    <h:inputText disabled="true" value="#{bundle.ViewUsuarioLabel_nivelUsuario}"/>
-                    <h:outputText value="#{usuarioController.selected.nivelUsuario}" title="#{bundle.ViewUsuarioTitle_nivelUsuario}"/>
-                    <h:inputText disabled="true" value="#{bundle.ViewUsuarioLabel_status}"/>
-                    <h:outputText value="#{usuarioController.selected.status}" title="#{bundle.ViewUsuarioTitle_status}"/>
-                </h:panelGrid>
-                <br />
-                <br/>
-                <h:commandButton action="#{usuarioController.destroyAndView}" value="#{bundle.ViewUsuarioDestroyLink}"/>
-                <br />
-                <br />
-                <h:commandButton action="Edit" value="#{bundle.ViewUsuarioEditLink}"/>
-                <br />
-                <br/>
-                <h:commandButton action="#{usuarioController.prepareCreate}" value="#{bundle.ViewUsuarioCreateLink}" />
-                <br />
-                <br/>
-                <h:commandButton action="#{usuarioController.prepareList}" value="#{bundle.ViewUsuarioShowAllLink}"/>
-                <br />
-                <br />
-                <h:commandButton action="/plantilla_admin" value="#{bundle.ViewUsuarioIndexLink}"/>
-
+                <div class="container">
+                    <div class="card">
+                        <div class="card-header">
+                            <h:outputText value="#{bundle.ViewCategoriasTitle}"></h:outputText>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputText value="#{bundle.ViewUsuarioLabel_id}"/>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText disabled="true" value="#{usuarioController.selected.id}" title="#{bundle.ViewUsuarioTitle_id}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputText value="#{bundle.ViewUsuarioLabel_nombre}"/>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText disabled="true" value="#{usuarioController.selected.nombre}" title="#{bundle.ViewUsuarioTitle_nombre}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputText value="#{bundle.ViewUsuarioLabel_usu}"/>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText disabled="true" value="#{usuarioController.selected.usu}" title="#{bundle.ViewUsuarioTitle_usu}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputText value="#{bundle.ViewUsuarioLabel_pasword}"/>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText disabled="true" value="#{usuarioController.selected.pasword}" title="#{bundle.ViewUsuarioTitle_pasword}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputText value="#{bundle.ViewUsuarioLabel_nivelUsuario}"/>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText disabled="true" value="#{usuarioController.selected.nivelUsuario}" title="#{bundle.ViewUsuarioTitle_nivelUsuario}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputText  value="#{bundle.ViewUsuarioLabel_status}"/>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText disabled="true" value="#{usuarioController.selected.status}" title="#{bundle.ViewUsuarioTitle_status}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="float: right;">
+                                <div class="">
+                                    <td>
+                                        <h:commandButton action="#{usuarioController.destroyAndView}" value="#{bundle.ViewUsuarioDestroyLink}" class="btn-danger"/>
+                                    </td>
+                                    <td>
+                                        <h:commandButton action="Edit" value="#{bundle.ViewUsuarioEditLink}" class="btn-warning"/>
+                                    </td>
+                                    <td>
+                                        <h:commandButton action="#{usuarioController.prepareCreate}" value="#{bundle.ViewUsuarioCreateLink}" class="btn-success"/>
+                                    </td>
+                                    <td>
+                                        <h:commandButton action="#{usuarioController.prepareList}" value="#{bundle.ViewUsuarioShowAllLink}" class="btn-info"/>
+                                    </td>
+                                    <td>
+                                        <h:commandButton action="/plantilla_admin" value="#{bundle.ViewUsuarioIndexLink}" class="btn-primary"/>
+                                    </td>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </h:form>
         </ui:define>
     </ui:composition>

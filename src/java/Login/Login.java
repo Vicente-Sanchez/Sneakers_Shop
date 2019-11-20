@@ -27,8 +27,8 @@ import javax.servlet.http.HttpServletRequest;
 @SessionScoped
 public class Login implements Serializable {
     
-    private String username;
-    private String password;
+    private String usu;
+    private String pasword;
     
     private HttpServletRequest httpservlet;
     
@@ -45,26 +45,7 @@ public class Login implements Serializable {
         this.usuautenticado = usuautenticado;
     }
     
-    
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-    
-    
-
+   
     /**
      * Creates a new instance of Login
      */
@@ -77,9 +58,9 @@ public class Login implements Serializable {
     public void Acceso() throws IOException{
          
         httpservlet = (HttpServletRequest) FacesContext.getCurrentInstance().getExternalContext().getRequest();
-        usuautenticado = usufacade.Buscar(username, password);
+        usuautenticado = usufacade.Buscar(getUsu(), getPasword());
         if(usuautenticado!=null){
-            httpservlet.getSession().setAttribute("username", usuautenticado.getUsu());
+            httpservlet.getSession().setAttribute("usu", usuautenticado.getUsu());
             httpservlet.getSession().setAttribute("nombre", usuautenticado.getNombre());
             httpservlet.getSession().setAttribute("nivel_usu", usuautenticado.getNivelUsuario());
             httpservlet.getSession().setAttribute("usuario", usuautenticado);
@@ -88,7 +69,7 @@ public class Login implements Serializable {
                     FacesContext.getCurrentInstance().getExternalContext().redirect("plantilla_admin.xhtml");
                     break;
                 case 2:
-                    //FacesContext.getCurrentInstance().getExternalContext().redirect("super.xhtml");
+                    FacesContext.getCurrentInstance().getExternalContext().redirect("index.xhtml");
                     break;
                 default:
                     FacesContext.getCurrentInstance().getExternalContext().redirect("plantilla_cliente.xhtml");
@@ -108,7 +89,7 @@ public class Login implements Serializable {
     public void cerrarSesion(){
         try {
             FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
-            FacesContext.getCurrentInstance().getExternalContext().redirect("login.xhtml");
+            FacesContext.getCurrentInstance().getExternalContext().redirect("./templates/login.xhtml");
             
         } catch (Exception e) {
         }
@@ -121,13 +102,41 @@ public class Login implements Serializable {
         if(usu != null){
             if(usu.getNivelUsuario()== nivel){
             }else{
-                FacesContext.getCurrentInstance().getExternalContext().redirect("sin_privilegios.xhtml");
+                FacesContext.getCurrentInstance().getExternalContext().redirect("plantilla_cliente.xhtml");
             }
             
         }else{
             FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
-            FacesContext.getCurrentInstance().getExternalContext().redirect("login.xhtml");
+            FacesContext.getCurrentInstance().getExternalContext().redirect("./templates/login.xhtml.xhtml");
         }
+    }
+
+    /**
+     * @return the usu
+     */
+    public String getUsu() {
+        return usu;
+    }
+
+    /**
+     * @param usu the usu to set
+     */
+    public void setUsu(String usu) {
+        this.usu = usu;
+    }
+
+    /**
+     * @return the pasword
+     */
+    public String getPasword() {
+        return pasword;
+    }
+
+    /**
+     * @param pasword the pasword to set
+     */
+    public void setPasword(String pasword) {
+        this.pasword = pasword;
     }
     
 }

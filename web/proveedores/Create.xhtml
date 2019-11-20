@@ -14,39 +14,156 @@
                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
             </h:panelGroup>
             <h:form>
-                <h:panelGrid columns="2">
-                    <h:outputLabel value="#{bundle.CreateProveedoresLabel_id}" for="id" />
-                    <h:inputText id="id" value="#{proveedoresController.selected.id}" title="#{bundle.CreateProveedoresTitle_id}" required="true" requiredMessage="#{bundle.CreateProveedoresRequiredMessage_id}"/>
-                    <h:outputLabel value="#{bundle.CreateProveedoresLabel_razonSocial}" for="razonSocial" />
-                    <h:inputText id="razonSocial" value="#{proveedoresController.selected.razonSocial}" title="#{bundle.CreateProveedoresTitle_razonSocial}" required="true" requiredMessage="#{bundle.CreateProveedoresRequiredMessage_razonSocial}"/>
-                    <h:outputLabel value="#{bundle.CreateProveedoresLabel_rfc}" for="rfc" />
-                    <h:inputText id="rfc" value="#{proveedoresController.selected.rfc}" title="#{bundle.CreateProveedoresTitle_rfc}" required="true" requiredMessage="#{bundle.CreateProveedoresRequiredMessage_rfc}"/>
-                    <h:outputLabel value="#{bundle.CreateProveedoresLabel_numInt}" for="numInt" />
-                    <h:inputText id="numInt" value="#{proveedoresController.selected.numInt}" title="#{bundle.CreateProveedoresTitle_numInt}" required="true" requiredMessage="#{bundle.CreateProveedoresRequiredMessage_numInt}"/>
-                    <h:outputLabel value="#{bundle.CreateProveedoresLabel_numExt}" for="numExt" />
-                    <h:inputText id="numExt" value="#{proveedoresController.selected.numExt}" title="#{bundle.CreateProveedoresTitle_numExt}" required="true" requiredMessage="#{bundle.CreateProveedoresRequiredMessage_numExt}"/>
-                    <h:outputLabel value="#{bundle.CreateProveedoresLabel_colonia}" for="colonia" />
-                    <h:inputText id="colonia" value="#{proveedoresController.selected.colonia}" title="#{bundle.CreateProveedoresTitle_colonia}" required="true" requiredMessage="#{bundle.CreateProveedoresRequiredMessage_colonia}"/>
-                    <h:outputLabel value="#{bundle.CreateProveedoresLabel_cp}" for="cp" />
-                    <h:inputText id="cp" value="#{proveedoresController.selected.cp}" title="#{bundle.CreateProveedoresTitle_cp}" required="true" requiredMessage="#{bundle.CreateProveedoresRequiredMessage_cp}"/>
-                    <h:outputLabel value="#{bundle.CreateProveedoresLabel_telefono1}" for="telefono1" />
-                    <h:inputText id="telefono1" value="#{proveedoresController.selected.telefono1}" title="#{bundle.CreateProveedoresTitle_telefono1}" required="true" requiredMessage="#{bundle.CreateProveedoresRequiredMessage_telefono1}"/>
-                    <h:outputLabel value="#{bundle.CreateProveedoresLabel_telefono2}" for="telefono2" />
-                    <h:inputText id="telefono2" value="#{proveedoresController.selected.telefono2}" title="#{bundle.CreateProveedoresTitle_telefono2}" required="true" requiredMessage="#{bundle.CreateProveedoresRequiredMessage_telefono2}"/>
-                    <h:outputLabel value="#{bundle.CreateProveedoresLabel_email}" for="email" />
-                    <h:inputText id="email" value="#{proveedoresController.selected.email}" title="#{bundle.CreateProveedoresTitle_email}" required="true" requiredMessage="#{bundle.CreateProveedoresRequiredMessage_email}"/>
-                    <h:outputLabel value="#{bundle.CreateProveedoresLabel_status}" for="status" />
-                    <h:inputText id="status" value="#{proveedoresController.selected.status}" title="#{bundle.CreateProveedoresTitle_status}" required="true" requiredMessage="#{bundle.CreateProveedoresRequiredMessage_status}"/>
-                </h:panelGrid>
-                <br />
-                <br/>
-                <h:commandButton action="#{proveedoresController.create}" value="#{bundle.CreateProveedoresSaveLink}" />
-                <br />
-                <br />
-                <h:commandButton action="#{proveedoresController.prepareList}" value="#{bundle.CreateProveedoresShowAllLink}" immediate="true"/>
-                <br />
-                <br />
-                <h:commandButton action="/plantilla_admin" value="#{bundle.CreateProveedoresIndexLink}"/>
+                <div class="container">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputLabel value="#{bundle.CreateProveedoresLabel_id}" for="id" />
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText id="id" value="#{proveedoresController.selected.id}" title="#{bundle.CreateProveedoresTitle_id}" required="true" requiredMessage="#{bundle.CreateProveedoresRequiredMessage_id}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputLabel value="#{bundle.CreateProveedoresLabel_razonSocial}" for="razonSocial" />
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText id="razonSocial" value="#{proveedoresController.selected.razonSocial}" title="#{bundle.CreateProveedoresTitle_razonSocial}" required="true" requiredMessage="#{bundle.CreateProveedoresRequiredMessage_razonSocial}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputLabel value="#{bundle.CreateProveedoresLabel_rfc}" for="rfc" />
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText id="rfc" value="#{proveedoresController.selected.rfc}" title="#{bundle.CreateProveedoresTitle_rfc}" required="true" requiredMessage="#{bundle.CreateProveedoresRequiredMessage_rfc}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputLabel value="#{bundle.CreateProveedoresLabel_numInt}" for="numInt" />
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText id="numInt" value="#{proveedoresController.selected.numInt}" title="#{bundle.CreateProveedoresTitle_numInt}" required="true" requiredMessage="#{bundle.CreateProveedoresRequiredMessage_numInt}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputLabel value="#{bundle.CreateProveedoresLabel_numExt}" for="numExt" />
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText id="numExt" value="#{proveedoresController.selected.numExt}" title="#{bundle.CreateProveedoresTitle_numExt}" required="true" requiredMessage="#{bundle.CreateProveedoresRequiredMessage_numExt}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputLabel value="#{bundle.CreateProveedoresLabel_colonia}" for="colonia" />
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText id="colonia" value="#{proveedoresController.selected.colonia}" title="#{bundle.CreateProveedoresTitle_colonia}" required="true" requiredMessage="#{bundle.CreateProveedoresRequiredMessage_colonia}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputLabel value="#{bundle.CreateProveedoresLabel_cp}" for="cp" />
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText id="cp" value="#{proveedoresController.selected.cp}" title="#{bundle.CreateProveedoresTitle_cp}" required="true" requiredMessage="#{bundle.CreateProveedoresRequiredMessage_cp}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputLabel value="#{bundle.CreateProveedoresLabel_telefono1}" for="telefono1" />
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText id="telefono1" value="#{proveedoresController.selected.telefono1}" title="#{bundle.CreateProveedoresTitle_telefono1}" required="true" requiredMessage="#{bundle.CreateProveedoresRequiredMessage_telefono1}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputLabel value="#{bundle.CreateProveedoresLabel_telefono2}" for="telefono2" />
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText id="telefono2" value="#{proveedoresController.selected.telefono2}" title="#{bundle.CreateProveedoresTitle_telefono2}" required="true" requiredMessage="#{bundle.CreateProveedoresRequiredMessage_telefono2}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputLabel value="#{bundle.CreateProveedoresLabel_email}" for="email" />
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText id="email" value="#{proveedoresController.selected.email}" title="#{bundle.CreateProveedoresTitle_email}" required="true" requiredMessage="#{bundle.CreateProveedoresRequiredMessage_email}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputLabel value="#{bundle.CreateProveedoresLabel_status}" for="status" />
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText id="status" value="#{proveedoresController.selected.status}" title="#{bundle.CreateProveedoresTitle_status}" required="true" requiredMessage="#{bundle.CreateProveedoresRequiredMessage_status}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="float: right;">
+                                <td>
+                                    <h:commandButton action="#{proveedoresController.create}" value="#{bundle.CreateProveedoresSaveLink}" class="btn-success"/>
+                                </td>
+                                <td>
+                                    <h:commandButton action="#{proveedoresController.prepareList}" value="#{bundle.CreateProveedoresShowAllLink}" immediate="true" class="btn-info"/>
+                                </td>
+                                <td>
+                                    <h:commandButton action="/plantilla_admin" value="#{bundle.CreateProveedoresIndexLink}" class="btn-primary"/>
+                                </td>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </h:form>
         </ui:define>
     </ui:composition>

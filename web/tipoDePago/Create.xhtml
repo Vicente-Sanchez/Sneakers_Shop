@@ -14,25 +14,73 @@
                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
             </h:panelGroup>
             <h:form>
-                <h:panelGrid columns="2">
-                    <h:outputLabel value="#{bundle.CreateTipoDePagoLabel_id}" for="id" />
-                    <h:inputText id="id" value="#{tipoDePagoController.selected.id}" title="#{bundle.CreateTipoDePagoTitle_id}" required="true" requiredMessage="#{bundle.CreateTipoDePagoRequiredMessage_id}"/>
-                    <h:outputLabel value="#{bundle.CreateTipoDePagoLabel_nombre}" for="nombre" />
-                    <h:inputText id="nombre" value="#{tipoDePagoController.selected.nombre}" title="#{bundle.CreateTipoDePagoTitle_nombre}" required="true" requiredMessage="#{bundle.CreateTipoDePagoRequiredMessage_nombre}"/>
-                    <h:outputLabel value="#{bundle.CreateTipoDePagoLabel_descripccion}" for="descripccion" />
-                    <h:inputText id="descripccion" value="#{tipoDePagoController.selected.descripccion}" title="#{bundle.CreateTipoDePagoTitle_descripccion}" required="true" requiredMessage="#{bundle.CreateTipoDePagoRequiredMessage_descripccion}"/>
-                    <h:outputLabel value="#{bundle.CreateTipoDePagoLabel_status}" for="status" />
-                    <h:inputText id="status" value="#{tipoDePagoController.selected.status}" title="#{bundle.CreateTipoDePagoTitle_status}" required="true" requiredMessage="#{bundle.CreateTipoDePagoRequiredMessage_status}"/>
-                </h:panelGrid>
-                <br />
-                <br/>
-                <h:commandButton action="#{tipoDePagoController.create}" value="#{bundle.CreateTipoDePagoSaveLink}" />
-                <br />
-                <br />
-                <h:commandButton action="#{tipoDePagoController.prepareList}" value="#{bundle.CreateTipoDePagoShowAllLink}" immediate="true"/>
-                <br />
-                <br />
-                <h:commandButton action="/plantilla_admin" value="#{bundle.CreateTipoDePagoIndexLink}"/>
+                <div class="container">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputLabel value="#{bundle.CreateTipoDePagoLabel_id}" for="id" />
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText id="id" value="#{tipoDePagoController.selected.id}" title="#{bundle.CreateTipoDePagoTitle_id}" required="true" requiredMessage="#{bundle.CreateTipoDePagoRequiredMessage_id}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputLabel value="#{bundle.CreateTipoDePagoLabel_nombre}" for="nombre" />
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText id="nombre" value="#{tipoDePagoController.selected.nombre}" title="#{bundle.CreateTipoDePagoTitle_nombre}" required="true" requiredMessage="#{bundle.CreateTipoDePagoRequiredMessage_nombre}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputLabel value="#{bundle.CreateTipoDePagoLabel_descripccion}" for="descripccion" />
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText id="descripccion" value="#{tipoDePagoController.selected.descripccion}" title="#{bundle.CreateTipoDePagoTitle_descripccion}" required="true" requiredMessage="#{bundle.CreateTipoDePagoRequiredMessage_descripccion}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputLabel value="#{bundle.CreateTipoDePagoLabel_status}" for="status" />
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText id="status" value="#{tipoDePagoController.selected.status}" title="#{bundle.CreateTipoDePagoTitle_status}" required="true" requiredMessage="#{bundle.CreateTipoDePagoRequiredMessage_status}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="float: right;">
+                                <td>
+                                    <h:commandButton action="#{tipoDePagoController.create}" value="#{bundle.CreateTipoDePagoSaveLink}" class="btn-success"/>
+                                </td>
+                                <td>
+                                    <h:commandButton action="#{tipoDePagoController.prepareList}" value="#{bundle.CreateTipoDePagoShowAllLink}" immediate="true" class="btn-info"/>
+                                </td>
+                                <td>
+                                    <h:commandButton action="/plantilla_admin" value="#{bundle.CreateTipoDePagoIndexLink}" class="btn-primary"/>
+                                </td>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </h:form>
         </ui:define>
     </ui:composition>

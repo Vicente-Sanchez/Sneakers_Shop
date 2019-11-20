@@ -14,32 +14,84 @@
                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
             </h:panelGroup>
             <h:form>
-                <h:panelGrid columns="2">
-                    <h:outputText value="#{bundle.ViewImagenesLabel_id}"/>
-                    <h:inputText disabled="true" value="#{imagenesController.selected.id}" title="#{bundle.ViewImagenesTitle_id}"/>
-                    <h:outputText value="#{bundle.ViewImagenesLabel_ruta}"/>
-                    <h:inputText disabled="true" value="#{imagenesController.selected.ruta}" title="#{bundle.ViewImagenesTitle_ruta}"/>
-                    <h:outputText value="#{bundle.ViewImagenesLabel_status}"/>
-                    <h:inputText disabled="true" value="#{imagenesController.selected.status}" title="#{bundle.ViewImagenesTitle_status}"/>
-                    <h:outputText value="#{bundle.ViewImagenesLabel_idProd}"/>
-                    <h:inputText disabled="true" value="#{imagenesController.selected.idProd}" title="#{bundle.ViewImagenesTitle_idProd}"/>
-                </h:panelGrid>
-                <br />
-                <br/>
-                <h:commandButton action="#{imagenesController.destroyAndView}" value="#{bundle.ViewImagenesDestroyLink}"/>
-                <br />
-                <br />
-                <h:commandButton action="Edit" value="#{bundle.ViewImagenesEditLink}"/>
-                <br />
-                <br/>
-                <h:commandButton action="#{imagenesController.prepareCreate}" value="#{bundle.ViewImagenesCreateLink}" />
-                <br />
-                <br/>
-                <h:commandButton action="#{imagenesController.prepareList}" value="#{bundle.ViewImagenesShowAllLink}"/>
-                <br />
-                <br />
-                <h:commandButton action="/plantilla_admin" value="#{bundle.ViewImagenesIndexLink}"/>
-
+                <div class="container">
+                    <div class="card">
+                        <div class="card-header">
+                            <h:outputText value="#{bundle.ViewImagenesTitle}"></h:outputText>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputText value="#{bundle.ViewImagenesLabel_id}"/>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText disabled="true" value="#{imagenesController.selected.id}" title="#{bundle.ViewImagenesTitle_id}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputText value="#{bundle.ViewImagenesLabel_ruta}"/>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText disabled="true" value="#{imagenesController.selected.ruta}" title="#{bundle.ViewImagenesTitle_ruta}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputText value="#{bundle.ViewImagenesLabel_status}"/>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText disabled="true" value="#{imagenesController.selected.status}" title="#{bundle.ViewImagenesTitle_status}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputText value="#{bundle.ViewImagenesLabel_idProd}"/>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText disabled="true" value="#{imagenesController.selected.idProd}" title="#{bundle.ViewImagenesTitle_idProd}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="float: right;">
+                                <div class="">
+                                    <td>
+                                        <h:commandButton action="#{imagenesController.destroyAndView}" value="#{bundle.ViewImagenesDestroyLink}" class="btn-danger"/>
+                                    </td>
+                                    <td>
+                                        <h:commandButton action="Edit" value="#{bundle.ViewImagenesEditLink}" class="btn-warning"/>
+                                    </td>
+                                    <td>
+                                        <h:commandButton action="#{imagenesController.prepareCreate}" value="#{bundle.ViewImagenesCreateLink}" class="btn-success"/>
+                                    </td>
+                                    <td>
+                                        <h:commandButton action="#{imagenesController.prepareList}" value="#{bundle.ViewImagenesShowAllLink}" class="btn-info"/>
+                                    </td>
+                                    <td>
+                                        <h:commandButton action="/plantilla_admin" value="#{bundle.ViewImagenesIndexLink}" class="btn-primary"/>
+                                    </td>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </h:form>
         </ui:define>
     </ui:composition>

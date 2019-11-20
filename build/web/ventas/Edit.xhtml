@@ -14,38 +14,128 @@
                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
             </h:panelGroup>
             <h:form>
-                <h:panelGrid columns="2">
-                    <h:outputLabel value="#{bundle.EditVentasLabel_id}" for="id" />
-                    <h:inputText id="id" value="#{ventasController.selected.id}" title="#{bundle.EditVentasTitle_id}" required="true" requiredMessage="#{bundle.EditVentasRequiredMessage_id}"/>
-                    <h:outputLabel value="#{bundle.EditVentasLabel_fecha}" for="fecha" />
-                    <h:inputText id="fecha" value="#{ventasController.selected.fecha}" title="#{bundle.EditVentasTitle_fecha}" required="true" requiredMessage="#{bundle.EditVentasRequiredMessage_fecha}">
-                        <f:convertDateTime pattern="MM/dd/yyyy" />
-                    </h:inputText>
-                    <h:outputLabel value="#{bundle.EditVentasLabel_idCliente}" for="idCliente" />
-                    <h:inputText id="idCliente" value="#{ventasController.selected.idCliente}" title="#{bundle.EditVentasTitle_idCliente}" required="true" requiredMessage="#{bundle.EditVentasRequiredMessage_idCliente}"/>
-                    <h:outputLabel value="#{bundle.EditVentasLabel_subtotal}" for="subtotal" />
-                    <h:inputText id="subtotal" value="#{ventasController.selected.subtotal}" title="#{bundle.EditVentasTitle_subtotal}" required="true" requiredMessage="#{bundle.EditVentasRequiredMessage_subtotal}"/>
-                    <h:outputLabel value="#{bundle.EditVentasLabel_iva}" for="iva" />
-                    <h:inputText id="iva" value="#{ventasController.selected.iva}" title="#{bundle.EditVentasTitle_iva}" required="true" requiredMessage="#{bundle.EditVentasRequiredMessage_iva}"/>
-                    <h:outputLabel value="#{bundle.EditVentasLabel_total}" for="total" />
-                    <h:inputText id="total" value="#{ventasController.selected.total}" title="#{bundle.EditVentasTitle_total}" required="true" requiredMessage="#{bundle.EditVentasRequiredMessage_total}"/>
-                    <h:outputLabel value="#{bundle.EditVentasLabel_status}" for="status" />
-                    <h:inputText id="status" value="#{ventasController.selected.status}" title="#{bundle.EditVentasTitle_status}" required="true" requiredMessage="#{bundle.EditVentasRequiredMessage_status}"/>
-                    <h:outputLabel value="#{bundle.EditVentasLabel_idTipodepago}" for="idTipodepago" />
-                    <h:selectOneMenu id="idTipodepago" value="#{ventasController.selected.idTipodepago}" title="#{bundle.EditVentasTitle_idTipodepago}" required="true" requiredMessage="#{bundle.EditVentasRequiredMessage_idTipodepago}">
-                        <f:selectItems value="#{tipoDePagoController.itemsAvailableSelectOne}"/>
-                    </h:selectOneMenu>
-                </h:panelGrid>
-                <h:commandButton action="#{ventasController.update}" value="#{bundle.EditVentasSaveLink}"/>
-                <br />
-                <br />
-                <h:commandButton action="View" value="#{bundle.EditVentasViewLink}"/>
-                <br />
-                <br/>
-                <h:commandButton action="#{ventasController.prepareList}" value="#{bundle.EditVentasShowAllLink}" immediate="true"/>
-                <br />
-                <br />
-                <h:commandButton action="/plantilla_admin" value="#{bundle.EditVentasIndexLink}" />
+                <div class="container">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputLabel value="#{bundle.EditVentasLabel_id}" for="id" />
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText id="id" value="#{ventasController.selected.id}" title="#{bundle.EditVentasTitle_id}" required="true" requiredMessage="#{bundle.EditVentasRequiredMessage_id}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputLabel value="#{bundle.EditVentasLabel_fecha}" for="fecha" />
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText id="fecha" value="#{ventasController.selected.fecha}" title="#{bundle.EditVentasTitle_fecha}" required="true" requiredMessage="#{bundle.EditVentasRequiredMessage_fecha}">
+                                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                                            </h:inputText>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputLabel value="#{bundle.EditVentasLabel_idCliente}" for="idCliente" />
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText id="idCliente" value="#{ventasController.selected.idCliente}" title="#{bundle.EditVentasTitle_idCliente}" required="true" requiredMessage="#{bundle.EditVentasRequiredMessage_idCliente}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputLabel value="#{bundle.EditVentasLabel_subtotal}" for="subtotal" />
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText id="subtotal" value="#{ventasController.selected.subtotal}" title="#{bundle.EditVentasTitle_subtotal}" required="true" requiredMessage="#{bundle.EditVentasRequiredMessage_subtotal}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputLabel value="#{bundle.EditVentasLabel_iva}" for="iva" />
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText id="iva" value="#{ventasController.selected.iva}" title="#{bundle.EditVentasTitle_iva}" required="true" requiredMessage="#{bundle.EditVentasRequiredMessage_iva}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputLabel value="#{bundle.EditVentasLabel_total}" for="total" />
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText id="total" value="#{ventasController.selected.total}" title="#{bundle.EditVentasTitle_total}" required="true" requiredMessage="#{bundle.EditVentasRequiredMessage_total}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputLabel value="#{bundle.EditVentasLabel_status}" for="status" />
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText id="status" value="#{ventasController.selected.status}" title="#{bundle.EditVentasTitle_status}" required="true" requiredMessage="#{bundle.EditVentasRequiredMessage_status}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputLabel value="#{bundle.EditVentasLabel_idTipodepago}" for="idTipodepago" />
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:selectOneMenu id="idTipodepago" value="#{ventasController.selected.idTipodepago}" title="#{bundle.EditVentasTitle_idTipodepago}" required="true" requiredMessage="#{bundle.EditVentasRequiredMessage_idTipodepago}">
+                                                <f:selectItems value="#{tipoDePagoController.itemsAvailableSelectOne}"/>
+                                            </h:selectOneMenu>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="float: right;">
+                                <td>
+                                    <h:commandButton action="#{ventasController.update}" value="#{bundle.EditVentasSaveLink}" class="btn-success"/>
+                                </td>
+                                <td>
+                                    <h:commandButton action="View" value="#{bundle.EditVentasViewLink}" class="btn-info"/>
+                                </td>
+                                <td>
+                                    <h:commandButton action="#{ventasController.prepareList}" value="#{bundle.EditVentasShowAllLink}" immediate="true" class="btn-warning"/>
+                                </td>
+                                <td>
+                                    <h:commandButton action="/plantilla_admin" value="#{bundle.EditVentasIndexLink}" class="btn-primary"/>
+                                </td>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </h:form>
         </ui:define>
     </ui:composition>

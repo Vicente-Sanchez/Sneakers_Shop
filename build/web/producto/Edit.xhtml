@@ -14,40 +14,130 @@
                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
             </h:panelGroup>
             <h:form>
-                <h:panelGrid columns="2">
-                    <h:outputLabel value="#{bundle.EditProductoLabel_id}" for="id" />
-                    <h:inputText id="id" value="#{productoController.selected.id}" title="#{bundle.EditProductoTitle_id}" required="true" requiredMessage="#{bundle.EditProductoRequiredMessage_id}"/>
-                    <h:outputLabel value="#{bundle.EditProductoLabel_nombreProd}" for="nombreProd" />
-                    <h:inputText id="nombreProd" value="#{productoController.selected.nombreProd}" title="#{bundle.EditProductoTitle_nombreProd}" required="true" requiredMessage="#{bundle.EditProductoRequiredMessage_nombreProd}"/>
-                    <h:outputLabel value="#{bundle.EditProductoLabel_descripProd}" for="descripProd" />
-                    <h:inputText id="descripProd" value="#{productoController.selected.descripProd}" title="#{bundle.EditProductoTitle_descripProd}" required="true" requiredMessage="#{bundle.EditProductoRequiredMessage_descripProd}"/>
-                    <h:outputLabel value="#{bundle.EditProductoLabel_precioProd}" for="precioProd" />
-                    <h:inputText id="precioProd" value="#{productoController.selected.precioProd}" title="#{bundle.EditProductoTitle_precioProd}" required="true" requiredMessage="#{bundle.EditProductoRequiredMessage_precioProd}"/>
-                    <h:outputLabel value="#{bundle.EditProductoLabel_status}" for="status" />
-                    <h:inputText id="status" value="#{productoController.selected.status}" title="#{bundle.EditProductoTitle_status}" required="true" requiredMessage="#{bundle.EditProductoRequiredMessage_status}"/>
-                    <h:outputLabel value="#{bundle.EditProductoLabel_idCategoria}" for="idCategoria" />
-                    <h:selectOneMenu id="idCategoria" value="#{productoController.selected.idCategoria}" title="#{bundle.EditProductoTitle_idCategoria}" required="true" requiredMessage="#{bundle.EditProductoRequiredMessage_idCategoria}">
-                        <f:selectItems value="#{categoriasController.itemsAvailableSelectOne}"/>
-                    </h:selectOneMenu>
-                    <h:outputLabel value="#{bundle.EditProductoLabel_idGen}" for="idGen" />
-                    <h:selectOneMenu id="idGen" value="#{productoController.selected.idGen}" title="#{bundle.EditProductoTitle_idGen}" required="true" requiredMessage="#{bundle.EditProductoRequiredMessage_idGen}">
-                        <f:selectItems value="#{generoController.itemsAvailableSelectOne}"/>
-                    </h:selectOneMenu>
-                    <h:outputLabel value="#{bundle.EditProductoLabel_idProv}" for="idProv" />
-                    <h:selectOneMenu id="idProv" value="#{productoController.selected.idProv}" title="#{bundle.EditProductoTitle_idProv}" required="true" requiredMessage="#{bundle.EditProductoRequiredMessage_idProv}">
-                        <f:selectItems value="#{proveedoresController.itemsAvailableSelectOne}"/>
-                    </h:selectOneMenu>
-                </h:panelGrid>
-                <h:commandButton action="#{productoController.update}" value="#{bundle.EditProductoSaveLink}"/>
-                <br />
-                <br />
-                <h:commandButton action="View" value="#{bundle.EditProductoViewLink}"/>
-                <br />
-                <br/>
-                <h:commandButton action="#{productoController.prepareList}" value="#{bundle.EditProductoShowAllLink}" immediate="true"/>
-                <br />
-                <br />
-                <h:commandButton action="/plantilla_admin" value="#{bundle.EditProductoIndexLink}" />
+                <div class="container">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputLabel value="#{bundle.EditProductoLabel_id}" for="id" />
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText id="id" value="#{productoController.selected.id}" title="#{bundle.EditProductoTitle_id}" required="true" requiredMessage="#{bundle.EditProductoRequiredMessage_id}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputLabel value="#{bundle.EditProductoLabel_nombreProd}" for="nombreProd" />
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText id="nombreProd" value="#{productoController.selected.nombreProd}" title="#{bundle.EditProductoTitle_nombreProd}" required="true" requiredMessage="#{bundle.EditProductoRequiredMessage_nombreProd}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputLabel value="#{bundle.EditProductoLabel_descripProd}" for="descripProd" />
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText id="descripProd" value="#{productoController.selected.descripProd}" title="#{bundle.EditProductoTitle_descripProd}" required="true" requiredMessage="#{bundle.EditProductoRequiredMessage_descripProd}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputLabel value="#{bundle.EditProductoLabel_precioProd}" for="precioProd" />
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText id="precioProd" value="#{productoController.selected.precioProd}" title="#{bundle.EditProductoTitle_precioProd}" required="true" requiredMessage="#{bundle.EditProductoRequiredMessage_precioProd}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputLabel value="#{bundle.EditProductoLabel_status}" for="status" />
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText id="status" value="#{productoController.selected.status}" title="#{bundle.EditProductoTitle_status}" required="true" requiredMessage="#{bundle.EditProductoRequiredMessage_status}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputLabel value="#{bundle.EditProductoLabel_idCategoria}" for="idCategoria" />
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:selectOneMenu id="idCategoria" value="#{productoController.selected.idCategoria}" title="#{bundle.EditProductoTitle_idCategoria}" required="true" requiredMessage="#{bundle.EditProductoRequiredMessage_idCategoria}">
+                                                <f:selectItems value="#{categoriasController.itemsAvailableSelectOne}"/>
+                                            </h:selectOneMenu>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputLabel value="#{bundle.EditProductoLabel_idGen}" for="idGen" />
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:selectOneMenu id="idGen" value="#{productoController.selected.idGen}" title="#{bundle.EditProductoTitle_idGen}" required="true" requiredMessage="#{bundle.EditProductoRequiredMessage_idGen}">
+                                                <f:selectItems value="#{generoController.itemsAvailableSelectOne}"/>
+                                            </h:selectOneMenu>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputLabel value="#{bundle.EditProductoLabel_idProv}" for="idProv" />
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:selectOneMenu id="idProv" value="#{productoController.selected.idProv}" title="#{bundle.EditProductoTitle_idProv}" required="true" requiredMessage="#{bundle.EditProductoRequiredMessage_idProv}">
+                                                <f:selectItems value="#{proveedoresController.itemsAvailableSelectOne}"/>
+                                            </h:selectOneMenu>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="float: right;">
+                                <td>
+                                    <h:commandButton action="#{productoController.update}" value="#{bundle.EditProductoSaveLink}" class="btn-success"/>
+                                </td>
+                                <td>
+                                    <h:commandButton action="View" value="#{bundle.EditProductoViewLink}" class="btn-info"/>
+                                </td>
+                                <td>
+                                    <h:commandButton action="#{productoController.prepareList}" value="#{bundle.EditProductoShowAllLink}" immediate="true" class="btn-warning"/>
+                                </td>
+                                <td>
+                                    <h:commandButton action="/plantilla_admin" value="#{bundle.EditProductoIndexLink}" class="btn-primary"/>
+                                </td>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </h:form>
         </ui:define>
     </ui:composition>

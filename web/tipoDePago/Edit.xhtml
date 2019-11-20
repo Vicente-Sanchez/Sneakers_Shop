@@ -14,26 +14,76 @@
                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
             </h:panelGroup>
             <h:form>
-                <h:panelGrid columns="2">
-                    <h:outputLabel value="#{bundle.EditTipoDePagoLabel_id}" for="id" />
-                    <h:inputText id="id" value="#{tipoDePagoController.selected.id}" title="#{bundle.EditTipoDePagoTitle_id}" required="true" requiredMessage="#{bundle.EditTipoDePagoRequiredMessage_id}"/>
-                    <h:outputLabel value="#{bundle.EditTipoDePagoLabel_nombre}" for="nombre" />
-                    <h:inputText id="nombre" value="#{tipoDePagoController.selected.nombre}" title="#{bundle.EditTipoDePagoTitle_nombre}" required="true" requiredMessage="#{bundle.EditTipoDePagoRequiredMessage_nombre}"/>
-                    <h:outputLabel value="#{bundle.EditTipoDePagoLabel_descripccion}" for="descripccion" />
-                    <h:inputText id="descripccion" value="#{tipoDePagoController.selected.descripccion}" title="#{bundle.EditTipoDePagoTitle_descripccion}" required="true" requiredMessage="#{bundle.EditTipoDePagoRequiredMessage_descripccion}"/>
-                    <h:outputLabel value="#{bundle.EditTipoDePagoLabel_status}" for="status" />
-                    <h:inputText id="status" value="#{tipoDePagoController.selected.status}" title="#{bundle.EditTipoDePagoTitle_status}" required="true" requiredMessage="#{bundle.EditTipoDePagoRequiredMessage_status}"/>
-                </h:panelGrid>
-                <h:commandButton action="#{tipoDePagoController.update}" value="#{bundle.EditTipoDePagoSaveLink}"/>
-                <br />
-                <br />
-                <h:commandButton action="View" value="#{bundle.EditTipoDePagoViewLink}"/>
-                <br />
-                <br/>
-                <h:commandButton action="#{tipoDePagoController.prepareList}" value="#{bundle.EditTipoDePagoShowAllLink}" immediate="true"/>
-                <br />
-                <br />
-                <h:commandButton action="/plantilla_admin" value="#{bundle.EditTipoDePagoIndexLink}" />
+                <div class="container">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputLabel value="#{bundle.EditTipoDePagoLabel_id}" for="id" />
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText id="id" value="#{tipoDePagoController.selected.id}" title="#{bundle.EditTipoDePagoTitle_id}" required="true" requiredMessage="#{bundle.EditTipoDePagoRequiredMessage_id}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputLabel value="#{bundle.EditTipoDePagoLabel_nombre}" for="nombre" />
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText id="nombre" value="#{tipoDePagoController.selected.nombre}" title="#{bundle.EditTipoDePagoTitle_nombre}" required="true" requiredMessage="#{bundle.EditTipoDePagoRequiredMessage_nombre}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputLabel value="#{bundle.EditTipoDePagoLabel_descripccion}" for="descripccion" />
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText id="descripccion" value="#{tipoDePagoController.selected.descripccion}" title="#{bundle.EditTipoDePagoTitle_descripccion}" required="true" requiredMessage="#{bundle.EditTipoDePagoRequiredMessage_descripccion}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputLabel value="#{bundle.EditTipoDePagoLabel_status}" for="status" />
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText id="status" value="#{tipoDePagoController.selected.status}" title="#{bundle.EditTipoDePagoTitle_status}" required="true" requiredMessage="#{bundle.EditTipoDePagoRequiredMessage_status}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="float: right;">
+                                <td>
+                                    <h:commandButton action="#{tipoDePagoController.update}" value="#{bundle.EditTipoDePagoSaveLink}" class="btn-success"/>
+                                </td>
+                                <td>
+                                    <h:commandButton action="View" value="#{bundle.EditTipoDePagoViewLink}" class="btn-info"/>
+                                </td>
+                                <td>
+                                    <h:commandButton action="#{tipoDePagoController.prepareList}" value="#{bundle.EditTipoDePagoShowAllLink}" immediate="true" class="btn-warning"/>
+                                </td>
+                                <td>
+                                    <h:commandButton action="/plantilla_admin" value="#{bundle.EditTipoDePagoIndexLink}" class="btn-primary"/>
+                                </td>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </h:form>
         </ui:define>
     </ui:composition>

@@ -14,36 +14,119 @@
                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
             </h:panelGroup>
             <h:form>
-                <h:panelGrid columns="2">
-                    <h:outputText value="#{bundle.ViewDetCompraLabel_id}"/>
-                    <h:inputText disabled="true" value="#{detCompraController.selected.id}" title="#{bundle.ViewDetCompraTitle_id}"/>
-                    <h:outputText value="#{bundle.ViewDetCompraLabel_cantidad}"/>
-                    <h:inputText disabled="true" value="#{detCompraController.selected.cantidad}" title="#{bundle.ViewDetCompraTitle_cantidad}"/>
-                    <h:outputText value="#{bundle.ViewDetCompraLabel_precioCompra}"/>
-                    <h:inputText disabled="true" value="#{detCompraController.selected.precioCompra}" title="#{bundle.ViewDetCompraTitle_precioCompra}"/>
-                    <h:outputText value="#{bundle.ViewDetCompraLabel_precioVenta}"/>
-                    <h:inputText disabled="true" value="#{detCompraController.selected.precioVenta}" title="#{bundle.ViewDetCompraTitle_precioVenta}"/>
-                    <h:outputText value="#{bundle.ViewDetCompraLabel_status}"/>
-                    <h:inputText disabled="true" value="#{detCompraController.selected.status}" title="#{bundle.ViewDetCompraTitle_status}"/>
-                    <h:outputText value="#{bundle.ViewDetCompraLabel_idComp}"/>
-                    <h:inputText disabled="true" value="#{detCompraController.selected.idComp}" title="#{bundle.ViewDetCompraTitle_idComp}"/>
-                    <h:outputText value="#{bundle.ViewDetCompraLabel_idProd}"/>
-                    <h:inputText disabled="true" value="#{detCompraController.selected.idProd}" title="#{bundle.ViewDetCompraTitle_idProd}"/>
-                </h:panelGrid>
-                <br />
-                <br/>
-                <h:commandButton action="#{detCompraController.destroyAndView}" value="#{bundle.ViewDetCompraDestroyLink}"/>
-                <br />
-                <br />
-                <h:commandButton action="Edit" value="#{bundle.ViewDetCompraEditLink}"/>
-                <br />
-                <h:commandButton action="#{detCompraController.prepareCreate}" value="#{bundle.ViewDetCompraCreateLink}" />
-                <br />
-                <h:commandButton action="#{detCompraController.prepareList}" value="#{bundle.ViewDetCompraShowAllLink}"/>
-                <br />
-                <br />
-                <h:commandButton action="/plantilla_admin" value="#{bundle.ViewDetCompraIndexLink}"/>
-
+                <div class="container">
+                    <div class="card">
+                        <div class="card-header">
+                            <h:outputText value="#{bundle.ViewDetCompraTitle}"></h:outputText>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputText value="#{bundle.ViewDetCompraLabel_id}"/>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText disabled="true" value="#{detCompraController.selected.id}" title="#{bundle.ViewDetCompraTitle_id}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputText value="#{bundle.ViewDetCompraLabel_cantidad}"/>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText disabled="true" value="#{detCompraController.selected.cantidad}" title="#{bundle.ViewDetCompraTitle_cantidad}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputText value="#{bundle.ViewDetCompraLabel_precioCompra}"/>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText disabled="true" value="#{detCompraController.selected.precioCompra}" title="#{bundle.ViewDetCompraTitle_precioCompra}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputText value="#{bundle.ViewDetCompraLabel_precioVenta}"/>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText disabled="true" value="#{detCompraController.selected.precioVenta}" title="#{bundle.ViewDetCompraTitle_precioVenta}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputText value="#{bundle.ViewDetCompraLabel_status}"/>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText disabled="true" value="#{detCompraController.selected.status}" title="#{bundle.ViewDetCompraTitle_status}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputText value="#{bundle.ViewDetCompraLabel_idComp}"/>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText disabled="true" value="#{detCompraController.selected.idComp}" title="#{bundle.ViewDetCompraTitle_idComp}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputText value="#{bundle.ViewDetCompraLabel_idProd}"/>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText disabled="true" value="#{detCompraController.selected.idProd}" title="#{bundle.ViewDetCompraTitle_idProd}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="float: right;">
+                                <div class="">
+                                    <td>
+                                        <h:commandButton action="#{detCompraController.destroyAndView}" value="#{bundle.ViewDetCompraDestroyLink}" class="btn-danger"/>
+                                    </td>
+                                    <td>
+                                        <h:commandButton action="Edit" value="#{bundle.ViewDetCompraEditLink}" class="btn-warning"/>
+                                    </td>
+                                    <td>
+                                        <h:commandButton action="#{detCompraController.prepareCreate}" value="#{bundle.ViewDetCompraCreateLink}" class="btn-success"/>
+                                    </td>
+                                    <td>
+                                        <h:commandButton action="#{detCompraController.prepareList}" value="#{bundle.ViewDetCompraShowAllLink}" class="btn-info"/>
+                                    </td>
+                                    <td>
+                                        <h:commandButton action="/plantilla_admin" value="#{bundle.ViewDetCompraIndexLink}" class="btn-primary"/>
+                                    </td>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </h:form>
         </ui:define>
     </ui:composition>

@@ -11,74 +11,85 @@
         </ui:define>
         <ui:define name="body">
             <h:form styleClass="jsfcrud_list_form">
-                <h:panelGroup id="messagePanel" layout="block">
-                    <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
-                </h:panelGroup>
-                <h:outputText escape="false" value="#{bundle.ListDetCompraEmpty}" rendered="#{detCompraController.items.rowCount == 0}"/>
-                <h:panelGroup rendered="#{detCompraController.items.rowCount > 0}">
-                    <h:outputText value="#{detCompraController.pagination.pageFirstItem + 1}..#{detCompraController.pagination.pageLastItem + 1}/#{detCompraController.pagination.itemsCount}"/>&nbsp;
-                    <h:commandButton action="#{detCompraController.previous}" value="#{bundle.Previous} #{detCompraController.pagination.pageSize}" rendered="#{detCompraController.pagination.hasPreviousPage}"/>&nbsp;
-                    <h:commandButton action="#{detCompraController.next}" value="#{bundle.Next} #{detCompraController.pagination.pageSize}" rendered="#{detCompraController.pagination.hasNextPage}"/>&nbsp;
-                    <h:dataTable value="#{detCompraController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
-                        <h:column>
-                            <f:facet name="header">
-                                <h:outputText value="#{bundle.ListDetCompraTitle_id}"/>
-                            </f:facet>
-                            <h:outputText value="#{item.id}"/>
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header">
-                                <h:outputText value="#{bundle.ListDetCompraTitle_cantidad}"/>
-                            </f:facet>
-                            <h:outputText value="#{item.cantidad}"/>
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header">
-                                <h:outputText value="#{bundle.ListDetCompraTitle_precioCompra}"/>
-                            </f:facet>
-                            <h:outputText value="#{item.precioCompra}"/>
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header">
-                                <h:outputText value="#{bundle.ListDetCompraTitle_precioVenta}"/>
-                            </f:facet>
-                            <h:outputText value="#{item.precioVenta}"/>
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header">
-                                <h:outputText value="#{bundle.ListDetCompraTitle_status}"/>
-                            </f:facet>
-                            <h:outputText value="#{item.status}"/>
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header">
-                                <h:outputText value="#{bundle.ListDetCompraTitle_idComp}"/>
-                            </f:facet>
-                            <h:outputText value="#{item.idComp}"/>
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header">
-                                <h:outputText value="#{bundle.ListDetCompraTitle_idProd}"/>
-                            </f:facet>
-                            <h:outputText value="#{item.idProd}"/>
-                        </h:column>
-                        <h:column>
-                            <f:facet name="header">
-                                <h:outputText value="&nbsp;"/>
-                            </f:facet>
-                            <h:commandButton action="#{detCompraController.prepareView}" value="#{bundle.ListDetCompraViewLink}"/>
-                            <h:outputText value=" "/>
-                            <h:commandButton action="#{detCompraController.prepareEdit}" value="#{bundle.ListDetCompraEditLink}"/>
-                            <h:outputText value=" "/>
-                            <h:commandButton action="#{detCompraController.destroy}" value="#{bundle.ListDetCompraDestroyLink}"/>
-                        </h:column>
-                    </h:dataTable>
-                </h:panelGroup>
-                <br />
-                <h:commandButton action="#{detCompraController.prepareCreate}" value="#{bundle.ListDetCompraCreateLink}"/>
-                <br />
-                <br />
-                <h:commandButton action="/plantilla_admin" value="#{bundle.ListDetCompraIndexLink}"/>
+                <div class="container">
+                    <div class="card">
+                        <div class="card-header">
+                            <h:outputText value="#{bundle.ListDetCompraTitle}"></h:outputText>
+                        </div>
+                        <div class="card-body">
+                            <h:panelGroup id="messagePanel" layout="block">
+                                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+                            </h:panelGroup>
+                            <h:outputText escape="false" value="#{bundle.ListDetCompraEmpty}" rendered="#{detCompraController.items.rowCount == 0}"/>
+                            <h:panelGroup rendered="#{detCompraController.items.rowCount > 0}">
+                                <h:outputText value="#{detCompraController.pagination.pageFirstItem + 1}..#{detCompraController.pagination.pageLastItem + 1}/#{detCompraController.pagination.itemsCount}"/>&nbsp;
+                                <h:commandButton action="#{detCompraController.previous}" value="#{bundle.Previous} #{detCompraController.pagination.pageSize}" rendered="#{detCompraController.pagination.hasPreviousPage}"/>&nbsp;
+                                <h:commandButton action="#{detCompraController.next}" value="#{bundle.Next} #{detCompraController.pagination.pageSize}" rendered="#{detCompraController.pagination.hasNextPage}"/>&nbsp;
+                                <h:dataTable value="#{detCompraController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
+                                    <h:column>
+                                        <f:facet name="header">
+                                            <h:outputText value="#{bundle.ListDetCompraTitle_id}"/>
+                                        </f:facet>
+                                        <h:outputText value="#{item.id}"/>
+                                    </h:column>
+                                    <h:column>
+                                        <f:facet name="header">
+                                            <h:outputText value="#{bundle.ListDetCompraTitle_cantidad}"/>
+                                        </f:facet>
+                                        <h:outputText value="#{item.cantidad}"/>
+                                    </h:column>
+                                    <h:column>
+                                        <f:facet name="header">
+                                            <h:outputText value="#{bundle.ListDetCompraTitle_precioCompra}"/>
+                                        </f:facet>
+                                        <h:outputText value="#{item.precioCompra}"/>
+                                    </h:column>
+                                    <h:column>
+                                        <f:facet name="header">
+                                            <h:outputText value="#{bundle.ListDetCompraTitle_precioVenta}"/>
+                                        </f:facet>
+                                        <h:outputText value="#{item.precioVenta}"/>
+                                    </h:column>
+                                    <h:column>
+                                        <f:facet name="header">
+                                            <h:outputText value="#{bundle.ListDetCompraTitle_status}"/>
+                                        </f:facet>
+                                        <h:outputText value="#{item.status}"/>
+                                    </h:column>
+                                    <h:column>
+                                        <f:facet name="header">
+                                            <h:outputText value="#{bundle.ListDetCompraTitle_idComp}"/>
+                                        </f:facet>
+                                        <h:outputText value="#{item.idComp}"/>
+                                    </h:column>
+                                    <h:column>
+                                        <f:facet name="header">
+                                            <h:outputText value="#{bundle.ListDetCompraTitle_idProd}"/>
+                                        </f:facet>
+                                        <h:outputText value="#{item.idProd}"/>
+                                    </h:column>
+                                    <h:column>
+                                        <f:facet name="header">
+                                            <h:outputText value="&nbsp;"/>
+                                        </f:facet>
+                                        <h:commandButton action="#{detCompraController.prepareView}" value="#{bundle.ListDetCompraViewLink}" class="btn-success"/>
+                                        <h:outputText value=" "/>
+                                        <h:commandButton action="#{detCompraController.prepareEdit}" value="#{bundle.ListDetCompraEditLink}" class="btn-warning"/>
+                                        <h:outputText value=" "/>
+                                        <h:commandButton action="#{detCompraController.destroy}" value="#{bundle.ListDetCompraDestroyLink}" class="da
+                                                         "/>
+                                    </h:column>
+                                </h:dataTable>
+                            </h:panelGroup>
+                            <br/>
+                            <div class="row">
+                                <h:commandButton action="#{detCompraController.prepareCreate}" value="#{bundle.ListDetCompraCreateLink}" class="btn-success"/>
+
+                                <h:commandButton action="/plantilla_admin" value="#{bundle.ListDetCompraIndexLink}" class="btn-primary"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </h:form>
         </ui:define>
     </ui:composition>

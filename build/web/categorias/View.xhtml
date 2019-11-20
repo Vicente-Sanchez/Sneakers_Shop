@@ -14,32 +14,84 @@
                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
             </h:panelGroup>
             <h:form>
-                <h:panelGrid columns="2">
-                    <h:outputText value="#{bundle.ViewCategoriasLabel_id}"/>
-                    <h:inputText value="#{categoriasController.selected.id}" disabled="true" title="#{bundle.ViewCategoriasTitle_id}"/>
-                    <h:outputText value="#{bundle.ViewCategoriasLabel_nombreCat}"/>
-                    <h:inputText value="#{categoriasController.selected.nombreCat}" disabled="true" title="#{bundle.ViewCategoriasTitle_nombreCat}"/>
-                    <h:outputText value="#{bundle.ViewCategoriasLabel_descripccionCat}"/>
-                    <h:inputText value="#{categoriasController.selected.descripccionCat}" disabled="true" title="#{bundle.ViewCategoriasTitle_descripccionCat}"/>
-                    <h:outputText value="#{bundle.ViewCategoriasLabel_status}"/>
-                    <h:inputText value="#{categoriasController.selected.status}" disabled="true" title="#{bundle.ViewCategoriasTitle_status}"/>
-                </h:panelGrid>
-                <br />
-                <br/>
-                <h:commandButton action="#{categoriasController.destroyAndView}" value="#{bundle.ViewCategoriasDestroyLink}"/>
-                <br />
-                <br />
-                <h:commandButton action="Edit" value="#{bundle.ViewCategoriasEditLink}"/>
-                <br />
-                <br/>
-                <h:commandButton action="#{categoriasController.prepareCreate}" value="#{bundle.ViewCategoriasCreateLink}" />
-                <br />
-                <br/>
-                <h:commandButton action="#{categoriasController.prepareList}" value="#{bundle.ViewCategoriasShowAllLink}"/>
-                <br />
-                <br />
-                <h:commandButton action="/pagina_admin" value="#{bundle.ViewCategoriasIndexLink}"/>
-
+                <div class="container">
+                    <div class="card">
+                        <div class="card-header">
+                            <h:outputText value="#{bundle.ViewCategoriasTitle}"></h:outputText>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputText value="#{bundle.ViewCategoriasLabel_id}"/>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText value="#{categoriasController.selected.id}" disabled="true" title="#{bundle.ViewCategoriasTitle_id}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputText value="#{bundle.ViewCategoriasLabel_nombreCat}"/>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText value="#{categoriasController.selected.nombreCat}" disabled="true" title="#{bundle.ViewCategoriasTitle_nombreCat}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputText value="#{bundle.ViewCategoriasLabel_descripccionCat}"/>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText value="#{categoriasController.selected.descripccionCat}" disabled="true" title="#{bundle.ViewCategoriasTitle_descripccionCat}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputText value="#{bundle.ViewCategoriasLabel_status}"/>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText value="#{categoriasController.selected.status}" disabled="true" title="#{bundle.ViewCategoriasTitle_status}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="float: right;">
+                                <div class="">
+                                    <td>
+                                        <h:commandButton action="#{categoriasController.destroyAndView}" value="#{bundle.ViewCategoriasDestroyLink}" class="btn-danger"/>
+                                    </td>
+                                    <td>
+                                        <h:commandButton action="Edit" value="#{bundle.ViewCategoriasEditLink}" class="btn-warning"/>
+                                    </td>
+                                    <td>
+                                        <h:commandButton action="#{categoriasController.prepareCreate}" value="#{bundle.ViewCategoriasCreateLink}" class="btn-success"/>
+                                    </td>
+                                    <td>
+                                        <h:commandButton action="#{categoriasController.prepareList}" value="#{bundle.ViewCategoriasShowAllLink}" class="btn-info"/>
+                                    </td>
+                                    <td>
+                                        <h:commandButton action="/pagina_admin" value="#{bundle.ViewCategoriasIndexLink}" class="btn-primary"/>
+                                    </td>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </h:form>
         </ui:define>
     </ui:composition>

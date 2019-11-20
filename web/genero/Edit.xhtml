@@ -14,23 +14,63 @@
                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
             </h:panelGroup>
             <h:form>
-                <h:panelGrid columns="2">
-                    <h:outputLabel value="#{bundle.EditGeneroLabel_id}" for="id" />
-                    <h:inputText id="id" value="#{generoController.selected.id}" title="#{bundle.EditGeneroTitle_id}" required="true" requiredMessage="#{bundle.EditGeneroRequiredMessage_id}"/>
-                    <h:outputLabel value="#{bundle.EditGeneroLabel_nombre}" for="nombre" />
-                    <h:inputText id="nombre" value="#{generoController.selected.nombre}" title="#{bundle.EditGeneroTitle_nombre}" required="true" requiredMessage="#{bundle.EditGeneroRequiredMessage_nombre}"/>
-                    <h:outputLabel value="#{bundle.EditGeneroLabel_status}" for="status" />
-                    <h:inputText id="status" value="#{generoController.selected.status}" title="#{bundle.EditGeneroTitle_status}" required="true" requiredMessage="#{bundle.EditGeneroRequiredMessage_status}"/>
-                </h:panelGrid>
-                <h:commandButton action="#{generoController.update}" value="#{bundle.EditGeneroSaveLink}"/>
-                <br />
-                <br />
-                <h:commandButton action="View" value="#{bundle.EditGeneroViewLink}"/>
-                <br />
-                <h:commandButton action="#{generoController.prepareList}" value="#{bundle.EditGeneroShowAllLink}" immediate="true"/>
-                <br />
-                <br />
-                <h:commandButton action="/plantilla_admin" value="#{bundle.EditGeneroIndexLink}" />
+                <div class="container">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputLabel value="#{bundle.EditGeneroLabel_id}" for="id" />
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText id="id" value="#{generoController.selected.id}" title="#{bundle.EditGeneroTitle_id}" required="true" requiredMessage="#{bundle.EditGeneroRequiredMessage_id}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputLabel value="#{bundle.EditGeneroLabel_nombre}" for="nombre" />
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText id="nombre" value="#{generoController.selected.nombre}" title="#{bundle.EditGeneroTitle_nombre}" required="true" requiredMessage="#{bundle.EditGeneroRequiredMessage_nombre}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputLabel value="#{bundle.EditGeneroLabel_status}" for="status" />
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText id="status" value="#{generoController.selected.status}" title="#{bundle.EditGeneroTitle_status}" required="true" requiredMessage="#{bundle.EditGeneroRequiredMessage_status}"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="float: right;">
+                                <td>
+                                    <h:commandButton action="#{generoController.update}" value="#{bundle.EditGeneroSaveLink}" class="btn-success"/>
+                                </td>
+                                <td>
+                                    <h:commandButton action="View" value="#{bundle.EditGeneroViewLink}" class="btn-info"/>
+                                </td>
+                                <td>
+                                    <h:commandButton action="#{generoController.prepareList}" value="#{bundle.EditGeneroShowAllLink}" immediate="true" class="btn-warning"/>
+                                </td>
+                                <td>
+                                    <h:commandButton action="/plantilla_admin" value="#{bundle.EditGeneroIndexLink}" class="btn-primary"/>
+                                </td>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </h:form>
         </ui:define>
     </ui:composition>
