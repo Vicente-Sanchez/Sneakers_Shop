@@ -17,10 +17,13 @@
         <link rel="stylesheet" href="/Sneakers_Shop/resources/css/all.min.css"/>
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
-        >
+        
 
     </h:head>
     <h:body>
+        <h:panelGroup id="messagePanel" layout="block">
+            <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+        </h:panelGroup>
         <h:form>
             <div class="container">
                 <div class="card">
@@ -65,14 +68,13 @@
                                 </div>
                             </div>
                         </div>
+                       
                         <h:inputText id="nivelUsuario" rendered="false" disabled="true" value="#{usuarioController.selected.setNivelUsuario(3)}" title="#{bundle.CreateUsuarioTitle_nivelUsuario}" required="true" requiredMessage="#{bundle.CreateUsuarioRequiredMessage_nivelUsuario}"/>
 
                         <h:inputText disabled="true" rendered="false" id="status" value="#{usuarioController.selected.setStatus(1)}" title="#{bundle.CreateUsuarioTitle_status}" required="true" requiredMessage="#{bundle.CreateUsuarioRequiredMessage_status}"/>
-
                         <div style="float: right;">
                             <td>
-                                <h:commandButton action="#{usuarioController.create}" value="#{bundle.CreateUsuarioSaveLink}" class="btn-success"/>
-                                <h1>Usuario Creado Correctamente</h1>
+                                <h:commandButton action="#{usuarioController.createRegistro(usuarioController.selected)}" value="#{bundle.CreateUsuarioSaveLink}" class="btn-success"/>               
                             </td>
                             <td>
                                 <a href="/Sneakers_Shop/faces/templates/login.xhtml" class="btn-info">Regresar</a>

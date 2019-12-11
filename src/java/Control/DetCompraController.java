@@ -131,6 +131,7 @@ public class DetCompraController implements Serializable {
             detventa.setPrecioCompra((float) (prod.getPrecioProd()*.70));
             detventa.setPrecioVenta(prod.getPrecioProd());
             detventa.setStatus(1);
+            detventa.setCantidad(1);
             
             getEjbdetventafacade().create(detventa);
             ventasuser.setIva((float) (prod.getPrecioProd()*.16));

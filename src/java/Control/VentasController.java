@@ -38,8 +38,8 @@ public class VentasController implements Serializable {
     public List<Ventas> getVentasuser() {
         HttpServletRequest httpservlet = (HttpServletRequest) FacesContext.getCurrentInstance().getExternalContext().getRequest();
         Usuario usu = (Usuario) httpservlet.getSession().getAttribute("usu1");
-        if (ventasuser==null) {
-            ventasuser= new ArrayList<Ventas>();
+        if (ventasuser == null) {
+            ventasuser = new ArrayList<Ventas>();
         }
         ventasuser.clear();
         if (usu != null) {
@@ -52,6 +52,18 @@ public class VentasController implements Serializable {
         }
 
         return ventasuser;
+    }
+
+    public void eliminar(Ventas venta) {
+        List<Ventas> list = getFacade().findAll();
+        venta.setStatus(3);
+        ejbFacade.edit(venta);
+        for (Ventas venta1 : list) {
+            if (venta1.getStatus() == 3) {
+                getFacade().remove(venta1);
+            }
+        }
+        JsfUtil.addSuccessMessage("Producto Eliminado");
     }
 
     public void setVentasuser(List<Ventas> ventasuser) {

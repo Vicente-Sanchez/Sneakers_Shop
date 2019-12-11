@@ -11,7 +11,9 @@
     </h:head>
     <h:body>
         <div id="login">
-
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
             <div class="container">
                 <!--   <div class="mx-auto d-block">
                        <img src="../resources/imagenes/user-shape.png" style="width:150px; height:150px;" align=""  alt="Sneackers Shop" class="justify-content-center align-items-center"/>
@@ -19,7 +21,7 @@
                 <div id="login-row" class="row justify-content-center align-items-center">
                     <div id="login-column" class="col-md-6">
                         <div id="login-box" class="col-md-12">
-                           <h:form onsubmit="#{login.Acceso()}">
+                            <h:form onsubmit="#{login.Acceso()}">
                                 <h3 class="text-center text-dark">Iniciar Sesion</h3>
                                 <div class="form-group">
                                     <label for="usu" class="text-dark">Usuario:</label><br/>

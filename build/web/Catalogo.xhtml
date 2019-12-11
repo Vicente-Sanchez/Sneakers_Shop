@@ -21,7 +21,7 @@
 
     <body>
         <h:form id="form">
-            <p:growl id="growl" showDetail="true" class="card-growl" sticky="false" life="500"/>
+            <p:growl id="growl" showDetail="true" class="card-growl" sticky="false" life="800"/>
             <div class="container">
                 <div class="card">
                     <div class="card-body">
@@ -38,7 +38,7 @@
 
                             <p:panel header="#{producto}" style="text-align: center">
                                 <p:panelGrid columns="1" style="width: 100%">
-                                    <img class="w-100" src="/Sneakers_Shop/faces#{producto.getImagen().getRuta()}"/>
+                                    <img style="width: 250px; height: 180px" src="/Sneakers_Shop/faces#{producto.getImagen().getRuta()}"/>
 
                                     <h:outputText value="#{producto.nombreProd}" class="font-weight-bold"/>
 

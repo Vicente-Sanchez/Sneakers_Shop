@@ -5,11 +5,11 @@
       xmlns:p="http://primefaces.org/ui"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
-        <title>Facelet Title</title>
+        <title>Sneackers Shop</title>
     </h:head>
     <h:body>
         <h:form id="form">
-            <p:growl id="growl" showDetail="true" sticky="false" life="500"/>
+            <p:growl id="growl" showDetail="true" sticky="false" life="800"/>
             <div class="container">
                 <div class="card">
                     <div class="card-body">
@@ -27,7 +27,7 @@
                             <p:panel header="#{ventas}" style="text-align: center">
                                 <p:panelGrid columns="1" style="width: 100%">
 
-                                    <h:outputText value="#{usuarioController.getUsuario(ventas.getIdCliente()).getNombre()}"/>
+                                    <h:outputText value="Usuario: #{usuarioController.getUsuario(ventas.getIdCliente()).getNombre()}"/>
 
                                     <h:outputText value="Iva $ #{ventas.iva}"/>
                                     <h:outputText value="Subtotal $ #{ventas.subtotal}"/>
@@ -35,14 +35,23 @@
                                     <h:outputText value="#{ventas.fecha}" >
                                         <f:convertDateTime pattern="MM/dd/yyyy" />
                                     </h:outputText>
+                                    <h:commandButton value="Quitar del Carrito"
+                                                     rendered="#{ventas.getStatus()!=1}" 
+                                                     class="btn btn-info btn-lg active">
+                                        <f:ajax event="click"
+                                                listener="#{ventasController.eliminar(ventas)}"
+                                                rendered="form"
+                                                render="form"/>
+                                    </h:commandButton>
                                     <h:commandButton value="Confirmar Compra"
                                                      rendered="#{ventas.getStatus()!=1}" 
-                                                     class="btn btn-warning btn-lg active">
+                                                     class="btn btn-info btn-lg active">
                                         <f:ajax event="click"
                                                 listener="#{ventasController.setStatus(ventas, 1)}"
                                                 rendered="form"
                                                 render="form"/>
                                     </h:commandButton>
+
                                 </p:panelGrid>
                             </p:panel>
                         </p:dataGrid>
