@@ -26,12 +26,12 @@
                                 <h:commandButton action="#{ventasController.previous}" value="#{bundle.Previous} #{ventasController.pagination.pageSize}" rendered="#{ventasController.pagination.hasPreviousPage}"/>&nbsp;
                                 <h:commandButton action="#{ventasController.next}" value="#{bundle.Next} #{ventasController.pagination.pageSize}" rendered="#{ventasController.pagination.hasNextPage}"/>&nbsp;
                                 <h:dataTable value="#{ventasController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
-                                    <h:column>
+                                 <!--   <h:column>
                                         <f:facet name="header">
                                             <h:outputText value="#{bundle.ListVentasTitle_id}"/>
                                         </f:facet>
                                         <h:outputText value="#{item.id}"/>
-                                    </h:column>
+                                    </h:column> -->
                                     <h:column>
                                         <f:facet name="header">
                                             <h:outputText value="#{bundle.ListVentasTitle_fecha}"/>
@@ -92,7 +92,7 @@
                             <div class="row">
                                 <h:commandButton action="#{ventasController.prepareCreate}" value="#{bundle.ListVentasCreateLink}" class="btn-success"/>
 
-                                <h:commandButton action="/plantilla_admin" value="#{bundle.ListVentasIndexLink}" class="btn-primary"/>
+                                <h:commandButton action="/Sneakers_Shop/faces/plantilla_admin.xhtml" value="#{bundle.ListVentasIndexLink}" class="btn-primary"/>
                             </div>
                         </div>
                     </div>

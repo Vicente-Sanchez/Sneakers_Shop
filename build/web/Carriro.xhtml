@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h:form id="form">
+            <p:growl id="growl" showDetail="true" sticky="false" life="500"/>
+            <div class="container">
+                <div class="card">
+                    <div class="card-body">
+                        <p:dataGrid var="ventas" 
+                                    value="#{ventasController.getVentasuser()}" 
+                                    columns="3"
+                                    rows="12" paginator="true" 
+                                    id="ventas"
+                                    paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                                    rowsPerPageTemplate="6,12,16" class="table table-dark">
+                            <f:facet name="header">
+                                Carrito de Compras
+                            </f:facet>
+
+                            <p:panel header="#{ventas}" style="text-align: center">
+                                <p:panelGrid columns="1" style="width: 100%">
+
+                                    <h:outputText value="#{usuarioController.getUsuario(ventas.getIdCliente()).getNombre()}"/>
+
+                                    <h:outputText value="Iva $ #{ventas.iva}"/>
+                                    <h:outputText value="Subtotal $ #{ventas.subtotal}"/>
+                                    <h:outputText value="Total $ #{ventas.total}"/>
+                                    <h:outputText value="#{ventas.fecha}" >
+                                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                                    </h:outputText>
+                                    <h:commandButton value="Confirmar Compra"
+                                                     rendered="#{ventas.getStatus()!=1}" 
+                                                     class="btn btn-warning btn-lg active">
+                                        <f:ajax event="click"
+                                                listener="#{ventasController.setStatus(ventas, 1)}"
+                                                rendered="form"
+                                                render="form"/>
+                                    </h:commandButton>
+                                </p:panelGrid>
+                            </p:panel>
+                        </p:dataGrid>
+
+                    </div>
+                </div>
+            </div>
+        </h:form>
+
+    </h:body>
+</html>
+

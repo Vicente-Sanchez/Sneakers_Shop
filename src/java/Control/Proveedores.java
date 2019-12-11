@@ -251,7 +251,7 @@ public class Proveedores implements Serializable {
 
     @Override
     public String toString() {
-        return "Control.Proveedores[ id=" + id + " ]";
+        return razonSocial;
     }
     
 }

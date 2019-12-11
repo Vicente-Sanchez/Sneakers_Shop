@@ -1,7 +1,8 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
     <h:head>
         <title>Facelet Title</title>
     </h:head>
@@ -17,11 +18,11 @@
             </div>
             <button onclick="myFunction('Genero')" class="w3-button w3-block w3-black w3-left-align">
                 Genero</button>
-            
+
             <div id="Genero" class="w3-hide">
-                 <h:link class="w3-button w3-block w3-left-align" outcome="/genero/Create" value="Insertar"/>
-                 <h:link class="w3-button w3-block w3-left-align" outcome="/genero/Edit" value="Editar"/>
-                 <h:link class="w3-button w3-block w3-left-align" outcome="/genero/List" value="Consultar"/>
+                <h:link class="w3-button w3-block w3-left-align" outcome="/genero/Create" value="Insertar"/>
+                <h:link class="w3-button w3-block w3-left-align" outcome="/genero/Edit" value="Editar"/>
+                <h:link class="w3-button w3-block w3-left-align" outcome="/genero/List" value="Consultar"/>
             </div>
             <button onclick="myFunction('Imagenes')" class="w3-button w3-block w3-black w3-left-align">
                 Imagenes</button>
@@ -31,14 +32,14 @@
                 <h:link class="w3-button w3-block w3-left-align" outcome="/imagenes/Edit" value="Editar"/>
                 <h:link class="w3-button w3-block w3-left-align" outcome="/imagenes/List" value="Consultar"/>
             </div>
-            <button onclick="myFunction('Compras')" class="w3-button w3-block w3-black w3-left-align">
-                Compras</button>
+            <button onclick="myFunction('Usuarios')" class="w3-button w3-block w3-black w3-left-align">
+                Usuarios</button>
 
-            <div id="Compras" class="w3-hide">
+            <div id="Usuarios" class="w3-hide">
 
-                <h:link class="w3-button w3-block w3-left-align" outcome="/compras/Create" value="Insertar"/>
-                <h:link class="w3-button w3-block w3-left-align" outcome="/compras/Edit" value="Editar"/>
-                <h:link class="w3-button w3-block w3-left-align" outcome="/compras/List" value="Consultar"/>
+                <h:link class="w3-button w3-block w3-left-align" outcome="/usuario/Create" value="Insertar"/>
+                <h:link class="w3-button w3-block w3-left-align" outcome="/usuario/Edit" value="Editar"/>
+                <h:link class="w3-button w3-block w3-left-align" outcome="/usuario/List" value="Consultar"/>
             </div>
             <button onclick="myFunction('Tallas')" class="w3-button w3-block w3-black w3-left-align">
                 Tallas</button>
@@ -80,6 +81,7 @@
                 <h:link class="w3-button w3-block w3-left-align" outcome="/tipoDePago/Edit" value="Editar"/>
                 <h:link class="w3-button w3-block w3-left-align" outcome="/tipoDePago/List" value="Consultar"/>
             </div>
+            <!--
             <button onclick="myFunction('Det_comp')" class="w3-button w3-block w3-black w3-left-align">
                 Detalles Compras</button>
 
@@ -88,6 +90,7 @@
                 <h:link class="w3-button w3-block w3-left-align" outcome="/detCompra/Edit" value="Editar"/>
                 <h:link class="w3-button w3-block w3-left-align" outcome="/detCompra/List" value="Consultar"/>
             </div>
+-->
             <button onclick="myFunction('Det_venta')" class="w3-button w3-block w3-black w3-left-align">
                 Detalles Ventas</button>
 
@@ -107,7 +110,9 @@
                     }
                 }
             </script>
+           
         </div>
     </h:body>
+
 </html>
 

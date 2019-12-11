@@ -26,12 +26,12 @@
                                 <h:commandButton action="#{productoController.previous}" value="#{bundle.Previous} #{productoController.pagination.pageSize}" rendered="#{productoController.pagination.hasPreviousPage}"/>&nbsp;
                                 <h:commandButton action="#{productoController.next}" value="#{bundle.Next} #{productoController.pagination.pageSize}" rendered="#{productoController.pagination.hasNextPage}"/>&nbsp;
                                 <h:dataTable value="#{productoController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
-                                    <h:column>
+                                   <!-- <h:column>
                                         <f:facet name="header">
                                             <h:outputText value="#{bundle.ListProductoTitle_id}"/>
                                         </f:facet>
                                         <h:outputText value="#{item.id}"/>
-                                    </h:column>
+                                    </h:column> -->
                                     <h:column>
                                         <f:facet name="header">
                                             <h:outputText value="#{bundle.ListProductoTitle_nombreProd}"/>

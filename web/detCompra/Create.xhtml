@@ -17,19 +17,9 @@
                 <div class="container">
                     <div class="card">
                         <div class="card-body">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <h:outputLabel value="#{bundle.CreateDetCompraLabel_id}" for="id" />
-                                        <div class="input-group mb-3">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
-                                            </div>
-                                            <h:inputText id="id" value="#{detCompraController.selected.id}" title="#{bundle.CreateDetCompraTitle_id}" required="true" requiredMessage="#{bundle.CreateDetCompraRequiredMessage_id}"/>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+
+                            <h:inputText id="id" rendered="false" value="#{detCompraController.selected.setId(1)}" title="#{bundle.CreateDetCompraTitle_id}" required="true" requiredMessage="#{bundle.CreateDetCompraRequiredMessage_id}"/>
+
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group">

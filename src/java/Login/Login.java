@@ -60,19 +60,20 @@ public class Login implements Serializable {
         httpservlet = (HttpServletRequest) FacesContext.getCurrentInstance().getExternalContext().getRequest();
         usuautenticado = usufacade.Buscar(getUsu(), getPasword());
         if(usuautenticado!=null){
+            System.out.println("entro");
             httpservlet.getSession().setAttribute("usu", usuautenticado.getUsu());
             httpservlet.getSession().setAttribute("nombre", usuautenticado.getNombre());
             httpservlet.getSession().setAttribute("nivel_usu", usuautenticado.getNivelUsuario());
-            httpservlet.getSession().setAttribute("usuario", usuautenticado);
+            httpservlet.getSession().setAttribute("usu1", usuautenticado);
             switch(usuautenticado.getNivelUsuario()){
                 case 1:
-                    FacesContext.getCurrentInstance().getExternalContext().redirect("plantilla_admin.xhtml");
+                    FacesContext.getCurrentInstance().getExternalContext().redirect("/Sneakers_Shop/faces/plantilla_admin.xhtml");
                     break;
                 case 2:
-                    FacesContext.getCurrentInstance().getExternalContext().redirect("index.xhtml");
+                    FacesContext.getCurrentInstance().getExternalContext().redirect("/Sneakers_Shop/faces/index.xhtml");
                     break;
                 default:
-                    FacesContext.getCurrentInstance().getExternalContext().redirect("plantilla_cliente.xhtml");
+                    FacesContext.getCurrentInstance().getExternalContext().redirect("/Sneakers_Shop/faces/plantilla_cliente.xhtml");
                     break;
             }
             
@@ -86,29 +87,29 @@ public class Login implements Serializable {
         
     }
     
-    public void cerrarSesion(){
+    public void logout() {
         try {
             FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
-            FacesContext.getCurrentInstance().getExternalContext().redirect("./templates/login.xhtml");
-            
+                FacesContext.getCurrentInstance().getExternalContext().redirect("/Sneakers_Shop/faces/plantilla_cliente.xhtml");
         } catch (Exception e) {
         }
     }
     
-    public void verificaSesionynivel(int nivel) throws IOException{
+    public boolean verificaSesionynivel(int nivel) throws IOException{
         
         httpservlet = (HttpServletRequest) FacesContext.getCurrentInstance().getExternalContext().getRequest();
-        Usuario usu = (Usuario) httpservlet.getSession().getAttribute("usuario");
+        Usuario usu = (Usuario) httpservlet.getSession().getAttribute("usu1");
         if(usu != null){
             if(usu.getNivelUsuario()== nivel){
             }else{
-                FacesContext.getCurrentInstance().getExternalContext().redirect("plantilla_cliente.xhtml");
+                FacesContext.getCurrentInstance().getExternalContext().redirect("/Sneakers_Shop/faces/plantilla_cliente.xhtml");
             }
-            
+            return true;
         }else{
             FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
-            FacesContext.getCurrentInstance().getExternalContext().redirect("./templates/login.xhtml.xhtml");
+            FacesContext.getCurrentInstance().getExternalContext().redirect("/Sneakers_Shop/faces/templates/login.xhtml");
         }
+        return false;
     }
 
     /**

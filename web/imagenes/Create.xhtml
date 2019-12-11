@@ -3,7 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
 
     <ui:composition template="/template.xhtml">
         <ui:define name="title">
@@ -13,23 +14,11 @@
             <h:panelGroup id="messagePanel" layout="block">
                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
             </h:panelGroup>
-            <h:form>
+            <h:form enctype="multipart/form-data">
                 <div class="container">
                     <div class="card">
                         <div class="card-body">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <h:outputLabel value="#{bundle.CreateImagenesLabel_id}" for="id" />
-                                        <div class="input-group mb-3">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
-                                            </div>
-                                            <h:inputText id="id" value="#{imagenesController.selected.id}" title="#{bundle.CreateImagenesTitle_id}" required="true" requiredMessage="#{bundle.CreateImagenesRequiredMessage_id}"/>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <h:inputText id="id" rendered="false" value="#{imagenesController.selected.setId(1)}" title="#{bundle.CreateImagenesTitle_id}" required="true" requiredMessage="#{bundle.CreateImagenesRequiredMessage_id}"/>
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group">
@@ -38,7 +27,11 @@
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"><i class="fa fa-user"></i></span>
                                             </div>
-                                            <h:inputText id="ruta" value="#{imagenesController.selected.ruta}" title="#{bundle.CreateImagenesTitle_ruta}" required="true" requiredMessage="#{bundle.CreateImagenesRequiredMessage_ruta}"/>
+                                           <!-- <h:inputText id="ruta" value="#{imagenesController.selected.ruta}" title="#{bundle.CreateImagenesTitle_ruta}" required="true" requiredMessage="#{bundle.CreateImagenesRequiredMessage_ruta}"/>
+                                        </div>
+                                        <h:commandButton value="Seleccionar" class="btn-info"/>
+                                            -->
+                                            <p:fileUpload required="true" allowTypes="/(\.|\/)(gif|jpe?g|png)$/" class="btn-danger" value="#{imagenesController.file}" mode="simple" sizeLimit="400000"/>
                                         </div>
                                     </div>
                                 </div>
@@ -71,10 +64,10 @@
                             </div>
                             <div style="float: right;">
                                 <td>
-                                    <h:commandButton action="#{imagenesController.create}" value="#{bundle.CreateImagenesSaveLink}" class="btn-success"/>
+                                    <p:commandButton ajax="false" action="#{imagenesController.create}" value="#{bundle.CreateImagenesSaveLink}" class="btn-success"/>
                                 </td>
                                 <td>
-                                    <h:commandButton action="#{imagenesController.prepareList}" value="#{bundle.CreateImagenesShowAllLink}" immediate="true" class="btn-info"/>
+                                    <p:commandButton ajax="false" action="#{imagenesController.prepareList}" value="#{bundle.CreateImagenesShowAllLink}" immediate="true" class="btn-info"/>
                                 </td>
                                 <td>
                                     <h:commandButton action="/plantilla_admin" value="#{bundle.CreateImagenesIndexLink}" class="btn-primary"/>

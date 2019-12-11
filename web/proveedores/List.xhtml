@@ -26,12 +26,12 @@
                                 <h:commandButton action="#{proveedoresController.previous}" value="#{bundle.Previous} #{proveedoresController.pagination.pageSize}" rendered="#{proveedoresController.pagination.hasPreviousPage}"/>&nbsp;
                                 <h:commandButton action="#{proveedoresController.next}" value="#{bundle.Next} #{proveedoresController.pagination.pageSize}" rendered="#{proveedoresController.pagination.hasNextPage}"/>&nbsp;
                                 <h:dataTable value="#{proveedoresController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
-                                    <h:column>
+                                <!--    <h:column>
                                         <f:facet name="header">
                                             <h:outputText value="#{bundle.ListProveedoresTitle_id}"/>
                                         </f:facet>
                                         <h:outputText value="#{item.id}"/>
-                                    </h:column>
+                                    </h:column> -->
                                     <h:column>
                                         <f:facet name="header">
                                             <h:outputText value="#{bundle.ListProveedoresTitle_razonSocial}"/>
@@ -108,7 +108,7 @@
                             <div class="row">
                                 <h:commandButton action="#{proveedoresController.prepareCreate}" value="#{bundle.ListProveedoresCreateLink}" class="btn-success"/>
 
-                                <h:commandButton action="/plantilla_admin" value="#{bundle.ListProveedoresIndexLink}" class="btn-primary"/>
+                                <h:commandButton action="/Sneakers_Shop/faces/plantilla_admin.xhtml" value="#{bundle.ListProveedoresIndexLink}" class="btn-primary"/>
                             </div>
                         </div>
                     </div>

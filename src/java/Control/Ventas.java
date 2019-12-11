@@ -8,6 +8,7 @@ package Control;
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.Date;
+import javax.ejb.EJB;
 import javax.persistence.Basic;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -45,6 +46,7 @@ import javax.xml.bind.annotation.XmlTransient;
     , @NamedQuery(name = "Ventas.findByStatus", query = "SELECT v FROM Ventas v WHERE v.status = :status")})
 public class Ventas implements Serializable {
 
+    
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -194,7 +196,7 @@ public class Ventas implements Serializable {
 
     @Override
     public String toString() {
-        return "Control.Ventas[ id=" + id + " ]";
+        return "Folio de Venta: "+id;
     }
-    
+
 }

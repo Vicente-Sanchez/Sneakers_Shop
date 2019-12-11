@@ -26,12 +26,12 @@
                                 <h:commandButton action="#{categoriasController.previous}" value="#{bundle.Previous} #{categoriasController.pagination.pageSize}" rendered="#{categoriasController.pagination.hasPreviousPage}"/>&nbsp;
                                 <h:commandButton action="#{categoriasController.next}" value="#{bundle.Next} #{categoriasController.pagination.pageSize}" rendered="#{categoriasController.pagination.hasNextPage}"/>&nbsp;
                                 <h:dataTable value="#{categoriasController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
-                                    <h:column>
+                            <!--        <h:column>
                                         <f:facet name="header">
                                             <h:outputText value="#{bundle.ListCategoriasTitle_id}"/>
                                         </f:facet>
                                         <h:outputText value="#{item.id}"/>
-                                    </h:column>
+                                    </h:column> -->
                                     <h:column>
                                         <f:facet name="header">
                                             <h:outputText value="#{bundle.ListCategoriasTitle_nombreCat}"/>
@@ -66,7 +66,7 @@
                             <div class="row">
                                 <h:commandButton action="#{categoriasController.prepareCreate}" value="#{bundle.ListCategoriasCreateLink}" class="btn-success"/>
 
-                                <h:commandButton action="/plantilla_admin" value="#{bundle.ListCategoriasIndexLink}" class="btn-primary"/>
+                                <h:commandButton action="/Sneakers_Shop/faces/plantilla_admin.xhtml" value="#{bundle.ListCategoriasIndexLink}" class="btn-primary"/>
                             </div>
                         </div>
                     </div>

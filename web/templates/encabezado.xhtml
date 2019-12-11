@@ -4,43 +4,49 @@
       xmlns:h="http://xmlns.jcp.org/jsf/html">
     <h:head>
         <title>Facelet Title</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+
     </h:head>
     <h:body>
         <div class="w3-bar w3-white">
-            <a href="#" class="w3-bar-item w3-button">Inicio</a>
-            <div class="w3-dropdown-hover w3-hide-small">
-                <button class="w3-padding-large w3-button" title="Genero">Genero</button>     
-                <div class="w3-dropdown-content w3-bar-block w3-card-4">
-                    <a href="#" class="w3-bar-item w3-button" >Hombres</a>
-                    <a href="#" class="w3-bar-item w3-button">Mujeres</a>
-                    <a href="#" class="w3-bar-item w3-button">Niños</a>
-                </div>
-            </div>
-            <div class="w3-dropdown-hover w3-hide-small">
-                <button class="w3-padding-large w3-button" title="Marcas">Marcas</button>     
-                <div class="w3-dropdown-content w3-bar-block w3-card-4">
-                    <a href="#" class="w3-bar-item w3-button" >Nike</a>
-                    <a href="#" class="w3-bar-item w3-button">Adidas</a>
-                    <a href="#" class="w3-bar-item w3-button">Puma</a>
-                    <a href="#" class="w3-bar-item w3-button">Pirma</a>
-                </div>
-            </div>
-            <div class="w3-dropdown-hover w3-hide-small">
-                <button class="w3-padding-large w3-button" title="Categoria">Categoría</button>     
-                <div class="w3-dropdown-content w3-bar-block w3-card-4">
-                    <a href="#" class="w3-bar-item w3-button" >Futbol</a>
-                    <a href="#" class="w3-bar-item w3-button">Basquetbol</a>
-                    <a href="#" class="w3-bar-item w3-button">Beisbol</a>
-                    <a href="#" class="w3-bar-item w3-button">Futbol americano</a>
-                </div>
-            </div>
-            <div class="w3-right w3-hide-small">
-                <img src="../resources/imagenes/car-shopping.png" style="width: 40px;"/>
-            </div>
-            <div class="w3-right w3-hide-small">
-                <a href="../templates/login.xhtml" class="w3-bar-item w3-button">Iniciar Sesion</a>
-            </div>
+            <h1 class="font-weight-bold text-danger text-center">Sneakers Shop</h1>
+            <h:form >
+                <div class="w3-left w3-hide-small">
+                    <h:commandLink style="z-index: 1000" class="text-dark" rendered="#{!login.verificaSesionynivel(3)}" dir="/Sneakers_Shop/faces/templates/login.xhtml">Inciar Sesion</h:commandLink>
+
+                    <a style="z-index: 1000" href="/Sneakers_Shop/faces/Carriro.xhtml" class="btn"><i class="fa fa-shopping-cart" style="width: 100%"></i></a>
+                    <h:commandLink style="z-index: 1000" class="text-dark" rendered="#{login.verificaSesionynivel(3)}" actionListener="#{login.logout()}" dir="/Sneakers_Shop/faces/templates/login.xhtml">Salir</h:commandLink>
+                </div>   
+            </h:form>
+            <!--   <div class="w3-dropdown-hover w3-hide-small">
+                   <button class="w3-padding-large w3-button" title="Genero">Genero</button>     
+                   <div class="w3-dropdown-content w3-bar-block w3-card-4">
+                       <a href="#" class="w3-bar-item w3-button" >Hombres</a>
+                       <a href="#" class="w3-bar-item w3-button">Mujeres</a>
+                       <a href="#" class="w3-bar-item w3-button">Niños</a>
+                   </div>
+               </div>
+               <div class="w3-dropdown-hover w3-hide-small">
+                   <button class="w3-padding-large w3-button" title="Marcas">Marcas</button>     
+                   <div class="w3-dropdown-content w3-bar-block w3-card-4">
+                       <a href="#" class="w3-bar-item w3-button" >Nike</a>
+                       <a href="#" class="w3-bar-item w3-button">Adidas</a>
+                       <a href="#" class="w3-bar-item w3-button">Puma</a>
+                       <a href="#" class="w3-bar-item w3-button">Pirma</a>
+                   </div>
+               </div>
+               <div class="w3-dropdown-hover w3-hide-small">
+                   <button class="w3-padding-large w3-button" title="Categoria">Categoría</button>     
+                   <div class="w3-dropdown-content w3-bar-block w3-card-4">
+                       <a href="#" class="w3-bar-item w3-button" >Futbol</a>
+                       <a href="#" class="w3-bar-item w3-button">Basquetbol</a>
+                       <a href="#" class="w3-bar-item w3-button">Beisbol</a>
+                       <a href="#" class="w3-bar-item w3-button">Futbol americano</a>
+                   </div>
+               </div>-->
+
         </div>
+
     </h:body>
 </html>
 

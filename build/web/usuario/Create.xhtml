@@ -17,19 +17,9 @@
                 <div class="container">
                     <div class="card">
                         <div class="card-body">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <h:outputLabel value="#{bundle.CreateUsuarioLabel_id}" for="id" />
-                                        <div class="input-group mb-3">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
-                                            </div>
-                                            <h:inputText id="id" value="#{usuarioController.selected.id}" title="#{bundle.CreateUsuarioTitle_id}" required="true" requiredMessage="#{bundle.CreateUsuarioRequiredMessage_id}"/>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+
+                            <h:inputText id="id" rendered="false" value="#{usuarioController.selected.setId(1)}" title="#{bundle.CreateUsuarioTitle_id}" required="true" requiredMessage="#{bundle.CreateUsuarioRequiredMessage_id}"/>
+
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group">

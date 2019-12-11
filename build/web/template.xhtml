@@ -4,7 +4,8 @@
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
 
-      >
+          
+      xmlns:p="http://primefaces.org/ui">
 
     <h:head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -16,28 +17,32 @@
         <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"/>
         <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        
-         <link rel="stylesheet" href="/Sneakers_Shop/resources/css/all.min.css"/>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+        <link rel="stylesheet" href="/Sneakers_Shop/resources/css/all.min.css"/>
     </h:head>
 
     <h:body>
         <div id="top">
-            <div class="w3-right w3-hide-small">
-                <a href="#projects" class="w3-bar-item w3-button">Salir</a>
-            </div>
-            <h1>Sneakers Shop</h1>
+            <h:form>
+                <div class="w3-right w3-hide-small">
+                    <p:commandLink value="Salir" actionListener="#{login.logout()}"/>
+                </div>
+                <h1>Sneakers Shop</h1>
+            </h:form>
         </div>
+
         <div>
             <div id="left">
                 <ui:include src="./templates/izquierda.xhtml"/>
             </div>
             <ui:insert name="content">
-            <div>
-                <div id="content">
-                   
-                    
+                <div>
+                    <div id="content">
+
+
+                    </div>
                 </div>
-            </div>
             </ui:insert>
         </div>
         <script type="text/javascript" src="/Sneaker_Shop/resources/all.min.js "/>

@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+
+        <h:outputStylesheet library="css" name="jsfcrud.css"/>
+        <h:outputStylesheet library="css" name="default.css"/>
+        <h:outputStylesheet library="css" name="cssLayout.css"/>
+        <h:outputStylesheet library="css" name="w3.css"/>
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"/>
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+        <link rel="stylesheet" href="/Sneakers_Shop/resources/css/all.min.css"/>
+        <title>Sneaker Shop</title>
+    </h:head>
+
+    <body>
+        <h:form id="form">
+            <p:growl id="growl" showDetail="true" class="card-growl" sticky="false" life="500"/>
+            <div class="container">
+                <div class="card">
+                    <div class="card-body">
+                        <p:dataGrid var="producto" 
+                                    value="#{productoController.items}" 
+                                    columns="3"
+                                    rows="12" paginator="true" 
+                                    id="Productos"
+                                    paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                                    rowsPerPageTemplate="6,12,16" class="table table-dark">
+                            <f:facet name="header">
+                                Productos
+                            </f:facet>
+
+                            <p:panel header="#{producto}" style="text-align: center">
+                                <p:panelGrid columns="1" style="width: 100%">
+                                    <img class="w-100" src="/Sneakers_Shop/faces#{producto.getImagen().getRuta()}"/>
+
+                                    <h:outputText value="#{producto.nombreProd}" class="font-weight-bold"/>
+
+                                    <h:outputText value="#{producto.getIdProv().getRazonSocial()}" class="font-weight-bold"/>
+
+                                    <h:outputText value="#{producto.descripProd}" class="font-weight-normal"/>
+
+                                    <h:outputText value="#{producto.getIdCategoria().getNombreCat()}" class="font-weight-normal"/>
+
+                                    <h:outputText value="$ #{producto.precioProd}" class="font-weight-bold"/>
+
+                                    <h:outputText value="#{producto.getIdGen().getNombre()}" class="font-weight-normal"/> 
+
+                                    <h:commandButton value="Agregar al Carrito" class="btn btn-warning btn-lg active">
+                                        <f:ajax event="click"
+                                                listener="#{detCompraController.addCar(producto)}"
+                                                rendered="form"
+                                                render="form"/>
+                                    </h:commandButton>
+
+                                </p:panelGrid>
+                            </p:panel>
+                        </p:dataGrid>
+
+                    </div>
+                </div>
+            </div>
+        </h:form>
+    </body>
+
+</html>
+

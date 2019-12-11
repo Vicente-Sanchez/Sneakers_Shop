@@ -17,19 +17,9 @@
                 <div class="container">
                     <div class="card">
                         <div class="card-body">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <h:outputLabel value="#{bundle.EditDetVentaLabel_id}" for="id" />
-                                        <div class="input-group mb-3">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
-                                            </div>
-                                            <h:inputText id="id" value="#{detVentaController.selected.id}" title="#{bundle.EditDetVentaTitle_id}" required="true" requiredMessage="#{bundle.EditDetVentaRequiredMessage_id}"/>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+
+                            <h:inputText id="id" rendered="false" value="#{detVentaController.selected.id}" title="#{bundle.EditDetVentaTitle_id}" required="true" requiredMessage="#{bundle.EditDetVentaRequiredMessage_id}"/>
+
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group">

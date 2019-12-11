@@ -4,6 +4,8 @@ import Control.util.JsfUtil;
 import Control.util.PaginationHelper;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 import javax.ejb.EJB;
 import javax.inject.Named;
@@ -15,6 +17,7 @@ import javax.faces.convert.FacesConverter;
 import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
 import javax.faces.model.SelectItem;
+import javax.servlet.http.HttpServletRequest;
 
 @Named("ventasController")
 @SessionScoped
@@ -27,7 +30,32 @@ public class VentasController implements Serializable {
     private PaginationHelper pagination;
     private int selectedItemIndex;
 
+    List<Ventas> ventasuser;
+
     public VentasController() {
+    }
+
+    public List<Ventas> getVentasuser() {
+        HttpServletRequest httpservlet = (HttpServletRequest) FacesContext.getCurrentInstance().getExternalContext().getRequest();
+        Usuario usu = (Usuario) httpservlet.getSession().getAttribute("usu1");
+        if (ventasuser==null) {
+            ventasuser= new ArrayList<Ventas>();
+        }
+        ventasuser.clear();
+        if (usu != null) {
+            List<Ventas> list = getFacade().findAll();
+            for (Ventas venta : list) {
+                if (venta.getIdCliente() == usu.getId()) {
+                    ventasuser.add(venta);
+                }
+            }
+        }
+
+        return ventasuser;
+    }
+
+    public void setVentasuser(List<Ventas> ventasuser) {
+        this.ventasuser = ventasuser;
     }
 
     public Ventas getSelected() {
@@ -40,6 +68,12 @@ public class VentasController implements Serializable {
 
     private VentasFacade getFacade() {
         return ejbFacade;
+    }
+
+    public void setStatus(Ventas venta, int status) {
+        venta.setStatus(status);
+        ejbFacade.edit(venta);
+        JsfUtil.addSuccessMessage("Compra Realizada Correctamente");
     }
 
     public PaginationHelper getPagination() {

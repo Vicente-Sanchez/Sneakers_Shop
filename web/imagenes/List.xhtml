@@ -26,24 +26,25 @@
                                 <h:commandButton action="#{imagenesController.previous}" value="#{bundle.Previous} #{imagenesController.pagination.pageSize}" rendered="#{imagenesController.pagination.hasPreviousPage}"/>&nbsp;
                                 <h:commandButton action="#{imagenesController.next}" value="#{bundle.Next} #{imagenesController.pagination.pageSize}" rendered="#{imagenesController.pagination.hasNextPage}"/>&nbsp;
                                 <h:dataTable value="#{imagenesController.items}" var="item" border="0" cellpadding="2" cellspacing="0" rowClasses="jsfcrud_odd_row,jsfcrud_even_row" rules="all" style="border:solid 1px">
-                                    <h:column>
+                                 <!--   <h:column>
                                         <f:facet name="header">
                                             <h:outputText value="#{bundle.ListImagenesTitle_id}"/>
                                         </f:facet>
                                         <h:outputText value="#{item.id}"/>
-                                    </h:column>
+                                    </h:column>  -->
                                     <h:column>
                                         <f:facet name="header">
                                             <h:outputText value="#{bundle.ListImagenesTitle_ruta}"/>
                                         </f:facet>
-                                        <h:outputText value="#{item.ruta}"/>
-                                    </h:column>
+                                            <h:outputText value="#{item.ruta}"/>
+                                        </h:column>
                                     <h:column>
                                         <f:facet name="header">
-                                            <h:outputText value="#{bundle.ListImagenesTitle_status}"/>
+                                            <h:outputText value="Imagen"/>
                                         </f:facet>
-                                        <h:outputText value="#{item.status}"/>
+                                        <img src="/Sneakers_Shop/faces#{item.ruta}" style="width: 250px; height: 180px"/>
                                     </h:column>
+                                   
                                     <h:column>
                                         <f:facet name="header">
                                             <h:outputText value="#{bundle.ListImagenesTitle_idProd}"/>
@@ -67,7 +68,6 @@
                                 <h:commandButton action="#{imagenesController.prepareCreate}" value="#{bundle.ListImagenesCreateLink}" class="btn-success"/>
 
                                 <h:commandButton action="/plantilla_admin" value="#{bundle.ListImagenesIndexLink}" class="btn-primary"/>
-
                             </div>
                         </div>
                     </div>

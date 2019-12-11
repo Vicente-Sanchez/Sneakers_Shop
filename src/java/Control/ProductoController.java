@@ -30,7 +30,7 @@ public class ProductoController implements Serializable {
     public ProductoController() {
     }
 
-    public Producto getSelected() {
+      public Producto getSelected() {
         if (current == null) {
             current = new Producto();
             selectedItemIndex = -1;

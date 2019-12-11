@@ -123,7 +123,7 @@ public class Genero implements Serializable {
 
     @Override
     public String toString() {
-        return "Control.Genero[ id=" + id + " ]";
+        return nombre;
     }
     
 }

@@ -133,7 +133,7 @@ public class Talla implements Serializable {
 
     @Override
     public String toString() {
-        return "Control.Talla[ id=" + id + " ]";
+        return ""+numeroTalla;
     }
     
 }

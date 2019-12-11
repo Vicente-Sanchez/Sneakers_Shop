@@ -138,6 +138,15 @@ public class Producto implements Serializable {
         this.status = status;
     }
 
+    public Imagenes getImagen() {
+        Imagenes imagen=null;
+        for (Imagenes img : getImagenesCollection()) {
+            imagen=img;
+            break;
+        }
+        return imagen;
+    }
+
     @XmlTransient
     public Collection<Imagenes> getImagenesCollection() {
         return imagenesCollection;
@@ -220,7 +229,7 @@ public class Producto implements Serializable {
 
     @Override
     public String toString() {
-        return "Control.Producto[ id=" + id + " ]";
+        return nombreProd;
     }
-    
+
 }

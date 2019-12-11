@@ -2,8 +2,11 @@ package Control;
 
 import Control.util.JsfUtil;
 import Control.util.PaginationHelper;
+import java.io.IOException;
 
 import java.io.Serializable;
+import java.util.Date;
+import java.util.List;
 import java.util.ResourceBundle;
 import javax.ejb.EJB;
 import javax.inject.Named;
@@ -15,11 +18,17 @@ import javax.faces.convert.FacesConverter;
 import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
 import javax.faces.model.SelectItem;
+import javax.servlet.http.HttpServletRequest;
 
 @Named("detCompraController")
 @SessionScoped
 public class DetCompraController implements Serializable {
 
+    private HttpServletRequest httpservlet;
+    @EJB
+    private Control.VentasFacade ejbventafacade;
+    @EJB
+    private Control.DetVentaFacade ejbdetventafacade;
     private DetCompra current;
     private DataModel items = null;
     @EJB
@@ -36,6 +45,36 @@ public class DetCompraController implements Serializable {
             selectedItemIndex = -1;
         }
         return current;
+    }
+
+    public DetVentaFacade getEjbdetventafacade() {
+        if (ejbdetventafacade == null) {
+            ejbdetventafacade = new DetVentaFacade();
+        }
+        return ejbdetventafacade;
+    }
+
+    public void setEjbdetventafacade(DetVentaFacade ejbdetventafacade) {
+        this.ejbdetventafacade = ejbdetventafacade;
+    }
+
+    public VentasFacade getEjbventafacade() {
+        if (ejbventafacade == null) {
+            ejbventafacade = new VentasFacade();
+        }
+        return ejbventafacade;
+    }
+
+    public void setEjbventafacade(VentasFacade ejbventafacade) {
+        this.ejbventafacade = ejbventafacade;
+    }
+
+    public DetCompraFacade getEjbFacade() {
+        return ejbFacade;
+    }
+
+    public void setEjbFacade(DetCompraFacade ejbFacade) {
+        this.ejbFacade = ejbFacade;
     }
 
     private DetCompraFacade getFacade() {
@@ -63,6 +102,71 @@ public class DetCompraController implements Serializable {
     public String prepareList() {
         recreateModel();
         return "List";
+    }
+
+    public void addCar(Producto prod) throws IOException {
+        String message = "Inicia Sesión";
+        Ventas ventasuser = null;
+        if (verificaSesionynivel()) {
+            httpservlet = (HttpServletRequest) FacesContext.getCurrentInstance().getExternalContext().getRequest();
+            Usuario usu = (Usuario) httpservlet.getSession().getAttribute("usu1");
+            ventasuser = getVentaAct(usu);
+
+            if (ventasuser == null) {
+                ventasuser = new Ventas();
+                ventasuser.setFecha(new Date());
+                ventasuser.setIdCliente(usu.getId());
+                ventasuser.setIdTipodepago(null);
+                ventasuser.setIva(0);
+                ventasuser.setStatus(0);
+                ventasuser.setSubtotal(0);
+                ventasuser.setTotal(0);
+                getEjbventafacade().create(ventasuser);
+                ventasuser = getVentaAct(usu);
+            }
+
+            DetVenta detventa = new DetVenta();
+            detventa.setIdProd(prod);
+            detventa.setIdVenta(ventasuser);
+            detventa.setPrecioCompra((float) (prod.getPrecioProd()*.70));
+            detventa.setPrecioVenta(prod.getPrecioProd());
+            detventa.setStatus(1);
+            
+            getEjbdetventafacade().create(detventa);
+            ventasuser.setIva((float) (prod.getPrecioProd()*.16));
+            ventasuser.setSubtotal((float)(prod.getPrecioProd()*.84));
+            ventasuser.setTotal(prod.getPrecioProd());
+            ejbventafacade.edit(ventasuser);
+            message="Producto Agregado al Carrito";
+            JsfUtil.addSuccessMessage(message);
+            
+        } else {
+            JsfUtil.addSuccessMessage(message);
+        }
+    }
+
+    public Ventas getVentaAct(Usuario usu) {
+        List<Ventas> list = getEjbventafacade().findAll();
+        Ventas ventasuser = null;
+        for (Ventas venta : list) {
+            if (venta.getStatus() == 0 && venta.getIdCliente() == usu.getId()) {
+                ventasuser = venta;
+                break;
+            }
+        }
+        return ventasuser;
+    }
+
+    public boolean verificaSesionynivel() throws IOException {
+
+        httpservlet = (HttpServletRequest) FacesContext.getCurrentInstance().getExternalContext().getRequest();
+        Usuario usu = (Usuario) httpservlet.getSession().getAttribute("usu1");
+        if (usu != null) {
+
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public String prepareView() {

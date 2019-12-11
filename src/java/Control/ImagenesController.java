@@ -2,12 +2,21 @@ package Control;
 
 import Control.util.JsfUtil;
 import Control.util.PaginationHelper;
+import java.io.IOException;
+import java.io.InputStream;
 
 import java.io.Serializable;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.ResourceBundle;
 import javax.ejb.EJB;
 import javax.inject.Named;
 import javax.enterprise.context.SessionScoped;
+import javax.faces.application.FacesMessage;
 import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 import javax.faces.convert.Converter;
@@ -15,6 +24,7 @@ import javax.faces.convert.FacesConverter;
 import javax.faces.model.DataModel;
 import javax.faces.model.ListDataModel;
 import javax.faces.model.SelectItem;
+import org.primefaces.model.UploadedFile;
 
 @Named("imagenesController")
 @SessionScoped
@@ -26,8 +36,25 @@ public class ImagenesController implements Serializable {
     private Control.ImagenesFacade ejbFacade;
     private PaginationHelper pagination;
     private int selectedItemIndex;
+    private UploadedFile file;
+    Calendar calendario = new GregorianCalendar();
+    int hora, minutos, segundos;
 
     public ImagenesController() {
+    }
+
+    /**
+     * @return the file
+     */
+    public UploadedFile getFile() {
+        return file;
+    }
+
+    /**
+     * @param file the file to set
+     */
+    public void setFile(UploadedFile file) {
+        this.file = file;
     }
 
     public Imagenes getSelected() {
@@ -77,15 +104,34 @@ public class ImagenesController implements Serializable {
         return "Create";
     }
 
-    public String create() {
-        try {
-            getFacade().create(current);
-            JsfUtil.addSuccessMessage(ResourceBundle.getBundle("/Bundle").getString("ImagenesCreated"));
-            return prepareCreate();
-        } catch (Exception e) {
+    public String create() throws IOException {
+        //try {
+        String ruta = "C:/Users/VSN_b/OneDrive/Documentos/SneakersShop/web/img";
+        /* hora = calendario.get(Calendar.HOUR_OF_DAY);
+            minutos = calendario.get(Calendar.MINUTE);
+            segundos = calendario.get(Calendar.SECOND);*/
+        current.setRuta("/img/" + file.getFileName());
+       // System.out.println(current.getRuta());
+        InputStream input = file.getInputstream();
+        Path folder = Paths.get(ruta);
+        Path fileToCreatePath = folder.resolve(file.getFileName());
+        Path newFilePath = Files.createFile(fileToCreatePath);
+        System.out.println("ruta:*****************\n"+current.getRuta());
+        Files.copy(input, newFilePath, StandardCopyOption.REPLACE_EXISTING);
+
+        /*  FacesMessage mensaje = new FacesMessage("El archivo " + file.getFileName() + " se guardo correctamente.");
+            FacesContext.getCurrentInstance().addMessage(null, mensaje);
+         */
+        getFacade().create(current);
+        JsfUtil.addSuccessMessage(ResourceBundle.getBundle("/Bundle").getString("ImagenesCreated"));
+        return prepareCreate();
+        // } catch (Exception e) {
+        /* FacesMessage mensaje = new FacesMessage("ERROR AL SUBIR El archivo " + file.getFileName());
+            FacesContext.getCurrentInstance().addMessage(null, mensaje);
+         *//*
             JsfUtil.addErrorMessage(e, ResourceBundle.getBundle("/Bundle").getString("PersistenceErrorOccured"));
             return null;
-        }
+        }*/
     }
 
     public String prepareEdit() {
@@ -96,6 +142,22 @@ public class ImagenesController implements Serializable {
 
     public String update() {
         try {
+            if (file != null) {
+                String ruta = "C:/Users/VSN_b/OneDrive/Documentos/SneakersShop/web/img";
+                /*  hora = calendario.get(Calendar.HOUR_OF_DAY);
+                minutos = calendario.get(Calendar.MINUTE);
+                segundos = calendario.get(Calendar.SECOND);*/
+                current.setRuta("/img/" + file.getFileName());
+
+                InputStream input = file.getInputstream();
+                Path folder = Paths.get(ruta);
+                Path fileToCreatePath = folder.resolve(file.getFileName());
+                Path newFilePath = Files.createFile(fileToCreatePath);
+
+                Files.copy(input, newFilePath, StandardCopyOption.REPLACE_EXISTING);
+
+            }
+
             getFacade().edit(current);
             JsfUtil.addSuccessMessage(ResourceBundle.getBundle("/Bundle").getString("ImagenesUpdated"));
             return "View";

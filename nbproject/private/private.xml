@@ -3,10 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/VSN_b/OneDrive/Documentos/SneakersShop/src/java/Login/Login.java</file>
-            <file>file:/C:/Users/VSN_b/OneDrive/Documentos/SneakersShop/src/java/Control/UsuarioFacade.java</file>
-            <file>file:/C:/Users/VSN_b/OneDrive/Documentos/SneakersShop/web/plantilla_admin.xhtml</file>
-            <file>file:/C:/Users/VSN_b/OneDrive/Documentos/SneakersShop/web/templates/login.xhtml</file>
+            <file>file:/C:/Users/VSN_b/OneDrive/Documentos/SneakersShop/web/Carriro.xhtml</file>
+            <file>file:/C:/Users/VSN_b/OneDrive/Documentos/SneakersShop/src/java/Control/VentasController.java</file>
+            <file>file:/C:/Users/VSN_b/OneDrive/Documentos/SneakersShop/src/java/Control/DetCompraController.java</file>
+            <file>file:/C:/Users/VSN_b/OneDrive/Documentos/SneakersShop/web/WEB-INF/web.xml</file>
+            <file>file:/C:/Users/VSN_b/OneDrive/Documentos/SneakersShop/web/Catalogo.xhtml</file>
         </group>
     </open-files>
 </project-private>

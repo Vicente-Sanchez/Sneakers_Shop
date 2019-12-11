@@ -138,7 +138,7 @@ public class Categorias implements Serializable {
 
     @Override
     public String toString() {
-        return "Control.Categorias[ id=" + id + " ]";
+        return nombreCat;
     }
     
 }

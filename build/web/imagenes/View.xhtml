@@ -20,19 +20,19 @@
                             <h:outputText value="#{bundle.ViewImagenesTitle}"></h:outputText>
                         </div>
                         <div class="card-body">
-                            <div class="row">
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                        <h:outputText value="#{bundle.ViewImagenesLabel_id}"/>
-                                        <div class="input-group mb-3">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
-                                            </div>
-                                            <h:inputText disabled="true" value="#{imagenesController.selected.id}" title="#{bundle.ViewImagenesTitle_id}"/>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <!--  <div class="row">
+                                  <div class="col-md-4">
+                                      <div class="form-group">
+                                          <h:outputText value="#{bundle.ViewImagenesLabel_id}"/>
+                                          <div class="input-group mb-3">
+                                              <div class="input-group-prepend">
+                                                  <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                              </div>
+                                              <h:inputText disabled="true" value="#{imagenesController.selected.id}" title="#{bundle.ViewImagenesTitle_id}"/>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div> -->
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group">
@@ -41,6 +41,8 @@
                                             <div class="input-group-prepend">
                                                 <span class="input-group-text"><i class="fa fa-user"></i></span>
                                             </div>
+                                            <img src="/Sneakers_Shop/faces#{imagenesController.selected.ruta}" style="width: 250px; height: 180px"/>
+
                                             <h:inputText disabled="true" value="#{imagenesController.selected.ruta}" title="#{bundle.ViewImagenesTitle_ruta}"/>
                                         </div>
                                     </div>
