@@ -35,7 +35,7 @@ public class DetVentaController implements Serializable {
 
     public List<DetVenta> getListVenta() {
         if (listVenta == null) {
-            listVenta= new ArrayList<DetVenta>();
+            listVenta = new ArrayList<DetVenta>();
         }
         return listVenta;
     }
@@ -56,12 +56,11 @@ public class DetVentaController implements Serializable {
         return ejbFacade;
     }
 
-    public List<DetVenta> getProductos(int idventa){
-        listVenta=getFacade().DetalleVenta(idventa);
+    public List<DetVenta> getProductos(int idventa) {
+        listVenta = getFacade().DetalleVenta(idventa);
         return listVenta;
     }
-    
-    
+
     public PaginationHelper getPagination() {
         if (pagination == null) {
             pagination = new PaginationHelper(10) {
@@ -123,6 +122,13 @@ public class DetVentaController implements Serializable {
             JsfUtil.addErrorMessage(e, ResourceBundle.getBundle("/Bundle").getString("PersistenceErrorOccured"));
             return null;
         }
+    }
+
+    public String eliminaDetVenta(DetVenta detventa) {
+        
+        ejbFacade.remove(detventa);
+        
+        return "Cancelación Exitosa";
     }
 
     public String destroy() {

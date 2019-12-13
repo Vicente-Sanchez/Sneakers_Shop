@@ -14,7 +14,7 @@
             <h:panelGroup id="messagePanel" layout="block">
                 <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
             </h:panelGroup>
-            <h:form>
+            <h:form id="form">
                 <div class="container">
                     <div class="card">
                         <div class="card-header">
@@ -109,8 +109,16 @@
                                 <p:column headerText="Precio">
                                     <h:outputText value="$ #{ventas.precioVenta}"/>
                                 </p:column>
-
-
+                                <p:column headerText="">
+                                    <h:commandButton value="Cancelar"
+                                                     rendered="true" 
+                                                     class="btn btn-info btn-lg active">
+                                        <f:ajax event="click"
+                                                listener="#{detVentaController.eliminaDetVenta(ventas)}"
+                                                rendered="form"
+                                                render="form"/>
+                                    </h:commandButton>                                
+                                </p:column>
                             </p:dataTable>
 
                         </div>
