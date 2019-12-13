@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+    <ui:composition template="/plantilla_cliente.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.ViewVentasTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="content">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <div class="container">
+                    <div class="card">
+                        <div class="card-header">
+                            <h:link value="Regresar" outcome="/Carriro.xhtml" class="btn btn-danger btn-block"/>
+                        </div>
+                        <div class="card-body">
+                            <!--  <div class="row">
+                                  <div class="col-md-4">
+                                      <div class="form-group">
+                                          <h:outputText value="#{bundle.ViewVentasLabel_id}"/>
+                                          <div class="input-group mb-3">
+                                              <div class="input-group-prepend">
+                                                  <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                              </div>
+                                              <h:inputText disabled="true" value="#{ventasController.venta.id}" title="#{bundle.ViewVentasTitle_id}"/>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div> -->
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <h:outputText value="#{bundle.ViewVentasLabel_fecha}"/>
+                                        <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                            </div>
+                                            <h:inputText disabled="true" value="#{ventasController.venta.fecha}" title="#{bundle.ViewVentasTitle_fecha}">
+                                                <f:convertDateTime pattern="MM/dd/yyyy" />
+                                            </h:inputText>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--
+                               <div class="col-md-4">
+                                   <div class="form-group">
+                                       <h:outputText value="#{bundle.ViewVentasLabel_idCliente}"/>
+                                       <div class="input-group mb-3">
+                                           <div class="input-group-prepend">
+                                               <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                           </div>
+                                           
+                                           <h:inputText disabled="true" value="#{ventasController.venta.idCliente}" title="#{bundle.ViewVentasTitle_idCliente}"/>
+                                       </div>
+                                   </div>
+                               </div>
+                           </div>
+                          
+                           <div class="row">
+                               <div class="col-md-4">
+                                   <div class="form-group">
+                                       <h:outputText value="#{bundle.ViewVentasLabel_subtotal}"/>
+                                       <div class="input-group mb-3">
+                                           <div class="input-group-prepend">
+                                               <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                           </div>
+                                           <h:inputText disabled="true" value="#{ventasController.venta.subtotal}" title="#{bundle.ViewVentasTitle_subtotal}"/>
+                                       </div>
+                                   </div>
+                               </div>
+                               <div class="col-md-4">
+                                   <div class="form-group">
+                                       <h:outputText value="#{bundle.ViewVentasLabel_iva}"/>
+                                       <div class="input-group mb-3">
+                                           <div class="input-group-prepend">
+                                               <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                           </div>
+                                           <h:inputText disabled="true" value="#{ventasController.venta.iva}" title="#{bundle.ViewVentasTitle_iva}"/>
+                                       </div>
+                                   </div>
+                               </div>
+                           </div>
+                           <div class="row">
+                               <div class="col-md-4">
+                                   <div class="form-group">
+                                       <h:outputText value="#{bundle.ViewVentasLabel_total}"/>
+                                       <div class="input-group mb-3">
+                                           <div class="input-group-prepend">
+                                               <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                           </div>
+                                           <h:inputText disabled="true" value="#{ventasController.venta.total}" title="#{bundle.ViewVentasTitle_total}"/>
+                                       </div>
+                                   </div>
+                               </div>
+                                -->
+                            </div>
+
+                            <p:dataTable var="ventas" value="#{detVentaController.getProductos(ventasController.venta.id)}">
+                                <p:column headerText="Producto">
+                                    <h:outputText value="#{ventas.idProd.nombreProd}"/>
+                                </p:column>
+                                <p:column headerText="Precio">
+                                    <h:outputText value="$ #{ventas.precioVenta}"/>
+                                </p:column>
+
+
+                            </p:dataTable>
+
+                        </div>
+                    </div>
+                </div>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>

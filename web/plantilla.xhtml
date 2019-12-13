@@ -6,28 +6,36 @@
       xmlns:p="http://primefaces.org/ui">
 
     <h:head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title><ui:insert name="title">Sneakers Shop</ui:insert></title>
+        <h:outputStylesheet library="css" name="jsfcrud.css"/>
         <h:outputStylesheet library="css" name="default.css"/>
         <h:outputStylesheet library="css" name="cssLayout.css"/>
         <h:outputStylesheet library="css" name="w3.css"/>
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"/>
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+        <link rel="stylesheet" href="/Sneakers_Shop/resources/css/all.min.css"/>
         <title>Sneackers Shop</title>
     </h:head>
 
     <h:body>
 
         <p:outputPanel id="top">
-             <ui:insert name="top">top</ui:insert>
+             <ui:insert name="top"></ui:insert>
         </p:outputPanel>
         <p:outputPanel>
             <p:outputPanel id="left">
-                <ui:insert name="left">Left</ui:insert>
+                <ui:insert name="left"></ui:insert>
             </p:outputPanel>
             <p:outputPanel>
                 <p:outputPanel id="right">
-                    <ui:insert name="right">Right</ui:insert>
+                    <ui:insert name="right"></ui:insert>
                 </p:outputPanel>
                 <p:outputPanel id="content" class="right_content">
-                    <ui:insert name="content">Content</ui:insert>
+                    <ui:insert name="content"></ui:insert>
                 </p:outputPanel>
             </p:outputPanel>
         </p:outputPanel>

@@ -4,6 +4,8 @@ import Control.util.JsfUtil;
 import Control.util.PaginationHelper;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 import javax.ejb.EJB;
 import javax.inject.Named;
@@ -24,10 +26,22 @@ public class DetVentaController implements Serializable {
     private DataModel items = null;
     @EJB
     private Control.DetVentaFacade ejbFacade;
+    private List<DetVenta> listVenta;
     private PaginationHelper pagination;
     private int selectedItemIndex;
 
     public DetVentaController() {
+    }
+
+    public List<DetVenta> getListVenta() {
+        if (listVenta == null) {
+            listVenta= new ArrayList<DetVenta>();
+        }
+        return listVenta;
+    }
+
+    public void setListVenta(List<DetVenta> listVenta) {
+        this.listVenta = listVenta;
     }
 
     public DetVenta getSelected() {
@@ -42,6 +56,12 @@ public class DetVentaController implements Serializable {
         return ejbFacade;
     }
 
+    public List<DetVenta> getProductos(int idventa){
+        listVenta=getFacade().DetalleVenta(idventa);
+        return listVenta;
+    }
+    
+    
     public PaginationHelper getPagination() {
         if (pagination == null) {
             pagination = new PaginationHelper(10) {

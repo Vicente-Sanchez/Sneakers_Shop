@@ -3,64 +3,68 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:p="http://primefaces.org/ui"
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
-    <h:head>
-        <title>Sneackers Shop</title>
-    </h:head>
-    <h:body>
-        <h:form id="form">
-            <p:growl id="growl" showDetail="true" sticky="false" life="800"/>
-            <div class="container">
-                <div class="card">
-                    <div class="card-body">
-                        <p:dataGrid var="ventas" 
-                                    value="#{ventasController.getVentasuser()}" 
-                                    columns="3"
-                                    rows="12" paginator="true" 
-                                    id="ventas"
-                                    paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
-                                    rowsPerPageTemplate="6,12,16" class="table table-dark">
-                            <f:facet name="header">
-                                Carrito de Compras
-                            </f:facet>
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
 
-                            <p:panel header="#{ventas}" style="text-align: center">
-                                <p:panelGrid columns="1" style="width: 100%">
+    <ui:composition template="./plantilla_cliente.xhtml">
+        <ui:define name="title">
+            <h:outputText value="Sneakers Shop"></h:outputText>
+        </ui:define>
+        <ui:define name="content">
+            <h:form id="form">
+                <p:growl id="growl" showDetail="true" sticky="false" life="800"/>
+                <div class="container">
+                    <div class="card">
+                        <div class="card-body">
+                            <h:link value="Regresar" outcome="/Catalogo.xhtml" class="btn btn-danger btn-block"/>
+                            <p:dataGrid style="background: blue !important" var="ventas" 
+                                        value="#{ventasController.getVentasuser()}" 
+                                        columns="3"
+                                        rows="12" paginator="true" 
+                                        id="ventas"
+                                        paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+                                        rowsPerPageTemplate="6,12,16">
+                                <f:facet name="header">
+                                    Carrito de Compras
+                                </f:facet>
 
-                                    <h:outputText value="Usuario: #{usuarioController.getUsuario(ventas.getIdCliente()).getNombre()}"/>
+                                <p:panel header="#{ventas}" style="text-align: center;">
+                                    <p:panelGrid columns="1" style="width: 100%">
 
-                                    <h:outputText value="Iva $ #{ventas.iva}"/>
-                                    <h:outputText value="Subtotal $ #{ventas.subtotal}"/>
-                                    <h:outputText value="Total $ #{ventas.total}"/>
-                                    <h:outputText value="#{ventas.fecha}" >
-                                        <f:convertDateTime pattern="MM/dd/yyyy" />
-                                    </h:outputText>
-                                    <h:commandButton value="Quitar del Carrito"
-                                                     rendered="#{ventas.getStatus()!=1}" 
-                                                     class="btn btn-info btn-lg active">
-                                        <f:ajax event="click"
-                                                listener="#{ventasController.eliminar(ventas)}"
-                                                rendered="form"
-                                                render="form"/>
-                                    </h:commandButton>
-                                    <h:commandButton value="Confirmar Compra"
-                                                     rendered="#{ventas.getStatus()!=1}" 
-                                                     class="btn btn-info btn-lg active">
-                                        <f:ajax event="click"
-                                                listener="#{ventasController.setStatus(ventas, 1)}"
-                                                rendered="form"
-                                                render="form"/>
-                                    </h:commandButton>
+                                        <h:outputText value="Usuario: #{usuarioController.getUsuario(ventas.getIdCliente()).getNombre()}"/>
+                                        <h:inputHidden value="#{ventas.getId()}" rendered="false" />
+                                        <h:outputText value="Iva $ #{ventas.getIva()}"/>
+                                        <h:outputText value="Subtotal $ #{ventas.getSubtotal()}"/>
+                                        <h:outputText value="Total $ #{ventas.getTotal()}"/>
+                                        <h:outputText value="#{ventas.getFecha()}" >
+                                            <f:convertDateTime pattern="MM/dd/yyyy" />
+                                        </h:outputText>
+                                        <h:commandButton value="Quitar del Carrito"
+                                                         rendered="#{ventas.getStatus()!=1}" 
+                                                         class="btn btn-info btn-lg active">
+                                            <f:ajax event="click"
+                                                    listener="#{ventasController.eliminar(ventas)}"
+                                                    rendered="form"
+                                                    render="form"/>
+                                        </h:commandButton>
+                                        <h:commandButton value="Confirmar Compra"
+                                                         rendered="#{ventas.getStatus()!=1}" 
+                                                         class="btn btn-info btn-lg active">
+                                            <f:ajax event="click"
+                                                    listener="#{ventasController.setStatus(ventas, 1)}"
+                                                    rendered="form"
+                                                    render="form"/>
+                                        </h:commandButton>
+                                        <h:commandButton action="#{ventasController.verDetalle(ventas)}" value="Ver más" class="btn-info btn-lg active"/>
+                                    </p:panelGrid>
+                                </p:panel>
+                            </p:dataGrid>
 
-                                </p:panelGrid>
-                            </p:panel>
-                        </p:dataGrid>
-
+                        </div>
                     </div>
                 </div>
-            </div>
-        </h:form>
-
-    </h:body>
+            </h:form>
+        </ui:define>
+    </ui:composition>
 </html>
 

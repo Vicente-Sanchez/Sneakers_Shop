@@ -5,9 +5,11 @@
  */
 package Control;
 
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 
 /**
  *
@@ -27,5 +29,11 @@ public class DetVentaFacade extends AbstractFacade<DetVenta> {
     public DetVentaFacade() {
         super(DetVenta.class);
     }
-    
+      public List<DetVenta> DetalleVenta(int idventa) {
+        Query consulta = em.createNamedQuery("DetalleVenta.findByidventa", DetVenta.class)
+                .setParameter("idVenta", idventa);
+        List<DetVenta> lista = consulta.getResultList();
+        
+        return lista;
+    }
 }

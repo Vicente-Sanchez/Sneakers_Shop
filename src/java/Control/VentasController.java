@@ -25,12 +25,32 @@ public class VentasController implements Serializable {
 
     private Ventas current;
     private DataModel items = null;
+    private List<DetVenta> detalleList;
     @EJB
     private Control.VentasFacade ejbFacade;
+    @EJB
+    private Control.DetVentaFacade ejbDetalle;
     private PaginationHelper pagination;
     private int selectedItemIndex;
+    
 
     List<Ventas> ventasuser;
+    private Ventas venta;
+
+    public Ventas getVenta() {
+        return venta;
+    }
+
+    public void setVenta(Ventas venta) {
+        this.venta = venta;
+    }
+    
+    public String verDetalle(Ventas ventaver){
+        System.out.println(ventaver);
+        venta = ventaver;
+        
+        return "detalle";
+    }
 
     public VentasController() {
     }
@@ -55,14 +75,16 @@ public class VentasController implements Serializable {
     }
 
     public void eliminar(Ventas venta) {
-        List<Ventas> list = getFacade().findAll();
-        venta.setStatus(3);
-        ejbFacade.edit(venta);
-        for (Ventas venta1 : list) {
-            if (venta1.getStatus() == 3) {
-                getFacade().remove(venta1);
+        detalleList = ejbDetalle.findAll();
+        
+        for(DetVenta detalle: detalleList){
+            if(detalle.getIdVenta().getId()== venta.getId()){
+                ejbDetalle.remove(detalle);
             }
         }
+        
+        ejbFacade.remove(venta);
+
         JsfUtil.addSuccessMessage("Producto Eliminado");
     }
 

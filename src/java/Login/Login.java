@@ -73,7 +73,7 @@ public class Login implements Serializable {
                     FacesContext.getCurrentInstance().getExternalContext().redirect("/Sneakers_Shop/faces/index.xhtml");
                     break;
                 default:
-                    FacesContext.getCurrentInstance().getExternalContext().redirect("/Sneakers_Shop/faces/plantilla_cliente.xhtml");
+                    FacesContext.getCurrentInstance().getExternalContext().redirect("/Sneakers_Shop/faces/Catalogo.xhtml");
                     break;
             }
             

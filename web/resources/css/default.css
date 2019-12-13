@@ -15,6 +15,10 @@ h1 {
     padding: 0px;
     color: #D20005;
 }
+.ui-widget-header {
+    background: white !important;
+}
+
 /*
 a:link, a:visited {
   color: #045491;
