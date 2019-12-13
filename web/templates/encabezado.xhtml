@@ -15,7 +15,7 @@
                     <h:commandLink style="z-index: 1000" class="text-dark" rendered="#{!login.verificaSesionynivel(3)}" dir="/Sneakers_Shop/faces/templates/login.xhtml">Inciar Sesion</h:commandLink>
 
                     <a style="z-index: 1000" href="/Sneakers_Shop/faces/Carriro.xhtml" class="btn"><i class="fa fa-shopping-cart" style="width: 100%"></i></a>
-                    <h:commandLink style="z-index: 1000" class="text-dark" rendered="#{login.verificaSesionynivel(3)}" actionListener="#{login.logout()}" dir="/Sneakers_Shop/faces/templates/login.xhtml">Salir</h:commandLink>
+                    <h:commandLink style="z-index: 1000" class="btn btn-warning btn-lg" rendered="#{login.verificaSesionynivel(3)}" actionListener="#{login.logout()}" dir="/Sneakers_Shop/faces/templates/login.xhtml">Salir</h:commandLink>
                 </div>   
             </h:form>
             <!--   <div class="w3-dropdown-hover w3-hide-small">

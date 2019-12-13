@@ -39,7 +39,7 @@
                                         <h:outputText value="#{ventas.getFecha()}" >
                                             <f:convertDateTime pattern="MM/dd/yyyy" />
                                         </h:outputText>
-                                        <h:commandButton value="Quitar del Carrito"
+                                        <h:commandButton value="Cancelar Compra"
                                                          rendered="#{ventas.getStatus()!=1}" 
                                                          class="btn btn-info btn-lg active">
                                             <f:ajax event="click"
